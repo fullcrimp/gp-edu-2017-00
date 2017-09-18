@@ -1,0 +1,1 @@
+# centrally positioned block(moon)

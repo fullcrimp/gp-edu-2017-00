@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>QS Breakpoints</title>
+
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+    	body {
+    		margin: 0;
+    		padding: 0;
+    		text-align: center;
+    		min-width: 320px
+    	}
+    	.row {
+    		margin: 0 20px;
+    		background:#999;
+    		overflow: auto;
+    	}
+    	.box, .titles, .inner {
+			background:#ccc;
+			margin-bottom: 1em;
+			padding: 10px 0;
+    	}
+    	.label, .answer, .child-question {
+			max-width: 380px;
+    	}
+
+    	.inner {
+    		background: #eee;
+    		margin-left: 15px;
+    		width: calc(100% - 35px);
+    	}
+
+		.indent{
+			border-left: 5px solid #00aeef;
+			max-width: 375px;
+			min-width: 270px;
+			margin: 0;
+		}
+
+		  .validation {
+		  	border-left: 5px solid red;
+		  }
+
+		.alert {
+			border-left: 5px solid #48a415;
+			background-color: #ecf6e7;
+			margin-bottom: 1em;
+			padding: 10px 0;
+		}
+
+		.alert .titles {
+			background-color:none;
+			background: none;
+		}
+
+		@media (min-width: 340px) {
+			.indent {
+				margin: 0 20px;
+			}
+			.inner {
+				width:calc(100% - 15px);
+			}
+
+			.indent {
+				border-left:5px solid #ebf0f2;
+			}
+
+			.validation {
+		  		border-left: 5px solid red;
+		  	}
+
+			.alert {
+				border-left: 5px solid #48a415;
+			}
+		}
+
+    	@media (min-width: 420px) { /* As the browser window gets larger, the margins to the left & right of the questions should grow but the content (labels/questions) remain at a max-width of 380px.  */
+		  .body {
+		  	margin:0 auto;
+		  }
+
+		  .row {
+		  	margin: 0 auto;
+		  	width:380px;
+		  }
+
+		.indent{
+			width:375px;
+		}
+		}
+
+    	@media (min-width: 620px) { /* When the browser hits 620px wide, the content should float into 2 columns with a min-width of 280px on each column. The columns then become fluid to a max-width of 380px which creates the next breakpoint. */
+			.row {
+				margin: 0 20px;
+				min-width: 580px;
+				max-width: 780px;
+				width: auto;
+			}
+		  .box {
+		  	float:left;
+		  	width: calc(50% - 10px);
+		  }
+		  .child-answer {
+		  	float:left;
+		  	width: calc(50% - 5px);
+		  }
+		  .label {
+		  	margin-right: 10px;
+		  }
+		  .answer {
+		  	margin-left:10px;
+		  }
+		  .titles {
+		  	min-width: 580px;
+		  	max-width:780px;
+		  	width: auto;
+		  }
+
+		  .child-question {
+		  	float: left;
+		  	min-width: calc(50% - 15px);
+		  	max-width: 360px;
+		  	width: calc(50% - 30px);
+		  	margin-right: 10px;
+		  }
+
+		  .indent {
+		  	border-left: 10px solid #ebf0f2;
+		  	min-width:570px;
+			max-width: 770px;
+		  }
+
+		  .validation {
+		  	border-left: 10px solid red;
+		  }
+
+		  .inner {
+		  	margin-left: 20px;
+		  	width:auto;
+		  }
+
+		  .child-answer .inner {
+			margin-left: 0;
+		  }
+
+			.alert {
+				border-left: 10px solid #48a415;
+			}
+
+		}
+		  @media (min-width: 820px) { /* At 820px as the browser window gets larger, the margins to the left & right of the columns should grow but the content (labels/questions) remains central at a max-width of 380px in each column and 780px overall. */
+
+
+		  	/* UPDATE AS THIS BREAKPOINT SHOULD BE 820 */
+		  	.row {
+		  		margin: 0 auto;
+		  		width:780px;
+		  	}
+		  	.box {
+		  		width:380px;
+		  	}
+		  }
+		}
+    </style>
+  </head>
+  <body>
+
+
+  	<div class="row">
+  		
+  		<div class="titles">
+  			<p>Titles</p>
+  		</div>
+
+  		<div class="label box">
+  			<p>Question label</p>
+  		</div>
+
+		<div class="answer box">
+			<p>Answer</p>
+		</div>
+
+  	</div>
+
+	<div class="row indent validation">
+	  	<div class="child-question">
+	  		<div class="inner">
+				Validation
+			</div>
+	  	</div>
+
+	  	<div class="child-answer answer">
+	  		<div class="inner">
+				Answer
+			</div>
+	  	</div>
+    </div>
+
+
+  	<div class="row" style="margin-top:2em">
+
+  		<div class="label box">
+  			<p>Question label</p>
+  		</div>
+
+		<div class="answer box">
+			<p>Answer</p>
+		</div>
+
+  	</div>
+
+	<div class="row indent">
+	  	<div class="child-question">
+	  		<div class="inner">
+				Child question
+			</div>
+	  	</div>
+
+	  	<div class="child-answer answer">
+	  		<div class="inner">
+				Child answer
+			</div>
+	  	</div>
+    </div>
+
+  	<div class="row indent alert" style="margin-top:2em">
+  		
+  		<div class="titles">
+  			<p>Alert</p>
+  		</div>
+
+
+
+  	</div>
+
+    <!-- page content -->
+  </body>
+</html>

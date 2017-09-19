@@ -1,0 +1,81 @@
+@import 'form-variables.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: $filter__main-ff;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.filter {
+    width:  980px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.filter__intro, .filter__account-types, .filter__results, .filter__order {
+    margin-bottom: 20px;
+
+}
+
+.filter__label {
+    color: $filter__label-fc;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+}
+
+.filter__label--account-types {
+    @extend .filter__label;
+    p {
+        padding-bottom: 10px;
+    }
+}
+
+.filter__laber--intro-text {
+    color: $filter__intro-fc;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.filter__dropdown {
+    color: $filter__dropdown-fc;
+    font-size: $filter__dropdown-fs;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.filter__dropdown--account-types {
+    @extend .filter__dropdown;
+    padding: 10px 50px 10px 20px;
+}
+
+.filter__dropdown--order {
+    @extend .filter__dropdown;
+    height: 34px;
+    width: 266px;
+    box-shadow: 0px 2px;
+}
+
+.filter__dropdown--results {
+    @extend .filter__dropdown;
+    height: 40px;
+    width: 200px;
+    box-shadow: 0px 2px; 
+}
+
+.filter__text-input {
+    @extend .filter__laber--intro-text;
+    height: 40px;
+    width: 144px;
+    padding: 15px 10px;
+}  
+
+// input, select {
+//     border-radius: 5%;
+// }

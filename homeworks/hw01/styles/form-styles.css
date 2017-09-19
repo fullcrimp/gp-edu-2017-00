@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Open Sans", "sans-serif";
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.filter {
+  width: 980px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__intro, .filter__account-types, .filter__results, .filter__order {
+  margin-bottom: 20px;
+}
+
+.filter__label, .filter__label--account-types {
+  color: #2B3133;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 19px;
+}
+
+.filter__label--account-types p {
+  padding-bottom: 10px;
+}
+
+.filter__laber--intro-text, .filter__text-input {
+  color: #566266;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.filter__dropdown, .filter__dropdown--account-types, .filter__dropdown--order, .filter__dropdown--results {
+  color: #949899;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.filter__dropdown--account-types {
+  padding: 10px 50px 10px 20px;
+}
+
+.filter__dropdown--order {
+  height: 34px;
+  width: 266px;
+  box-shadow: 0px 2px;
+}
+
+.filter__dropdown--results {
+  height: 40px;
+  width: 200px;
+  box-shadow: 0px 2px;
+}
+
+.filter__text-input {
+  height: 40px;
+  width: 144px;
+  padding: 15px 10px;
+}
+ 
+
+ /*# sourceMappingURL= form-styles.css.map */

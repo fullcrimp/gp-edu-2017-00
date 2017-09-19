@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/form-styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+    <div class="form-wrapper">
+            <form class="filter">
+                    <section class="filter__intro">
+                        <label class="filter__laber--intro-text">
+                            We’ve found you 32 results based on a starting balance of
+                            <input class="filter__text-input" type="text" value="£100000">
+                            .
+                        </label>
+                    </section>
+                    <section class="filter__account-types">
+                        <label class="filter__label--account-types">
+                            <p>Account types</p>
+                            <select class="filter__dropdown--account-types">
+                                <option value="" selected>Show all</option>
+                            </select>                                
+                        </label>
+                        <label class="filter__label" for="filterCheckbox">
+                            Only show accounts I can open through MoneySupermarket
+                            <input class="filter__checkbox" type="checkbox">
+                        </label>
+                    </section>
+                    <section class="filter__results">
+                        <label class="filter__label">
+                            Transfer in
+                            <label class="filter__label">    
+                                <input class="filter__radio" name="filter-radio-btn" type="radio"> 
+                                Yes
+                            </label>
+                            <label class="filter__label">    
+                                <input class="filter__radio" name="filter-radio-btn" type="radio"> 
+                                No
+                            </label>                                            
+                        </label>
+                        <label class="filter__label">
+                            <input class="filter__checkbox" type="checkbox" />                                
+                            Opt in phone                            
+                        </label>
+                        <label class="filter__label">
+                            <input class="filter__checkbox" type="checkbox" />                                
+                            Opt in text                            
+                        </label>
+                        <label class="filter__label">
+                            <select class="filter__dropdown--results">
+                                <option value="" selected>--Please select--</option>
+                            </select>                               
+                        </label>
+                        <label class="filter__label">
+                                <input class="filter__password" type="password">                                
+                        </label>
+                    </section>
+                    <section class="filter__order">
+                        <label class="filter__label--order">
+                            Order results by:
+                            <select class="filter__dropdown--order">
+                                <option value="">Interest rate (AER) High to low</option>
+                            </select>
+                        </label>
+                    </section>    
+
+            </form>
+    </div>
+</body>
+</html>

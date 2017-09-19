@@ -1,0 +1,17 @@
+{
+  "name": "hw01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.6.0"
+  },
+  "scripts": {
+      "node-sass": "node-sass --output-style compressed -o dist/css src/scss"
+  },
+  "author": "katya",
+  "license": "ISC"
+}

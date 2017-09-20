@@ -16,8 +16,23 @@
   flex-direction: column;
 }
 
+.filter__title, .filter__label--order, .filter__results-title, .filter__order-title {
+  font-size: 18px;
+  color: #562873;
+  line-height: 24px;
+}
+
 .filter__intro, .filter__account-types, .filter__results, .filter__order {
-  margin-bottom: 20px;
+  margin: 0px 10px 20px 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  align-content: space-between;
+}
+
+.filter__intro {
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .filter__label, .filter__label--account-types {
@@ -27,14 +42,49 @@
   line-height: 19px;
 }
 
-.filter__label--account-types p {
-  padding-bottom: 10px;
+.filter__radiogroup-wraper, .filter__check-btn, .filter__radio-btn, .filter__checkbox-wraper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 
-.filter__laber--intro-text, .filter__text-input {
+.filter__check-btn, .filter__radio-btn {
+  border: 1px solid #949899;
+}
+
+.filter__check-btn {
+  height: 40px;
+  width: 200px;
+  background-color: #FFFFFF;
+}
+
+.filter__radio-btn {
+  height: 40px;
+  width: 95px;
+  background-color: #FFFFFF;
+}
+
+.filter__checkbox-wraper {
+  flex-flow: row wrap;
+}
+
+.filter__checkbox--account-types {
+  margin-right: 10px;
+}
+
+.filter__laber--intro-text, .filter__text--input {
   color: #566266;
   font-size: 20px;
   line-height: 28px;
+}
+
+.filter__results-title {
+  flex: 1 100%;
+  padding-bottom: 30px;
+}
+
+.filter__order-title {
+  margin-right: 10px;
 }
 
 .filter__dropdown, .filter__dropdown--account-types, .filter__dropdown--order, .filter__dropdown--results {
@@ -42,28 +92,87 @@
   font-size: 14px;
   font-weight: bold;
   line-height: 20px;
+  box-shadow: 0 1px 1px 0 #949899;
+  border-radius: 5px;
+}
+
+.filter__password--results,
+.filter__text--input {
+  box-shadow: inset 0 1px 0 0 #949899;
+  border-radius: 5px;
 }
 
 .filter__dropdown--account-types {
   padding: 10px 50px 10px 20px;
+  margin-right: 30px;
 }
 
 .filter__dropdown--order {
   height: 34px;
   width: 266px;
-  box-shadow: 0px 2px;
 }
 
 .filter__dropdown--results {
   height: 40px;
   width: 200px;
-  box-shadow: 0px 2px;
 }
 
-.filter__text-input {
+.filter__text--input {
   height: 40px;
   width: 144px;
   padding: 15px 10px;
+}
+
+.filter__password--results {
+  height: 40px;
+  width: 200px;
+  padding: 15px 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .filter__radio-btn:first-child {
+    margin-right: 10px;
+  }
+  .filter__check-btn:first-child {
+    margin-right: 0px;
+  }
+  .filter__radiogroup-wraper, .filter__check-btn, .filter__radio-btn, .filter__checkbox-wraper,
+  .filter__checkbox-wraper {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .filter__label, .filter__label--account-types, .filter__label--order {
+    width: 100%;
+  }
+  .filter__label .filter__password--results, .filter__label--account-types .filter__password--results,
+  .filter__label .filter__dropdown--results, .filter__label--account-types .filter__dropdown--results,
+  .filter__label .filter__dropdown--order, .filter__label--account-types .filter__dropdown--order, .filter__label--order .filter__password--results,
+  .filter__label--order .filter__dropdown--results,
+  .filter__label--order .filter__dropdown--order {
+    width: 100%;
+  }
+  
+  .filter__label .filter__dropdown--results, .filter__label--account-types .filter__dropdown--results, .filter__label--order .filter__dropdown--results {
+    margin-bottom: 10px;
+  }
+  .filter__check-btn {
+    margin-bottom: 10px;
+  }
+  .filter__radio-btn {
+    flex-grow: 2;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .filter__radio-btn:first-child,
+  .filter__check-btn:first-child {
+    margin-right: 5px;
+  }
+  .filter__radiogroup-wraper, .filter__check-btn, .filter__radio-btn, .filter__checkbox-wraper,
+  .filter__checkbox-wraper {
+    margin-right: 30px;
+  }
 }
  
 

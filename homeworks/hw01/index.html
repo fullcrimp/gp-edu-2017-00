@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,55 +14,58 @@
                     <section class="filter__intro">
                         <label class="filter__laber--intro-text">
                             We’ve found you 32 results based on a starting balance of
-                            <input class="filter__text-input" type="text" value="£100000">
+                            <input class="filter__text--input" type="text" value="£100000">
                             .
                         </label>
                     </section>
                     <section class="filter__account-types">
-                        <label class="filter__label--account-types">
+                        <label class="filter__label--account-types" for="accountSelect">
                             <p>Account types</p>
-                            <select class="filter__dropdown--account-types">
-                                <option value="" selected>Show all</option>
-                            </select>                                
-                        </label>
-                        <label class="filter__label" for="filterCheckbox">
-                            Only show accounts I can open through MoneySupermarket
-                            <input class="filter__checkbox" type="checkbox">
+                            <select class="filter__dropdown--account-types" id="accountSelect">
+                                    <option value="" selected>Show all</option>
+                            </select>   
+                            <label class="filter__label" for="filterCheckbox">
+                                    <input class="filter__checkbox--account-types" type="checkbox" id="filterCheckbox">
+                                    Only show accounts I can open through MoneySupermarket
+                                </label>
                         </label>
                     </section>
                     <section class="filter__results">
-                        <label class="filter__label">
-                            Transfer in
-                            <label class="filter__label">    
-                                <input class="filter__radio" name="filter-radio-btn" type="radio"> 
-                                Yes
-                            </label>
-                            <label class="filter__label">    
-                                <input class="filter__radio" name="filter-radio-btn" type="radio"> 
-                                No
-                            </label>                                            
-                        </label>
-                        <label class="filter__label">
-                            <input class="filter__checkbox" type="checkbox" />                                
-                            Opt in phone                            
-                        </label>
-                        <label class="filter__label">
-                            <input class="filter__checkbox" type="checkbox" />                                
-                            Opt in text                            
-                        </label>
-                        <label class="filter__label">
-                            <select class="filter__dropdown--results">
+                        <h5 class="filter__results-title">Filter results by:</h5>
+                        <div class="filter__radiogroup-wraper">
+                            <div class="filter__radio-btn">
+                                <input class="filter__radio" name="filter-radio-btn" type="radio" id="results-radio-y">                                                             
+                                <label class="filter__label" for="results-radio-y">Yes</label>
+                            </div>
+                            <div class="filter__radio-btn">
+                                <input class="filter__radio" name="filter-radio-btn" type="radio" id="results-radio-n">                             
+                                <label class="filter__label" for="results-radio-n">No</label>       
+                            </div>
+                        </div>
+                        <div class="filter__checkbox-wraper">
+                            <div class="filter__check-btn">
+                                <input class="filter__checkbox" type="checkbox" id="results-chekbox-p" /> 
+                                <label class="filter__label" for="results-chekbox-p">Opt in phone</label>
+                            </div> 
+                            <div class="filter__check-btn">
+                                <input class="filter__checkbox" type="checkbox" id="results-chekbox-t" /> 
+                                <label class="filter__label" for="results-chekbox-t">Opt in text</label>
+                            </div>                                    
+                        </div>
+                        <label class="filter__label" for="results-select">
+                            <select class="filter__dropdown--results" id="results-select">
                                 <option value="" selected>--Please select--</option>
                             </select>                               
                         </label>
-                        <label class="filter__label">
-                                <input class="filter__password" type="password">                                
+                        <label class="filter__label" for="results-password">
+                                <input class="filter__password--results" type="password" id="results-password">                                
                         </label>
                     </section>
                     <section class="filter__order">
-                        <label class="filter__label--order">
-                            Order results by:
-                            <select class="filter__dropdown--order">
+                        <h5 class="filter__order-title">Order results by:</h5>
+                        <label class="filter__label--order" for="order-select">
+                           
+                            <select class="filter__dropdown--order" id="order-select">
                                 <option value="">Interest rate (AER) High to low</option>
                             </select>
                         </label>

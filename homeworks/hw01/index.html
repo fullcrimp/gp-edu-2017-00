@@ -9,17 +9,18 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 </head>
 <body>
+    <h1></h1>
     <section>
         <div class="wrap">
             <form action="url" method="GET" id="form-filter" class="form-filter">
-                <fieldset class="form-filter-intro">
+                <section class="form-filter-intro">
                     <label for="form-filter-price">We've found you <span>32</span> results based on a starting balance of</label>
                     <div class="wrap-for-input-price">
                         <input type="text" id="form-filter-price" class="form-filter-field form-filter-input placeholder" placeholder="1000"/>.
                         <span class="bank-note-denomination">&#163;</span>
                     </div>
-                </fieldset>
-                <fieldset class="form-filter-account form-filter-item">
+                </section>
+                <section class="form-filter-account form-filter-item">
                     <div class="form-filter-account-item">
                         <label for="form-filter-account-type" class="form-filter-label">Account type(s)</label>
                         <div class="custom-select">
@@ -35,52 +36,54 @@
                         <input type="checkbox" id="form-filter-specific-account-type" class="form-filter-input-checkbox" />
                         <label for="form-filter-specific-account-type" class="form-filter-label-checkbox">Only show account I can open through MoneySupermarket (<span>5</span>)</label>
                     </div>
-                </fieldset>
-                <fieldset class="form-filter-results-by form-filter-item">
-                    <legend class="form-filter-legend">Filter results by:</legend>
-                    <ul>
-                        <li>
-                            <input type="radio" id="filter-by-choice-yes" name="filter-by-choice" value="yes">
+                </section>
+                <section class="form-filter-results-by form-filter-item">
+                    <h2 class="form-filter-title">Filter results by:</h2>
+                    <ul class="wrap-filter-by-choice form-filter-results-by-item">
+                        <li class="wrap-filter-by-choice-yes">
+                            <input type="radio" id="filter-by-choice-yes" class="filter-by-choice" name="filter-by-choice" value="yes">
                             <label for="filter-by-choice-yes">Yes</label>
                         </li>
-                        <li>
-                            <input type="radio" id="filter-by-choice-no" name="filter-by-choice" value="no">
+                        <li class="wrap-filter-by-choice-no">
+                            <input type="radio" id="filter-by-choice-no" class="filter-by-choice" name="filter-by-choice" value="no">
                             <label for="filter-by-choice-no">No</label>
                         </li>
                     </ul>
-                    <ul>
+                    <ul class="form-filter-results-by-item wrap-filter-results-by-checkbox">
                         <li>
                             <input type="checkbox" id="filter-by-opt-phone" name="filter-by-opt" value="opt-in-phone">
                             <label for="filter-by-opt-phonee">Opt in phone</label>
-                        </li>
-                        <li>
+                        </li><!--
+                        --><li>
                             <input type="checkbox" id="filter-by-opt-text" name="filter-by-opt" value="opt-in-text">
                             <label for="filter-by-opt-text">Opt in text</label>
                         </li>
                     </ul>
-                    <div>
-                        <select>
+                    <div class="form-filter-results-by-item">
+                        <div class="custom-select">
+                            <select class="form-filter-field form-filter-select">
+                                <!-- <option>Please select</option> -->
+                                <option>select type 1</option>
+                                <option>select type 2</option>
+                                <option>select type 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-filter-results-by-item">
+                        <input type="password" class="form-filter-field form-filter-input form-filter-passwod placeholder" placeholder="******">
+                    </div>
+                </section>
+                <section class="form-filter-order form-filter-item">
+                    <h2 class="form-filter-title">Order results by:</h2>
+                    <div class="custom-select">
+                        <select  class="form-filter-field form-filter-select">
                             <!-- <option>Please select</option> -->
                             <option>select type 1</option>
                             <option>select type 2</option>
                             <option>select type 3</option>
                         </select>
                     </div>
-                    <div>
-                        <input type="password" class="form-filter-field form-filter-input">
-                    </div>
-                </fieldset>
-                <fieldset class="form-filter-order form-filter-item">
-                    <legend class="form-filter-legend">Order results by:</legend>
-                    <div>
-                        <select>
-                            <!-- <option>Please select</option> -->
-                            <option>select type 1</option>
-                            <option>select type 2</option>
-                            <option>select type 3</option>
-                        </select>
-                    </div>
-                </fieldset>
+                </section>
             </form>
         </div>
     </section>

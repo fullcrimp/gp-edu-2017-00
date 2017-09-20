@@ -13,31 +13,43 @@
     <section>
         <div class="wrap">
             <form action="url" method="GET" id="form-filter" class="form-filter">
-                <section class="form-filter-intro">
-                    <label for="form-filter-price">We've found you <span>32</span> results based on a starting balance of</label>
-                    <div class="wrap-for-input-price">
-                        <input type="text" id="form-filter-price" class="form-filter-field form-filter-input placeholder" placeholder="1000"/>.
-                        <span class="bank-note-denomination">&#163;</span>
+                <section class="form-filter__section">
+                    <div class="intro">
+                        <label for="form-filter-price" class="intro__label">We've found you <span>32</span> results based on a starting balance of</label>
+                        <div class="intro__input">
+                            <div class="input-badge">
+                                <div class="input-badge__money">
+                                    <input type="text" id="form-filter-price" class="input placeholder" placeholder="1000"/>
+                                </div>
+                            </div>
+                        </div><!--
+                        --><span>.</span>
                     </div>
                 </section>
-                <section class="form-filter-account form-filter-item">
-                    <div class="form-filter-account-item">
-                        <label for="form-filter-account-type" class="form-filter-label">Account type(s)</label>
-                        <div class="custom-select">
-                            <select id="form-filter-account-type" class="form-filter-field form-filter-select">
-                                <option>Show all</option>
-                                <option>Account type 1</option>
-                                <option>Account type 2</option>
-                                <option>Account type 3</option>
-                            </select>
+                <section class="form-filter__section">
+                    <div class="filter-account">
+                        <!-- <div class="filter-account__select"> -->
+                        <div class="select">
+                            <label for="form-filter-account-type" class="select__label">Account type(s)</label>
+                            <div class="custom-select">
+                                <select id="form-filter-account-type" class="custom-select__element">
+                                    <option>Show all</option>
+                                    <option>Account type 1</option>
+                                    <option>Account type 2</option>
+                                    <option>Account type 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <div class="filter-account__checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="form-filter-specific-account-type" class="checkbox__input" />
+                                <label for="form-filter-specific-account-type" class="checkbox__label">Only show account I can open through MoneySupermarket (<span>5</span>)</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-filter-account-item">
-                        <input type="checkbox" id="form-filter-specific-account-type" class="form-filter-input-checkbox" />
-                        <label for="form-filter-specific-account-type" class="form-filter-label-checkbox">Only show account I can open through MoneySupermarket (<span>5</span>)</label>
-                    </div>
                 </section>
-                <section class="form-filter-results-by form-filter-item">
+                <!-- <section class="form-filter-results-by form-filter-item">
                     <h2 class="form-filter-title">Filter results by:</h2>
                     <ul class="wrap-filter-by-choice form-filter-results-by-item">
                         <li class="wrap-filter-by-choice-yes">
@@ -53,8 +65,8 @@
                         <li>
                             <input type="checkbox" id="filter-by-opt-phone" name="filter-by-opt" value="opt-in-phone">
                             <label for="filter-by-opt-phonee">Opt in phone</label>
-                        </li><!--
-                        --><li>
+                        </li>
+                        <li>
                             <input type="checkbox" id="filter-by-opt-text" name="filter-by-opt" value="opt-in-text">
                             <label for="filter-by-opt-text">Opt in text</label>
                         </li>
@@ -62,7 +74,6 @@
                     <div class="form-filter-results-by-item">
                         <div class="custom-select">
                             <select class="form-filter-field form-filter-select">
-                                <!-- <option>Please select</option> -->
                                 <option>select type 1</option>
                                 <option>select type 2</option>
                                 <option>select type 3</option>
@@ -72,18 +83,17 @@
                     <div class="form-filter-results-by-item">
                         <input type="password" class="form-filter-field form-filter-input form-filter-passwod placeholder" placeholder="******">
                     </div>
-                </section>
-                <section class="form-filter-order form-filter-item">
+                </section> -->
+                <!-- <section class="form-filter-order form-filter-item">
                     <h2 class="form-filter-title">Order results by:</h2>
                     <div class="custom-select">
                         <select  class="form-filter-field form-filter-select">
-                            <!-- <option>Please select</option> -->
                             <option>select type 1</option>
                             <option>select type 2</option>
                             <option>select type 3</option>
                         </select>
                     </div>
-                </section>
+                </section> -->
             </form>
         </div>
     </section>

@@ -12,81 +12,177 @@
     <header class="header">
       <img src="img/logo.jpg" alt="MoneySuperMarket" class="header__logo">
     </header>
-    <div class="wrapper">
-      <form class="form flex-container">
-        <p class="intro flex-container">We've found you 32 results based on a starting balance of
-          <input type="number" class="filter__input filter__input--intro" required>.
-        </p>
-        <div class="flex-container account-types">
-          <div class="form__filter filter">
-            <h5 class="filter__title">Account type(s)</h5>
-            <select name="accountType" class="filter__input filter__input--dropdown" required>
-              <option value="null" disabled>Show all</option>
-              <option value="1">Option1</option>
-              <option value="2">Option2</option>
-              <option value="3">Option3</option>
-              <option value="4">Option4</option>
-            </select>
+    <main class="main">
+      <form class="main__search">
+        <div class="search">
+          <div class="search__section">
+            <div class="intro">
+              <span class="intro__text">
+                We've found you 32 results based on a starting balance of
+              </span>
+              <div class="intro__input">
+                <div class="money">
+                  <input type="number" class="money__input">
+                </div>
+              </div>
+            </div>
+            <div class="inputs">
+              <div class="inputs__options">
+                <div class="form-block">
+                  <h5 class="form-block__header">
+                    Account type(s)
+                  </h5>
+                  <div class="form-block__input">
+                    <div class="dropdown">
+                      <select name="accounts" id="" class="dropdown__select">
+                        <option value="1">
+                          Option 1
+                        </option>
+                        <option value="2">
+                          Option 2
+                        </option>
+                        <option value="3">
+                          Option 3
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inputs__msmshow">
+                <div class="form-block">
+                  <div class="form-block__input form-block__input--autowidth">
+                    <div class="checkbox-free">
+                      <input type="checkbox" id="checkbox-free" class="checkbox-free__input">
+                      <label for="checkbox-free" class="checkbox-free__label">
+                        Only show accounts I can open through MoneySupermarket (5)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form__filter filter">
-            <input type="checkbox" id="showMSMAccounts" class="filter__checkbox" name="showMSMAccounts" value="showMSMAccounts">
-            <label class="filter__checkbox-label" for="showMSMAccounts">Only show accounts I can open through MoneySupermarket (5)</label>
+          <div class="search__section">
+            <div class="caption">
+              <span class="caption__text">
+                Filter results by:
+              </span>
+            </div>
+            <div class="inputs">
+              <div class="form-block">
+                <h5 class="form-block__header">
+                  Transfer in
+                </h5>
+                <div class="form-block__input form-block__input--autowidth">
+                  <div class="multiple-choice">
+                    <div class="multiple-choice__item">
+                      <div class="radio">
+                        <input type="radio" name="yes" id="yes" class="radio__input">
+                        <label for="yes" class="radio__label">
+                          Yes
+                        </label>
+                      </div>
+                    </div>
+                    <div class="multiple-choice__item">
+                      <div class="radio">
+                        <input type="radio" name="no" id="no" class="radio__input">
+                        <label for="no" class="radio__label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              </div>
+              <div class="form-block">
+                <h5 class="form-block__header">
+                  Account opening
+                </h5>
+                <div class="form-block__input form-block__input--autowidth">
+                  <div class="multiple-choice">
+                    <div class="multiple-choice__item">
+                      <div class="checkbox">
+                        <input type="checkbox" name="phone" id="phone" class="checkbox__input">
+                        <label for="phone" class="checkbox__label">
+                          Opt in phone
+                        </label>
+                      </div>
+                    </div>
+                    <div class="multiple-choice__item">
+                      <div class="checkbox">
+                        <input type="checkbox" name="text" id="text" class="checkbox__input">
+                        <label for="text" class="checkbox__label">
+                          Opt in text
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-block">
+                <h5 class="form-block__header">
+                  Managing your account
+                </h5>
+                <div class="form-block__input">
+                  <div class="dropdown">
+                    <label for="accounts" class="dropdown__label"></label>
+                    <select name="accounts" id="" class="dropdown__select">
+                      <option value="1">
+                        Option 1
+                      </option>
+                      <option value="2">
+                        Option 2
+                      </option>
+                      <option value="3">
+                        Option 3
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-block">
+                <h5 class="form-block__header">
+                  Notice period or term
+                </h5>
+                <div class="form-block__input">
+                  <div class="password">
+                    <input type="password" class="password__input">
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="link">
+            <a href="#" class="link__text">
+              Show me all available filters
+            </a>
+          </div>
+          </div>
+        <div class="search__section">
+          <div class="caption">
+            <span class="caption__text">
+              Order results by:
+            </span>
+            <div class="caption__input">
+              <div class="dropdown">
+                <select id="" class="dropdown__select">
+                  <option value="1">
+                    Interest rate (AER)
+                  </option>
+                  <option value="2">
+                    Option 2
+                  </option>
+                  <option value="3">
+                    Option 3
+                  </option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
-        <section class="form__section section section--filter">
-          <h4 class="section__title">Filter results by:</h4>
-          <div class="flex-container">
-            <div class="form__filter filter">
-              <h5 class="filter__title">Transfer in</h5>
-              <div class="flex-container">
-                <label for="answerYes" class="filter__input filter__input--half">
-                  <input name="answer" type="radio" value="yes" id="answerYes" required>Yes
-                </label>
-                <label for="answerNo" class="filter__input filter__input--half">
-                  <input name="answer" type="radio" value="no" id="answerNo">No
-                </label>
-              </div>
-            </div>
-            <div class="form__filter filter">
-              <h5 class="filter__title">Account opening</h5>
-              <div class="flex-container">
-                <label for="optInPhone" class="filter__input">
-                  <input type="checkbox" id="optInPhone" name="optType" value="phone">Opt in phone
-                </label>
-                <label for="optInText" class="filter__input">
-                  <input type="checkbox" id="optInText" name="optType" value="text">Opt in text
-                </label>
-              </div>
-            </div>
-            <div class="form__filter filter">
-              <h5 class="filter__title">Managing your account</h5>
-              <select name="accountType" class="filter__input" required>
-                <option value="null" disabled selected>Show all</option>
-                <option value="1">Option1</option>
-                <option value="2">Option2</option>
-                <option value="3">Option3</option>
-                <option value="4">Option4</option>
-              </select>
-            </div>
-            <div class="form__filter filter">
-              <h5 class="filter__title">Notice period or term</h5>
-              <input type="password" class="filter__input" minlength="8" maxlength="32" required>
-            </div>
-          </div>
-          <a class="section__link" href="#">Show me all available filters</a>
-        </section>
-        <section class="form__section section">
-          <h4 class="section__title">Order results by: </h4>
-          <select name="accountType" class="filter__input filter__input--order required">
-            <option value="null"selected>Interest rate (AER)</option>
-            <option value="1">Option1</option>
-            <option value="2">Option2</option>
-            <option value="3">Option3</option>
-            <option value="4">Option4</option>
-          </select>
-        </section>
         <button style="visibility: hidden" type="submit" name="button"></button>
       </form>
-    </div>
+    </main>
+    <footer class="footer"></footer>
   </body>
 </html>

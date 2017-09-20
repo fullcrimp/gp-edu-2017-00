@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw01</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+  <body>
+    <header class="header">
+      <img src="img/logo.jpg" alt="MoneySuperMarket" class="header__logo">
+    </header>
+    <div class="wrapper">
+      <form class="form flex-container">
+        <p class="intro flex-container">We've found you 32 results based on a starting balance of
+          <input type="number" class="filter__input filter__input--intro" required>.
+        </p>
+        <div class="flex-container account-types">
+          <div class="form__filter filter">
+            <h5 class="filter__title">Account type(s)</h5>
+            <select name="accountType" class="filter__input filter__input--dropdown" required>
+              <option value="null" disabled>Show all</option>
+              <option value="1">Option1</option>
+              <option value="2">Option2</option>
+              <option value="3">Option3</option>
+              <option value="4">Option4</option>
+            </select>
+          </div>
+          <div class="form__filter filter">
+            <input type="checkbox" id="showMSMAccounts" class="filter__checkbox" name="showMSMAccounts" value="showMSMAccounts">
+            <label class="filter__checkbox-label" for="showMSMAccounts">Only show accounts I can open through MoneySupermarket (5)</label>
+          </div>
+        </div>
+        <section class="form__section section section--filter">
+          <h4 class="section__title">Filter results by:</h4>
+          <div class="flex-container">
+            <div class="form__filter filter">
+              <h5 class="filter__title">Transfer in</h5>
+              <div class="flex-container">
+                <label for="answerYes" class="filter__input filter__input--half">
+                  <input name="answer" type="radio" value="yes" id="answerYes" required>Yes
+                </label>
+                <label for="answerNo" class="filter__input filter__input--half">
+                  <input name="answer" type="radio" value="no" id="answerNo">No
+                </label>
+              </div>
+            </div>
+            <div class="form__filter filter">
+              <h5 class="filter__title">Account opening</h5>
+              <div class="flex-container">
+                <label for="optInPhone" class="filter__input">
+                  <input type="checkbox" id="optInPhone" name="optType" value="phone">Opt in phone
+                </label>
+                <label for="optInText" class="filter__input">
+                  <input type="checkbox" id="optInText" name="optType" value="text">Opt in text
+                </label>
+              </div>
+            </div>
+            <div class="form__filter filter">
+              <h5 class="filter__title">Managing your account</h5>
+              <select name="accountType" class="filter__input" required>
+                <option value="null" disabled selected>Show all</option>
+                <option value="1">Option1</option>
+                <option value="2">Option2</option>
+                <option value="3">Option3</option>
+                <option value="4">Option4</option>
+              </select>
+            </div>
+            <div class="form__filter filter">
+              <h5 class="filter__title">Notice period or term</h5>
+              <input type="password" class="filter__input" minlength="8" maxlength="32" required>
+            </div>
+          </div>
+          <a class="section__link" href="#">Show me all available filters</a>
+        </section>
+        <section class="form__section section">
+          <h4 class="section__title">Order results by: </h4>
+          <select name="accountType" class="filter__input filter__input--order required">
+            <option value="null"selected>Interest rate (AER)</option>
+            <option value="1">Option1</option>
+            <option value="2">Option2</option>
+            <option value="3">Option3</option>
+            <option value="4">Option4</option>
+          </select>
+        </section>
+        <button style="visibility: hidden" type="submit" name="button"></button>
+      </form>
+    </div>
+  </body>
+</html>

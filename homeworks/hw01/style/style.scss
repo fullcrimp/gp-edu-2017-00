@@ -46,6 +46,16 @@ ul {
 h1 {
     display: none;
 }
+input {
+    &:focus {
+        box-shadow: 0 0 8px $deepskyblue;
+    }
+}
+select {
+    &:focus {
+        box-shadow: 0 0 8px $deepskyblue;
+    }
+}
 .wrap {
     display: flex;
     justify-content: center;
@@ -73,11 +83,7 @@ h1 {
     }
 }
 .input-badge {
-    background-color: $white;
-    box-shadow: 0 2px $gray-light inset;
-    border-radius: 5px;
     &__money {
-        padding: 6px 15px 6px 25px;
         &:before {
             content: "\00A3";
             position: absolute;
@@ -91,7 +97,10 @@ h1 {
     display: inline-block;
     height: 100%;
     width: 100%;
-    padding: 0 10px
+    padding: 6px 15px 6px 40px;
+    background-color: $white;
+    box-shadow: 0 2px $gray-light inset;
+    border-radius: 5px;
 }
 .filter-account {
     display: flex;
@@ -157,6 +166,11 @@ h1 {
                             }
                         }
                     }
+                    &:focus {
+                        & + label {
+                            box-shadow: 0 0 8px $deepskyblue;
+                        }
+                    }
                 }
             }
         }
@@ -181,6 +195,7 @@ h1 {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        cursor: pointer;
         option {
             @extend .extend-two;
         }
@@ -344,10 +359,7 @@ h1 {
         }
         &:focus {
             & + label {
-                &:before {
-                    background-color: $deepskyblue;
-                    box-shadow: 0 0 0 2px $white;
-                }
+                box-shadow: 0 0 8px $deepskyblue;
             }
         }
     }

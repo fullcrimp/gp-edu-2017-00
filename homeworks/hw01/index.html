@@ -19,23 +19,25 @@
                         <span class="bank-note-denomination">&#163;</span>
                     </div>
                 </fieldset>
-                <fieldset class="form-filter-account">
+                <fieldset class="form-filter-account form-filter-item">
                     <div class="form-filter-account-item">
                         <label for="form-filter-account-type" class="form-filter-label">Account type(s)</label>
-                        <select id="form-filter-account-type" class="form-filter-field form-filter-select">
-                            <option>Show all</option>
-                            <option>Account type 1</option>
-                            <option>Account type 2</option>
-                            <option>Account type 3</option>
-                        </select>
+                        <div class="custom-select">
+                            <select id="form-filter-account-type" class="form-filter-field form-filter-select">
+                                <option>Show all</option>
+                                <option>Account type 1</option>
+                                <option>Account type 2</option>
+                                <option>Account type 3</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="form-filter-account-item">
-                        <input type="checkbox" id="form-filter-specific-account-type" />
+                        <input type="checkbox" id="form-filter-specific-account-type" class="form-filter-input-checkbox" />
                         <label for="form-filter-specific-account-type" class="form-filter-label-checkbox">Only show account I can open through MoneySupermarket (<span>5</span>)</label>
                     </div>
                 </fieldset>
-                <fieldset>
-                    <legend>Filter results by:</legend>
+                <fieldset class="form-filter-results-by form-filter-item">
+                    <legend class="form-filter-legend">Filter results by:</legend>
                     <ul>
                         <li>
                             <input type="radio" id="filter-by-choice-yes" name="filter-by-choice" value="yes">
@@ -68,8 +70,8 @@
                         <input type="password" class="form-filter-field form-filter-input">
                     </div>
                 </fieldset>
-                <fieldset>
-                    <legend>Order results by:</legend>
+                <fieldset class="form-filter-order form-filter-item">
+                    <legend class="form-filter-legend">Order results by:</legend>
                     <div>
                         <select>
                             <!-- <option>Please select</option> -->

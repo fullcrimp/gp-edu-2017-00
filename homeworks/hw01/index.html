@@ -19,7 +19,7 @@
                         <div class="intro__input">
                             <div class="input-badge">
                                 <div class="input-badge__money">
-                                    <input type="text" id="form-filter-price" class="input placeholder" placeholder="1000"/>
+                                    <input type="number" id="form-filter-price" class="input placeholder" placeholder="1000"/>
                                 </div>
                             </div>
                         </div><!--
@@ -28,72 +28,102 @@
                 </section>
                 <section class="form-filter__section">
                     <div class="filter-account">
-                        <!-- <div class="filter-account__select"> -->
-                        <div class="select">
-                            <label for="form-filter-account-type" class="select__label">Account type(s)</label>
-                            <div class="custom-select">
-                                <select id="form-filter-account-type" class="custom-select__element">
-                                    <option>Show all</option>
-                                    <option>Account type 1</option>
-                                    <option>Account type 2</option>
-                                    <option>Account type 3</option>
-                                </select>
+                        <div class="filter-account__select">
+                            <div class="form-unit">
+                                <label for="form-filter-account-type" class="form-unit__label">Account type(s)</label>
+                                <div class="custom-select">
+                                    <select id="form-filter-account-type" class="custom-select__element">
+                                        <option>Show all</option>
+                                        <option>Account type 1</option>
+                                        <option>Account type 2</option>
+                                        <option>Account type 3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <!-- </div> -->
                         <div class="filter-account__checkbox">
-                            <div class="checkbox">
-                                <input type="checkbox" id="form-filter-specific-account-type" class="checkbox__input" />
-                                <label for="form-filter-specific-account-type" class="checkbox__label">Only show account I can open through MoneySupermarket (<span>5</span>)</label>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="form-filter-specific-account-type" class="custom-checkbox__input" />
+                                <label for="form-filter-specific-account-type" class="custom-checkbox__label">Only show account I can open through MoneySupermarket (<span>5</span>)</label>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- <section class="form-filter-results-by form-filter-item">
-                    <h2 class="form-filter-title">Filter results by:</h2>
-                    <ul class="wrap-filter-by-choice form-filter-results-by-item">
-                        <li class="wrap-filter-by-choice-yes">
-                            <input type="radio" id="filter-by-choice-yes" class="filter-by-choice" name="filter-by-choice" value="yes">
-                            <label for="filter-by-choice-yes">Yes</label>
-                        </li>
-                        <li class="wrap-filter-by-choice-no">
-                            <input type="radio" id="filter-by-choice-no" class="filter-by-choice" name="filter-by-choice" value="no">
-                            <label for="filter-by-choice-no">No</label>
-                        </li>
-                    </ul>
-                    <ul class="form-filter-results-by-item wrap-filter-results-by-checkbox">
-                        <li>
-                            <input type="checkbox" id="filter-by-opt-phone" name="filter-by-opt" value="opt-in-phone">
-                            <label for="filter-by-opt-phonee">Opt in phone</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="filter-by-opt-text" name="filter-by-opt" value="opt-in-text">
-                            <label for="filter-by-opt-text">Opt in text</label>
-                        </li>
-                    </ul>
-                    <div class="form-filter-results-by-item">
+                <section class="form-filter__section">
+                    <div class="form-filter__section--result">
+                        <h2 class="title">Filter results by:</h2>
+                        <div class="filter-variations">
+                            <div class="filter-variations__element">
+                                <div class="form-unit">
+                                    <label class="form-unit__label">Transfer in:</label>
+                                    <div class="form-unit__radio">
+                                        <div class="form-unit__radio--element">
+                                            <div class="custon-radio">
+                                                <input type="radio" id="filter-by-choice-yes" class="custom-radio__element" name="filter-by-choice" value="yes">
+                                                <label for="filter-by-choice-yes" class="custom-radio__label">Yes</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-unit__radio--element">
+                                            <div class="custon-radio">
+                                                <input type="radio" id="filter-by-choice-no" class="custom-radio__element" name="filter-by-choice" value="no">
+                                                <label for="filter-by-choice-no" class="custom-radio__label">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-variations__element">
+                                <div class="form-unit">
+                                    <label class="form-unit__label">Transfer in:</label>
+                                    <div class="form-unit__checkbox">
+                                        <div class="form-unit__checkbox--element">
+                                            <div class="custom-checkbox">
+                                                <input type="checkbox" id="filter-by-opt-phone" name="filter-by-opt" value="opt-in-phone" class="custom-checkbox__input">
+                                                <label for="filter-by-opt-phone" class="custom-checkbox__label">Opt in phone</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-unit__checkbox--element">
+                                            <div class="custom-checkbox">
+                                                <input type="checkbox" id="filter-by-opt-text" name="filter-by-opt" value="opt-in-text" class="custom-checkbox__input">
+                                                <label for="filter-by-opt-text" class="custom-checkbox__label">Opt in text</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-variations__element">
+                                <div class="form-unit">
+                                    <label for="form-filter-account-type-two" class="form-unit__label">Transfer in:</label>
+                                    <div class="custom-select">
+                                        <select id="form-filter-account-type-two" class="custom-select__element">
+                                            <option>Select</option>
+                                            <option>Select type 2</option>
+                                            <option>Select type 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-variations__element">
+                                <div class="form-unit">
+                                    <label for="passwod" class="form-unit__label">Transfer in:</label>
+                                    <input type="password" class="form-unit__input placeholder" placeholder="&#183;&#183;&#183;&#183;&#183;&#183;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="form-filter__section">
+                    <div class="form-filter__section--order">
+                        <h2 class="title">Order results by:</h2>
                         <div class="custom-select">
-                            <select class="form-filter-field form-filter-select">
-                                <option>select type 1</option>
-                                <option>select type 2</option>
-                                <option>select type 3</option>
+                            <select class="custom-select__element">
+                                <option>Select</option>
+                                <option>Select type 2</option>
+                                <option>Select type 3</option>
                             </select>
                         </div>
                     </div>
-                    <div class="form-filter-results-by-item">
-                        <input type="password" class="form-filter-field form-filter-input form-filter-passwod placeholder" placeholder="******">
-                    </div>
-                </section> -->
-                <!-- <section class="form-filter-order form-filter-item">
-                    <h2 class="form-filter-title">Order results by:</h2>
-                    <div class="custom-select">
-                        <select  class="form-filter-field form-filter-select">
-                            <option>select type 1</option>
-                            <option>select type 2</option>
-                            <option>select type 3</option>
-                        </select>
-                    </div>
-                </section> -->
+                </section>
             </form>
         </div>
     </section>

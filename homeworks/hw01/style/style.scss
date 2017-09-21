@@ -1,29 +1,25 @@
-$primary-background-color: #f2f8fa;
-$intro-text-color: #566266;
-$input-field-background-color: #fff;
-$radio-background-color: #fff;
 $white: #fff;
-$input-field-shadow-color: #c6cacc;
-$label-title-color: #2b3133;
-$label-checkbox-text-color: #566266;
-$select-text-color: #949899;
-$select-arrow-radio-checkbox-bg-color: #00adf2;
-$title-text-color: #562873;
-$radio-shadow-checked: #0481b3;
-$border-filter-result-color: #c6cacc;
+$azure: #f2f8fa;
+$gray-dark: #2b3133;
+$gray: #566266;
+$gray-light: #c6cacc;
+$gray-lighter: #949899;
+$deepskyblue: #00adf2;
+$deepskyblue-dark: #0481b3;
+$indigo: #562873;
 
 $small-screen-width: 490px;
 $medium-screen-width: 720px;
 $large-screen-width: 980px;
 
 .extend-one {
-    color: $intro-text-color;
+    color: $gray;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
     line-height: 1.4;
 }
 .extend-two {
-    color: $select-text-color;
+    color: $gray-lighter;
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
     font-weight: bold;
@@ -31,7 +27,7 @@ $large-screen-width: 980px;
 }
 .extend-three {
     padding: 10px 25px 10px 20px;
-    box-shadow: 0 2px $input-field-shadow-color;
+    box-shadow: 0 2px $gray-light;
     border-radius: 5px;
 }
 * {
@@ -42,7 +38,7 @@ $large-screen-width: 980px;
     box-sizing: border-box;
 }
 body {
-    background-color: $primary-background-color;
+    background-color: $azure;
 }
 ul {
     list-style-type: none;
@@ -77,8 +73,8 @@ h1 {
     }
 }
 .input-badge {
-    background-color: $input-field-background-color;
-    box-shadow: 0 2px $input-field-shadow-color inset;
+    background-color: $white;
+    box-shadow: 0 2px $gray-light inset;
     border-radius: 5px;
     &__money {
         padding: 6px 15px 6px 25px;
@@ -111,7 +107,7 @@ h1 {
     &__label {
         display: block;
         padding-bottom: 10px;
-        color: $label-title-color;
+        color: $gray-dark;
         font-family: "Open Sans", sans-serif;
         font-size: 14px;
         font-weight: bold;
@@ -139,24 +135,22 @@ h1 {
                                 top: 9px;
                                 left: 15px;
                                 background: $white;
-                                // box-shadow: inset 0 1px 5px $input-field-shadow-color;
                             }
                             &:after {
                                 top: 16px;
                                 left: 9px;
-                                color: $select-arrow-radio-checkbox-bg-color;
+                                color: $deepskyblue;
                             }
                         }
                     }
                     &:checked {
                         & + label {
                             color: $white;
-                            background-color: $select-arrow-radio-checkbox-bg-color;
-                            box-shadow: 0 2px $radio-shadow-checked inset;
+                            background-color: $deepskyblue;
+                            box-shadow: 0 2px $deepskyblue-dark inset;
                             &:before {
-                                background-color: $select-arrow-radio-checkbox-bg-color;
+                                background-color: $deepskyblue;
                                 border-color: $white;
-                                // box-shadow: inset 0 1px 5px $white;
                             }
                             &:after {
                                 color: $white;
@@ -169,7 +163,7 @@ h1 {
     }
     &__input {
         @extend .extend-three;
-        color: $label-checkbox-text-color;
+        color: $gray;
         font-family: "Open Sans", sans-serif;
         font-size: 14px;
         font-weight: bold;
@@ -179,7 +173,6 @@ h1 {
 .custom-select {
     position: relative;
     display: inline-block;
-    // width: 100%;
     &__element {
         @extend .extend-two;
         @extend .extend-three;
@@ -188,17 +181,20 @@ h1 {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        option {
+            @extend .extend-two;
+        }
     }
     &:after {
-        content: "\221F";
+        content: "\0349";
         position: absolute;
-        right: 20px;
-        top: 9px;
-        color: $select-arrow-radio-checkbox-bg-color;
-        font-size: 14px;
+        right: 10px;
+        top: 10px;
+        color: $deepskyblue;
+        font-size: 35px;
         font-weight: bold;
         text-align: center;
-        transform: rotate(-45deg);
+        transform: rotate(135deg);
         pointer-events: none;
     }
 }
@@ -225,8 +221,7 @@ h1 {
                     width: 20px;
                     height: 20px;
                     background: $white;
-                    border: 2px solid $input-field-shadow-color;
-                    // box-shadow: inset 0 1px 5px $input-field-shadow-color;
+                    border: 2px solid $gray-light;
                 }
                 &:after {
                     content: '';
@@ -245,7 +240,7 @@ h1 {
                     left: -5px;
                     width: 20px;
                     height: 20px;
-                    color: $select-arrow-radio-checkbox-bg-color;
+                    color: $deepskyblue;
                     font-size: 29px;
                     transform: rotate(145deg);
                 }
@@ -254,13 +249,13 @@ h1 {
         &:focus {
             & + label {
                 &:before {
-                    box-shadow: inset 0 1px 7px $input-field-shadow-color;
+                    box-shadow: inset 0 1px 7px $gray-light;
                 }
             }
         }
     }
     &__label {
-        color: $label-checkbox-text-color;
+        color: $gray;
         font-family: "Open Sans", sans-serif;
         font-size: 14px;
         font-weight: bold;
@@ -270,7 +265,7 @@ h1 {
 }
 .title {
     padding-bottom: 20px;
-    color: $title-text-color;
+    color: $indigo;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
     font-weight: bold;
@@ -284,7 +279,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 1px solid $border-filter-result-color;
+    border-bottom: 1px solid $gray-light;
 }
 .custom-radio {
     &__element {
@@ -296,23 +291,23 @@ h1 {
             display: inline-block;
             width: 100%;
             padding: 11px 30px 11px 55px;
-            background-color: $input-field-background-color;
+            background-color: $white;
             border-radius: 5px;
-            box-shadow: 0 2px $input-field-shadow-color;
+            box-shadow: 0 2px $gray-light;
             cursor: pointer;
         }
         &:checked {
             & + label {
-                color: $input-field-background-color;
-                background-color: $select-arrow-radio-checkbox-bg-color;
-                box-shadow: 0 2px $radio-shadow-checked inset;
+                color: $white;
+                background-color: $deepskyblue;
+                box-shadow: 0 2px $deepskyblue-dark inset;
                 &:before {
-                    background-color: $select-arrow-radio-checkbox-bg-color;
-                    box-shadow: 0 0 2px 2px $radio-background-color;
+                    background-color: $deepskyblue;
+                    box-shadow: 0 0 2px 2px $white;
                 }
                 &:after {
                     opacity: 1;
-                    background-color: $radio-background-color;
+                    background-color: $white;
                 }
             }
         }
@@ -328,9 +323,9 @@ h1 {
                     left: 20px;
                     width: 22px;
                     height: 22px;
-                    box-shadow: inset 0 1px 1px $input-field-shadow-color;
+                    box-shadow: inset 0 1px 1px $gray-light;
                     border-radius: 50%;
-                    background-color: $radio-background-color;
+                    background-color: $white;
                 }
                 &:after {
                     content: '';
@@ -340,8 +335,8 @@ h1 {
                     width: 10px;
                     height: 10px;
                     border-radius: 50%;
-                    background-color: $radio-background-color;
-                    box-shadow: inset 0 1px 1px $radio-background-color;
+                    background-color: $white;
+                    box-shadow: inset 0 1px 1px $white;
                     opacity: 0;
                     transition: all .2s;
                 }
@@ -350,8 +345,8 @@ h1 {
         &:focus {
             & + label {
                 &:before {
-                    background-color: $select-arrow-radio-checkbox-bg-color;
-                    box-shadow: 0 0 0 2px $radio-background-color;
+                    background-color: $deepskyblue;
+                    box-shadow: 0 0 0 2px $white;
                 }
             }
         }
@@ -361,26 +356,29 @@ h1 {
     }
 }
 .placeholder::-webkit-input-placeholder {
-    color: $intro-text-color;
+    color: $gray;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
 }
 .placeholder::-moz-placeholder {
-    color: $intro-text-color;
+    color: $gray;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
 }
 .placeholder:-moz-placeholder {
-    color: $intro-text-color;
+    color: $gray;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
 }
 .placeholder:-ms-input-placeholder {
-    color: $intro-text-color;
+    color: $gray;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
 }
 @media screen and (max-width: $medium-screen-width) {
+    body {
+        padding: 0 10px;
+    }
     .custom-checkbox {
         margin-top: 15px;
         &__label {
@@ -401,9 +399,6 @@ h1 {
     }
 }
 @media screen and (max-width: $small-screen-width) {
-    body {
-        padding: 0 10px;
-    }
     .intro {
         margin-bottom: 20px;
     }
@@ -463,10 +458,7 @@ h1 {
     }
 }
 
-@media screen and (max-width: $medium-screen-width) and (min-width: $small-screen-width) {
-    body {
-        padding: 0 10px;
-    }
+@media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
     .filter-variations {
         &__element {
             width: 50%;

@@ -1,54 +1,106 @@
 $primary-background-color: #f2f8fa;
 $intro-text-color: #566266;
 $input-field-background-color: #fff;
-$input-field-shadow-color: #868788;
+$input-field-shadow-color: #c6cacc;
 $label-title-color: #2b3133;
 $label-checkbox-text-color: #2b3133;
+$select-text-color: #949899;
 
-*
-    box-sizing: border-box;
-body
-    margin: 0;
-    padding: 0;
-    background-color: $primary-background-color;
-fieldset
-    border: none;
-.container
-    display: flex;
-    justify-content: center;
-.form-filter
-    padding: 30px 10px;
-.form-filter-intro
+.extend-one
+    color: $intro-text-color;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
-    color: $intro-text-color;
     line-height: 1.4;
+
+*
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+
+body
+    background-color: $primary-background-color;
+
+.wrap
+    width: 980px;
+    margin: auto;
+
+.form-filter
+    margin: 30px 10px 0 10px;
+
+.form-filter-intro
+    margin-bottom: 10px;
+    @extend .extend-one;
+
 .form-filter-field
     background-color: $input-field-background-color;
     border: none;
     border-radius: 5px;
+
 .form-filter-input
+    @extend .extend-one;
+    width: 144px;
     margin: 0 10px;
-    padding: 10px 15px;
+    padding: 6px 15px 6px 25px;
     box-shadow: 0 2px $input-field-shadow-color inset;
+
 .form-filter-select
     margin-right: 30px;
     padding: 10px 20px;
     box-shadow: 0 2px $input-field-shadow-color;
+
 .form-filter-label
     display: block;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
     font-weight: bold;
     line-height: 1.4;
+
+.wrap-for-input-price
+    display: inline-block;
+    position: relative;
+    .bank-note-denomination
+        position: absolute;
+        top: 6px;
+        left: 20px;
+
 .form-filter-label-checkbox
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
     font-weight: bold;
     line-height: 1.4;
     color: $label-checkbox-text-color;
+
 .form-filter-account
     display: flex;
     flex-wrap: nowrap;
+
+.placeholder::-webkit-input-placeholder
+    color: $intro-text-color;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+
+.form-filter-select
+    color: $select-text-color;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+
+.placeholder::-moz-placeholder
+    color: $intro-text-color;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+
+.placeholder:-moz-placeholder
+    color: $intro-text-color;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+
+.placeholder:-ms-input-placeholder
+    color: $intro-text-color;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
 // .form-filter-account-item

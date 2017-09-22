@@ -59,7 +59,7 @@ select {
     }
 }
 button {
-    display: none;
+    overflow: hidden;
 }
 // .form-error {
 //     display: none;
@@ -70,18 +70,9 @@ button {
 input:valid:not(:placeholder-shown) {
     box-shadow: 0 0 8px $green;
 }
-input:invalid:not(:placeholder-shown) {
-    box-shadow: 0 0 8px $red;
-}
-// input:invalid:not(:placeholder-shown) + .form__error {
-//     display: block;
+// input:invalid:not(:placeholder-shown) {
+//     box-shadow: 0 0 8px $red;
 // }
-input:valid:not(:placeholder-shown) {
-    box-shadow: 0 0 8px $green;
-}
-input:invalid:not(:placeholder-shown) {
-    box-shadow: 0 0 8px $red;
-}
 // input:invalid:not(:placeholder-shown) + .form__error {
 //     display: block;
 // }

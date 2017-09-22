@@ -35,10 +35,10 @@
                             <div class="form-unit">
                                 <label for="form-filter-account-type" class="form-unit__label">Account type(s)</label>
                                 <div class="custom-select">
-                                    <select id="form-filter-account-type" class="custom-select__element">
-                                        <option>Account type 1</option>
-                                        <option>Account type 2</option>
-                                        <option>Account type 3</option>
+                                    <select id="form-filter-account-type" class="custom-select__element" required>
+                                        <option value="" disabled selected hidden>Select</option>
+                                        <option value="type1">Account type 1</option>
+                                        <option value="type2">Account type 2</option>
                                     </select>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                     <div class="form-unit__radio">
                                         <div class="form-unit__radio--element">
                                             <div class="custon-radio">
-                                                <input type="radio" id="filter-by-choice-yes" class="custom-radio__element" name="filter-by-choice" value="yes">
+                                                <input type="radio" id="filter-by-choice-yes" class="custom-radio__element" name="filter-by-choice" value="yes" required>
                                                 <label for="filter-by-choice-yes" class="custom-radio__label">Yes</label>
                                             </div>
                                         </div>
@@ -97,10 +97,10 @@
                                 <div class="form-unit">
                                     <label for="form-filter-account-type-two" class="form-unit__label">Transfer in:</label>
                                     <div class="custom-select">
-                                        <select id="form-filter-account-type-two" class="custom-select__element">
-                                            <option disabled>--Please select</option>
-                                            <option>Select type 2</option>
-                                            <option>Select type 3</option>
+                                        <select id="form-filter-account-type-two" class="custom-select__element" required>
+                                            <option value="" selected hidden disabled>--Please select--</option>
+                                            <option value="select1">Select type 2</option>
+                                            <option value="select2">Select type 3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -118,10 +118,10 @@
                     <div class="form-filter__section--order">
                         <h2 class="title">Order results by:</h2>
                         <div class="custom-select">
-                            <select class="custom-select__element">
-                                <option>Select</option>
-                                <option>Select type 2</option>
-                                <option>Select type 3</option>
+                            <select class="custom-select__element" required>
+                                <option value="" disabled hidden selected>Select</option>
+                                <option value="1">Select type 2</option>
+                                <option value="2">Select type 3</option>
                             </select>
                         </div>
                     </div>

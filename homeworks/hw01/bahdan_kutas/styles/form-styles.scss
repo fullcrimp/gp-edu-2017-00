@@ -1,5 +1,4 @@
 @import 'form-variables.scss';
-
 .input-text {
     font-family: $filter__main-ff;
     color: $grey-fc;
@@ -53,7 +52,6 @@
     align-items: center;
     margin-bottom: 10px;
     margin-top: 30px;
-    
     &__heading {
         margin-right: 10px;
     }
@@ -120,14 +118,13 @@
     &__input--results {
         @extend .checkbox__input;
         position: absolute;
-        
         opacity: 0;
     }
-    &__input--results:not(checked) + &__label--results {
+    &__input--results:not(checked)+&__label--results {
         position: relative;
     }
-    &__input--results:not(checked) + &__label--results:before {
-        box-sizing: border-box;  
+    &__input--results:not(checked)+&__label--results:before {
+        box-sizing: border-box;
         position: absolute;
         top: 50%;
         left: 15px;
@@ -138,7 +135,7 @@
         height: 20px;
         content: '';
     }
-    &__input--results:not(checked) + &__label--results:after {
+    &__input--results:not(checked)+&__label--results:after {
         box-sizing: border-box;
         position: absolute;
         width: 14px;
@@ -151,14 +148,14 @@
         content: '\031A';
         transform: rotate(140deg);
     }
-    &__input--results:checked + &__label--results {
+    &__input--results:checked+&__label--results {
         background: #00adef;
         color: white;
     }
-    &__input--results:checked + &__label--results:after {
+    &__input--results:checked+&__label--results:after {
         opacity: 1;
     }
-    &__input--results:checked + &__label--results:before {
+    &__input--results:checked+&__label--results:before {
         border: 2px solid white;
         background: #00adef;
     }
@@ -191,14 +188,12 @@
         position: absolute;
         opacity: 0;
     }
-
-    &__radibtn:not(checked) + &__label {
+    &__radibtn:not(checked)+&__label {
         position: relative;
     }
-
-    &__radiobtn:not(checked) + &__label:before {
+    &__radiobtn:not(checked)+&__label:before {
         box-sizing: border-box;
-        box-shadow: inset 0 1px 1px 0;  
+        box-shadow: inset 0 1px 1px 0;
         position: absolute;
         top: 50%;
         left: 15px;
@@ -209,8 +204,7 @@
         height: 20px;
         content: '';
     }
-
-    &__radiobtn:not(checked) + &__label:after {
+    &__radiobtn:not(checked)+&__label:after {
         box-sizing: border-box;
         position: absolute;
         top: 50%;
@@ -224,16 +218,13 @@
         opacity: 0;
         content: '';
     }
-
-    &__radiobtn:checked + &__label {
+    &__radiobtn:checked+&__label {
         background: #00adef;
         color: white;
     }
-    
-    &__radiobtn:checked + &__label:after {
+    &__radiobtn:checked+&__label:after {
         opacity: 1;
     }
-
     &__label {
         @extend .input-text;
         @extend .shadow-props-outer;
@@ -255,7 +246,8 @@
         background-color: $bgbutton;
         -webkit-appearance: button;
     }
-    &::after , &::before {
+    &::after,
+    &::before {
         position: absolute;
         pointer-events: none;
         content: '';
@@ -266,7 +258,6 @@
         bottom: 0;
         right: 0;
         border-radius: 0 5px 5px 0;
-
     }
     &:before {
         @extend .input-text;
@@ -276,7 +267,7 @@
         color: #00adef;
         top: 50%;
         right: 20px;
-        transform: translate(0,-50%);
+        transform: translate(0, -50%);
     }
 }
 
@@ -414,7 +405,8 @@
             width: 100%;
         }
     }
-    .account, .account {
+    .account,
+    .account {
         width: 100%;
         &__dropdown {
             width: 100%;

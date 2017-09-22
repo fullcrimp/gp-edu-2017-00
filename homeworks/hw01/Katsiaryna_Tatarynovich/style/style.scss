@@ -1,0 +1,516 @@
+$white: #fff;
+$azure: #f2f8fa;
+$gray-dark: #2b3133;
+$gray: #566266;
+$gray-light: #c6cacc;
+$gray-lighter: #949899;
+$green: #1c8429;
+$deepskyblue: #00adf2;
+$deepskyblue-dark: #0481b3;
+$indigo: #562873;
+$red: #c71b1b;
+
+$small-screen-width: 490px;
+$medium-screen-width: 720px;
+$large-screen-width: 980px;
+
+.extend-one {
+    color: $gray;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+}
+.extend-two {
+    color: $gray-lighter;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+.extend-three {
+    padding: 10px 25px 10px 20px;
+    box-shadow: 0 2px $gray-light;
+    border-radius: 5px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $azure;
+}
+ul {
+    list-style-type: none;
+}
+h1 {
+    display: none;
+}
+input {
+    &:focus {
+        box-shadow: 0 0 8px $deepskyblue;
+    }
+}
+select {
+    &:focus {
+        box-shadow: 0 0 8px $deepskyblue;
+    }
+}
+button {
+    overflow: hidden;
+}
+input:valid:not(:placeholder-shown) {
+    box-shadow: 0 0 8px $green;
+}
+// input:invalid:not(:placeholder-shown) {
+//     box-shadow: 0 0 8px $red;
+// }
+.wrap-external {
+    display: flex;
+    justify-content: center;
+}
+.wrap {
+    max-width: 980px;
+}
+.form-filter {
+    margin: 20px 0;
+    &__section {
+        margin: 10px;
+        &--order {
+            display: flex;
+            h2 {
+                margin-right: 10px;
+                padding-top: 7px;
+            }
+        }
+    }
+}
+.intro {
+    @extend .extend-one;
+    &__input {
+        display: inline-block;
+        position: relative;
+        width: 144px;
+        margin: 0 10px;
+    }
+}
+.input-badge {
+    &__money {
+        &:before {
+            content: "\00A3";
+            position: absolute;
+            top: 6px;
+            left: 20px;
+        }
+    }
+}
+.input {
+    @extend .extend-one;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 6px 15px 6px 40px;
+    background-color: $white;
+    box-shadow: 0 2px $gray-light inset;
+    border-radius: 5px;
+}
+.filter-account {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    &__checkbox {
+        margin-bottom: 10px;
+    }
+}
+.form-unit {
+    margin-right: 30px;
+    &__label {
+        display: block;
+        padding-bottom: 10px;
+        color: $gray-dark;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.4;
+    }
+    &__radio {
+        display: flex;
+        &--element {
+            margin-right: 5px;
+        }
+    }
+    &__checkbox {
+        &--element {
+            margin-bottom: 10px;
+            .custom-checkbox {
+                &__input {
+                    &:not(checked) {
+                        & + label {
+                            @extend .extend-three;
+                            display: inline-block;
+                            width: 100%;
+                            padding: 11px 30px 11px 50px;
+                            background-color: $white;
+                            &:before {
+                                top: 9px;
+                                left: 15px;
+                                background: $white;
+                            }
+                            &:after {
+                                top: 16px;
+                                left: 9px;
+                                color: $deepskyblue;
+                            }
+                        }
+                    }
+                    &:checked {
+                        & + label {
+                            color: $white;
+                            background-color: $deepskyblue;
+                            box-shadow: 0 2px $deepskyblue-dark inset;
+                            &:before {
+                                background-color: $deepskyblue;
+                                border-color: $white;
+                            }
+                            &:after {
+                                color: $white;
+                            }
+                        }
+                    }
+                    &:focus {
+                        & + label {
+                            box-shadow: 0 0 8px $deepskyblue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__input {
+        @extend .extend-three;
+        color: $gray;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.4;
+    }
+}
+.custom-select {
+    position: relative;
+    display: inline-block;
+    &__element {
+        @extend .extend-two;
+        @extend .extend-three;
+        padding-right: 50px;
+        width: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        option {
+            @extend .extend-two;
+        }
+    }
+    &:after {
+        content: "\0349";
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: $deepskyblue;
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        transform: rotate(135deg);
+        pointer-events: none;
+    }
+}
+.custom-checkbox {
+    margin-bottom: 5px;
+    &__input {
+        vertical-align: top;
+        margin: 0 10px 0 0;
+        width: 20px;
+        height: 20px;
+        &:not(checked) {
+            position: absolute;
+            opacity: 0;
+
+            & + label {
+                position: relative;
+                padding: 0 0 0 30px;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -2px;
+                    left: 0;
+                    width: 20px;
+                    height: 20px;
+                    background: $white;
+                    border: 2px solid $gray-light;
+                }
+                &:after {
+                    content: '';
+                }
+            }
+        }
+        &:checked {
+            & + label {
+                &:before {
+                    background: $white;
+                }
+                &:after {
+                    content: '\031A';
+                    position: absolute;
+                    top: 5px;
+                    left: -5px;
+                    width: 20px;
+                    height: 20px;
+                    color: $deepskyblue;
+                    font-size: 29px;
+                    transform: rotate(145deg);
+                }
+            }
+        }
+        &:focus {
+            & + label {
+                &:before {
+                    box-shadow: inset 0 1px 7px $gray-light;
+                }
+            }
+        }
+    }
+    &__label {
+        color: $gray;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.4;
+        cursor: pointer;
+    }
+}
+.title {
+    padding-bottom: 20px;
+    color: $indigo;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+.filter-variations {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid $gray-light;
+    &__element {
+        width: 25%;
+    }
+}
+.custom-radio {
+    &__element {
+        vertical-align: top;
+        width: 15px;
+        height: 15px;
+        margin: 0 3px 0 0;
+        & + label {
+            display: inline-block;
+            width: 100%;
+            padding: 11px 30px 11px 55px;
+            background-color: $white;
+            border-radius: 5px;
+            box-shadow: 0 2px $gray-light;
+            cursor: pointer;
+        }
+        &:checked {
+            & + label {
+                color: $white;
+                background-color: $deepskyblue;
+                box-shadow: 0 2px $deepskyblue-dark inset;
+                &:before {
+                    background-color: $deepskyblue;
+                    box-shadow: 0 0 2px 2px $white;
+                }
+                &:after {
+                    opacity: 1;
+                    background-color: $white;
+                }
+            }
+        }
+        &:not(checked) {
+            position: absolute;
+            opacity: 0;
+            & + label {
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 11px;
+                    left: 20px;
+                    width: 18px;
+                    height: 18px;
+                    box-shadow: inset 0 1px 1px $gray-light;
+                    border-radius: 50%;
+                    background-color: $white;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 16px;
+                    left: 25px;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: $white;
+                    box-shadow: inset 0 1px 1px $white;
+                    opacity: 0;
+                    transition: all .2s;
+                }
+            }
+        }
+        &:focus {
+            & + label {
+                box-shadow: 0 0 8px $deepskyblue;
+            }
+        }
+    }
+    &__label {
+        @extend .extend-two;
+    }
+}
+.placeholder::-webkit-input-placeholder {
+    color: $gray;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+}
+.placeholder::-moz-placeholder {
+    color: $gray;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+}
+.placeholder:-moz-placeholder {
+    color: $gray;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+}
+.placeholder:-ms-input-placeholder {
+    color: $gray;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+}
+@media screen and (max-width: $medium-screen-width) {
+    body {
+        padding: 0 10px;
+    }
+    .custom-checkbox {
+        margin-top: 15px;
+        &__label {
+            line-height: 1.6;
+        }
+    }
+    .form-unit {
+        &__checkbox {
+            &--element {
+                label {
+                    line-height: 1.4;
+                }
+                .custom-checkbox {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $small-screen-width) {
+    .intro {
+        margin-bottom: 20px;
+    }
+    .form-filter {
+        &__section {
+            &--order {
+                flex-wrap: wrap;
+                .custom-select {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+    .filter-account {
+        &__select {
+            width: 100%;
+        }
+        &__checkbox {
+            margin-bottom: 0;
+        }
+    }
+    .custom-select {
+        width: 100%;
+    }
+    .form-unit {
+        margin-right: 0;
+        &__radio {
+            justify-content: space-between;
+            &--element {
+                width: 100%;
+            }
+        }
+        &__input {
+            width: 100%;
+        }
+    }
+    .filter-variations {
+        &__element {
+            width: 100%;
+            margin-top: 15px;
+        }
+    }
+    .title {
+        padding-bottom: 0;
+    }
+    .custom-checkbox {
+        &__input {
+            &:checked {
+                & + label {
+                    &:after {
+                        top: 7px;
+                        left: -4px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
+    .filter-variations {
+        &__element {
+            width: 50%;
+        }
+    }
+    .custom-select {
+        width: 100%;
+    }
+    .form-unit {
+        margin-right: 10px;
+        &__radio {
+            justify-content: space-between;
+            &--element {
+                width: 100%;
+            }
+        }
+        &__input {
+            width: 100%;
+        }
+        &__label {
+            padding-top: 10px;
+        }
+    }
+    .title {
+        padding-bottom: 10px;
+    }
+}

@@ -4,74 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Task1</title>
     <link rel="stylesheet" href="./styles/form-styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
 <body>
     <div class="form-wrapper">
-            <form class="filter">
-                    <section class="filter__intro">
-                        <label class="filter__laber--intro-text">
-                            We’ve found you 32 results based on a starting balance of
-                            <input class="filter__text--input" type="text" value="£100000">
-                            .
-                        </label>
-                    </section>
-                    <section class="filter__account-types">
-                        <label class="filter__label--account-types" for="accountSelect">
-                            <p>Account types</p>
-                            <select class="filter__dropdown--account-types" id="accountSelect">
-                                    <option value="" selected>Show all</option>
-                            </select>   
-                            <label class="filter__label" for="filterCheckbox">
-                                    <input class="filter__checkbox--account-types" type="checkbox" id="filterCheckbox">
-                                    Only show accounts I can open through MoneySupermarket
-                                </label>
-                        </label>
-                    </section>
-                    <section class="filter__results">
-                        <h5 class="filter__results-title">Filter results by:</h5>
-                        <div class="filter__radiogroup-wraper">
-                            <div class="filter__radio-btn">
-                                <input class="filter__radio" name="filter-radio-btn" type="radio" id="results-radio-y">                                                             
-                                <label class="filter__label" for="results-radio-y">Yes</label>
-                            </div>
-                            <div class="filter__radio-btn">
-                                <input class="filter__radio" name="filter-radio-btn" type="radio" id="results-radio-n">                             
-                                <label class="filter__label" for="results-radio-n">No</label>       
+        <form class="filter">
+            <section class="filter__filter-section">
+                <div class="intro">
+                    <div class="intro__heading">
+                        <div class="intro-text">
+                            <span class="intro-text__paragraph">We’ve found you 32 results based on a starting balance of</span>
+                        </div>
+                    </div>
+                    <div class="intro__input">
+                        <div class="text-input">
+                            <input type="text" class="text-input__input" value="100000">
+                        </div>
+                    </div>
+                </div>
+                <div class="account">
+                    <h5 class="account__heading">Account type(s)</h5>
+                    <div class="account__dropdown">
+                        <div class="input-area">
+                            <div class="input-area__dropdown">
+                                <div class="dropdown">
+                                    <select class="dropdown__select" name="" id="" required>
+                                        <option class="dropdown__option"  value="" selected disabled hidden>Show all</option>
+                                        <option class="dropdown__option" value="1">1</option>
+                                        <option class="dropdown__option" value="2">2</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="filter__checkbox-wraper">
-                            <div class="filter__check-btn">
-                                <input class="filter__checkbox" type="checkbox" id="results-chekbox-p" /> 
-                                <label class="filter__label" for="results-chekbox-p">Opt in phone</label>
-                            </div> 
-                            <div class="filter__check-btn">
-                                <input class="filter__checkbox" type="checkbox" id="results-chekbox-t" /> 
-                                <label class="filter__label" for="results-chekbox-t">Opt in text</label>
-                            </div>                                    
+                    </div>
+                    <div class="account__checkbox">
+                        <div class="checkbox">
+                            <input class="checkbox__input" type="checkbox" id="account-checkbox">
+                            <label for="account-checkbox" class="checkbox__label">Only show accounts I can open through MoneySupermarket (5)</label>
                         </div>
-                        <label class="filter__label" for="results-select">
-                            <select class="filter__dropdown--results" id="results-select">
-                                <option value="" selected>--Please select--</option>
-                            </select>                               
-                        </label>
-                        <label class="filter__label" for="results-password">
-                                <input class="filter__password--results" type="password" id="results-password">                                
-                        </label>
-                    </section>
-                    <section class="filter__order">
-                        <h5 class="filter__order-title">Order results by:</h5>
-                        <label class="filter__label--order" for="order-select">
-                           
-                            <select class="filter__dropdown--order" id="order-select">
-                                <option value="">Interest rate (AER) High to low</option>
+                    </div>
+                </div>
+            </section>
+            <section class="filter__filter-section">
+                <div class="results">
+                    <div class="results__heading">
+                        <div class="heading">
+                            <h5 class="heading__text">Filter results by:</h5>
+                        </div>
+                    </div>
+                    <div class="results__radio-area">
+                        <div class="input-area">
+                            <div class="input-area__title">
+                                <div class="title">
+                                    <span class="title__text">Transfer in</span>
+                                </div>
+                            </div>
+                            <div class="input-area__inputs">
+                                <div class="input-area__radio">
+                                    <div class="radio radio--results">
+                                        <input type="radio" name="radio-group" id="result-radio-a" class="radio__radiobtn" required>
+                                        <label for="result-radio-a" class="radio__label">Yes</label>
+                                    </div>
+                                </div>
+                                <div class="input-area__radio">
+                                    <div class="radio radio--results">
+                                        <input type="radio" name="radio-group" id="result-radio-b" class="radio__radiobtn">
+                                        <label for="result-radio-b" class="radio__label">No</label>         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="results__check-area">
+                        <div class="input-area">
+                            <div class="input-area__title">
+                                <div class="title">
+                                    <span class="title__text">Account opening</span>
+                                </div>
+                            </div>
+                            <div class="input-area__inputs">
+                                <div class="input-area__checkbox">
+                                    <div class="checkbox">
+                                        <input class="checkbox__input--results" type="checkbox" id="account-checkbox-a">
+                                        <label for="account-checkbox-a" class="checkbox__label--results">Opt in phone</label>
+                                    </div>
+                                </div>
+                                <div class="input-area__checkbox">
+                                    <div class="checkbox">
+                                        <input class="checkbox__input--results" type="checkbox" id="account-checkbox-b">
+                                        <label for="account-checkbox-b" class="checkbox__label--results">Opt in text</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="results__dropdown">
+                        <div class="input-area">
+                            <div class="input-area__title">
+                                <div class="title">
+                                    <span class="title__text">Managing your account</span>
+                                </div>
+                            </div>
+                            <div class="input-area__dropdown">
+                                <div class="dropdown">
+                                    <select class="dropdown__select" name="" id="" required>
+                                        <option class="dropdown__option" value="" selected disabled hidden>Show all</option>
+                                        <option class="dropdown__option" value="1">1</option>
+                                        <option class="dropdown__option" value="2">2</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="results__password">
+                        <div class="input-area">
+                            <div class="input-area__title">
+                                <div class="title">
+                                    <span class="title__text">Notice period or term</span>
+                                </div>
+                            </div>
+                            <div class="input-area__password">
+                                <div class="password">
+                                    <input type="password" name="" id="resultPass" class="password__input" required>
+                                    <label class="password__label" for="resultPass"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="filter__filter-section">
+                <div class="order">
+                    <div class="order__heading">
+                        <div class="heading">
+                            <h5 class="heading__text">Order results by:</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="order__dropdown">
+                        <div class="dropdown dropdown--order">
+                            <select class="dropdown__select" name="" id="" required>
+                                <option class="dropdown__option" value="" selected disabled hidden>Interest rate (AER)</option>
+                                <option class="dropdown__option" value="1">1</option>
+                                <option class="dropdown__option" value="2">2</option>
                             </select>
-                        </label>
-                    </section>    
-
-            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>  
+            <input type="submit" value="" class="submit-btn">
+        </form>
     </div>
 </body>
 </html>

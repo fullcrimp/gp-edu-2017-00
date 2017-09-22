@@ -61,20 +61,11 @@ select {
 button {
     overflow: hidden;
 }
-// .form-error {
-//     display: none;
-//     position: absolute;
-//     color: #c71b1b;
-//     font-size: 10px;
-// }
 input:valid:not(:placeholder-shown) {
     box-shadow: 0 0 8px $green;
 }
 // input:invalid:not(:placeholder-shown) {
 //     box-shadow: 0 0 8px $red;
-// }
-// input:invalid:not(:placeholder-shown) + .form__error {
-//     display: block;
 // }
 .wrap-external {
     display: flex;
@@ -318,6 +309,9 @@ input:valid:not(:placeholder-shown) {
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 1px solid $gray-light;
+    &__element {
+        width: 25%;
+    }
 }
 .custom-radio {
     &__element {
@@ -357,10 +351,10 @@ input:valid:not(:placeholder-shown) {
                 &:before {
                     content: '';
                     position: absolute;
-                    top: 8px;
+                    top: 11px;
                     left: 20px;
-                    width: 22px;
-                    height: 22px;
+                    width: 18px;
+                    height: 18px;
                     box-shadow: inset 0 1px 1px $gray-light;
                     border-radius: 50%;
                     background-color: $white;
@@ -368,10 +362,10 @@ input:valid:not(:placeholder-shown) {
                 &:after {
                     content: '';
                     position: absolute;
-                    top: 14px;
-                    left: 26px;
-                    width: 10px;
-                    height: 10px;
+                    top: 16px;
+                    left: 25px;
+                    width: 8px;
+                    height: 8px;
                     border-radius: 50%;
                     background-color: $white;
                     box-shadow: inset 0 1px 1px $white;
@@ -512,5 +506,11 @@ input:valid:not(:placeholder-shown) {
         &__input {
             width: 100%;
         }
+        &__label {
+            padding-top: 10px;
+        }
+    }
+    .title {
+        padding-bottom: 10px;
     }
 }

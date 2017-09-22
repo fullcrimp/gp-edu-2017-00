@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1></h1>
-    <section>
+    <section class="wrap-external">
         <div class="wrap">
             <form action="url" method="GET" id="form-filter" class="form-filter">
                 <section class="form-filter__section">
@@ -19,7 +19,10 @@
                         <div class="intro__input">
                             <div class="input-badge">
                                 <div class="input-badge__money">
-                                    <input type="number" id="form-filter-price" class="input placeholder" placeholder="" required />
+                                    <input type="number" id="form-filter-price" class="input placeholder" placeholder="" max="1000000" min="0" required />
+                                    <!-- <span class="form-error">
+                                        Your balance must not exceed 1000000 &#163;
+                                    </span> -->
                                 </div>
                             </div>
                         </div><!--
@@ -105,7 +108,7 @@
                             <div class="filter-variations__element">
                                 <div class="form-unit">
                                     <label for="passwod" class="form-unit__label">Transfer in:</label>
-                                    <input type="password" class="form-unit__input placeholder" placeholder="&#183;&#183;&#183;&#183;&#183;&#183;" required>
+                                    <input type="password" class="form-unit__input placeholder" placeholder="&#183;&#183;&#183;&#183;&#183;&#183;" required >
                                 </div>
                             </div>
                         </div>
@@ -123,6 +126,7 @@
                         </div>
                     </div>
                 </section>
+                <button type="submit" name="button"></button>
             </form>
         </div>
     </section>

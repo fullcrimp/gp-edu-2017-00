@@ -4,9 +4,11 @@ $gray-dark: #2b3133;
 $gray: #566266;
 $gray-light: #c6cacc;
 $gray-lighter: #949899;
+$green: #1c8429;
 $deepskyblue: #00adf2;
 $deepskyblue-dark: #0481b3;
 $indigo: #562873;
+$red: #c71b1b;
 
 $small-screen-width: 490px;
 $medium-screen-width: 720px;
@@ -56,9 +58,39 @@ select {
         box-shadow: 0 0 8px $deepskyblue;
     }
 }
-.wrap {
+button {
+    display: none;
+}
+// .form-error {
+//     display: none;
+//     position: absolute;
+//     color: #c71b1b;
+//     font-size: 10px;
+// }
+input:valid:not(:placeholder-shown) {
+    box-shadow: 0 0 8px $green;
+}
+input:invalid:not(:placeholder-shown) {
+    box-shadow: 0 0 8px $red;
+}
+// input:invalid:not(:placeholder-shown) + .form__error {
+//     display: block;
+// }
+input:valid:not(:placeholder-shown) {
+    box-shadow: 0 0 8px $green;
+}
+input:invalid:not(:placeholder-shown) {
+    box-shadow: 0 0 8px $red;
+}
+// input:invalid:not(:placeholder-shown) + .form__error {
+//     display: block;
+// }
+.wrap-external {
     display: flex;
     justify-content: center;
+}
+.wrap {
+    max-width: 980px;
 }
 .form-filter {
     margin: 20px 0;
@@ -469,7 +501,6 @@ select {
         }
     }
 }
-
 @media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
     .filter-variations {
         &__element {

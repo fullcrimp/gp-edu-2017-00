@@ -1,23 +1,5 @@
 @import 'variables.scss';
 
-.extend-one {
-    color: $gray;
-    font-family: "Open Sans", sans-serif;
-    font-size: 20px;
-    line-height: 1.4;
-}
-.extend-two {
-    color: $gray-lighter;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 1.4;
-}
-.extend-three {
-    padding: 10px 25px 10px 20px;
-    box-shadow: 0 2px $gray-light;
-    border-radius: 5px;
-}
 * {
     margin: 0;
     padding: 0;
@@ -25,89 +7,132 @@
     outline: 0;
     box-sizing: border-box;
 }
+
 html, body {
     height: 100%;
 }
+
 body {
     background-color: $azure;
+    @media screen and (max-width: $medium-screen-width) {
+        padding: 0 10px;
+    }
 }
+
 ul {
     list-style-type: none;
 }
+
 h1 {
     display: none;
 }
+
 input {
     &:focus {
         box-shadow: 0 0 8px $deepskyblue;
     }
 }
+
 select {
     &:focus {
         box-shadow: 0 0 8px $deepskyblue;
     }
 }
+
 button {
     overflow: hidden;
 }
+
 input:valid:not(:placeholder-shown) {
     box-shadow: 0 0 8px $green;
 }
+
 .button {
-    @extend .extend-two;
     padding: 10px 25px 10px 20px;
-    margin: 20px 0;
     background-color: $white;
     box-shadow: 0 2px $gray-light;
     border-radius: 5px;
+    color: $gray-lighter;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
     cursor: pointer;
+
     &:focus {
         box-shadow: 0 2px $gray-light inset;
     }
 }
-.moon {
-    position: fixed;
-    width: 400px;
-    height: 400px;
-    left: 50%;
-    top: 50%;
-    background-color: $white;
-    border-radius: 50%;
-    box-shadow: 0 0 6px $deepskyblue;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-}
+
 .wrap {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-// .wrap {
-//     // max-width: 980px;
-// }
+
 .form-filter {
-    margin: 20px 0;
+    margin: 10px 0;
+
     &__section {
         margin: 10px;
+
+        &--intro {
+            color: $gray;
+            font-family: "Open Sans", sans-serif;
+            font-size: 20px;
+            line-height: 1.4;
+            @media screen and (max-width: $small-screen-width) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &--account {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            margin-bottom: 20px;
+
+            .form-unit {
+                @media screen and (max-width: $small-screen-width) {
+                    width: 100%;
+                }
+            }
+
+            .custom-checkbox {
+                margin-bottom: 10px;
+                @media screen and (max-width: $small-screen-width) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
         &--order {
             display: flex;
-            h2 {
+            @media screen and (max-width: $small-screen-width) {
+                flex-wrap: wrap;
+            }
+
+            .filter-title {
                 margin-right: 10px;
                 padding-top: 7px;
+            }
+
+            .custom-select {
+                @media screen and (max-width: $small-screen-width) {
+                    margin-top: 15px;
+                }
             }
         }
     }
 }
-.intro {
-    @extend .extend-one;
-    &__input {
-        display: inline-block;
-        position: relative;
-        width: 144px;
-        margin: 0 10px;
-    }
-}
+
 .input-badge {
-    &__money {
+    display: inline-block;
+    position: relative;
+    width: 144px;
+    margin: 0 10px;
+
+    &--money {
         &:before {
             content: "\00A3";
             position: absolute;
@@ -116,8 +141,8 @@ input:valid:not(:placeholder-shown) {
         }
     }
 }
+
 .input {
-    @extend .extend-one;
     display: inline-block;
     height: 100%;
     width: 100%;
@@ -125,18 +150,21 @@ input:valid:not(:placeholder-shown) {
     background-color: $white;
     box-shadow: 0 2px $gray-light inset;
     border-radius: 5px;
+    color: $gray;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
 }
-.filter-account {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    margin-bottom: 20px;
-    &__checkbox {
-        margin-bottom: 10px;
-    }
-}
+
 .form-unit {
     margin-right: 30px;
+    @media screen and (max-width: $small-screen-width) {
+        margin-right: 0;
+    }
+    @media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
+        margin-right: 15px;
+    }
+
     &__label {
         display: block;
         padding-bottom: 10px;
@@ -145,30 +173,55 @@ input:valid:not(:placeholder-shown) {
         font-size: 14px;
         font-weight: bold;
         line-height: 1.4;
-    }
-    &__radio {
-        display: flex;
-        &--element {
-            margin-right: 5px;
+        @media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
+            padding-top: 10px;
         }
     }
+
+    &__radio {
+        display: flex;
+        @media screen and (max-width: $large-screen-width) {
+            justify-content: space-between;
+        }
+
+        &--element {
+            margin-right: 5px;
+            @media screen and (max-width: $large-screen-width) {
+                width: 100%;
+            }
+        }
+    }
+
     &__checkbox {
         &--element {
             margin-bottom: 10px;
+
+            .custom-checkbox__label {
+                @media screen and (max-width: $medium-screen-width) {
+                    line-height: 1.4;
+                }
+            }
+
             .custom-checkbox {
+                @media screen and (max-width: $medium-screen-width) {
+                    margin-top: 0;
+                }
                 &__input {
                     &:not(checked) {
-                        & + label {
-                            @extend .extend-three;
+                        & + .custom-checkbox__label{
                             display: inline-block;
                             width: 100%;
                             padding: 11px 30px 11px 50px;
                             background-color: $white;
+                            box-shadow: 0 2px $gray-light;
+                            border-radius: 5px;
+
                             &:before {
                                 top: 9px;
                                 left: 15px;
                                 background: $white;
                             }
+
                             &:after {
                                 top: 16px;
                                 left: 9px;
@@ -176,22 +229,26 @@ input:valid:not(:placeholder-shown) {
                             }
                         }
                     }
+
                     &:checked {
-                        & + label {
+                        & + .custom-checkbox__label {
                             color: $white;
                             background-color: $deepskyblue;
                             box-shadow: 0 2px $deepskyblue-dark inset;
+
                             &:before {
                                 background-color: $deepskyblue;
                                 border-color: $white;
                             }
+
                             &:after {
                                 color: $white;
                             }
                         }
                     }
+
                     &:focus {
-                        & + label {
+                        & + .custom-checkbox__label {
                             box-shadow: 0 0 8px $deepskyblue;
                         }
                     }
@@ -199,31 +256,53 @@ input:valid:not(:placeholder-shown) {
             }
         }
     }
+
     &__input {
-        @extend .extend-three;
+        padding: 10px 25px 10px 20px;
+        box-shadow: 0 2px $gray-light;
+        border-radius: 5px;
         color: $gray;
         font-family: "Open Sans", sans-serif;
         font-size: 14px;
         font-weight: bold;
         line-height: 1.4;
+        @media screen and (max-width: $large-screen-width) {
+            width: 100%;
+        }
     }
 }
+
 .custom-select {
     position: relative;
     display: inline-block;
-    &__element {
-        @extend .extend-two;
-        @extend .extend-three;
-        padding-right: 50px;
+    @media screen and (max-width: $large-screen-width) {
         width: 100%;
+    }
+
+    &__element {
+        width: 100%;
+        padding: 10px 50px 10px 20px;
+        box-shadow: 0 2px $gray-light;
+        border-radius: 5px;
+        color: $gray-lighter;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.4;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
         cursor: pointer;
+
         option {
-            @extend .extend-two;
+            color: $gray-lighter;
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1.4;
         }
     }
+
     &:after {
         content: "\0349";
         position: absolute;
@@ -237,8 +316,13 @@ input:valid:not(:placeholder-shown) {
         pointer-events: none;
     }
 }
+
 .custom-checkbox {
     margin-bottom: 5px;
+    @media screen and (max-width: $medium-screen-width) {
+        margin-top: 15px;
+    }
+
     &__input {
         vertical-align: top;
         margin: 0 10px 0 0;
@@ -248,7 +332,7 @@ input:valid:not(:placeholder-shown) {
             position: absolute;
             opacity: 0;
 
-            & + label {
+            & + .custom-checkbox__label {
                 position: relative;
                 padding: 0 0 0 30px;
 
@@ -262,16 +346,19 @@ input:valid:not(:placeholder-shown) {
                     background: $white;
                     border: 2px solid $gray-light;
                 }
+
                 &:after {
                     content: '';
                 }
             }
         }
+
         &:checked {
-            & + label {
+            & + .custom-checkbox__label {
                 &:before {
                     background: $white;
                 }
+
                 &:after {
                     content: '\031A';
                     position: absolute;
@@ -282,17 +369,23 @@ input:valid:not(:placeholder-shown) {
                     color: $deepskyblue;
                     font-size: 29px;
                     transform: rotate(145deg);
+                    @media screen and (max-width: $small-screen-width) {
+                        top: 7px;
+                        left: -4px;
+                    }
                 }
             }
         }
+
         &:focus {
-            & + label {
+            & + .custom-checkbox__label {
                 &:before {
                     box-shadow: inset 0 1px 7px $gray-light;
                 }
             }
         }
     }
+
     &__label {
         color: $gray;
         font-family: "Open Sans", sans-serif;
@@ -300,16 +393,27 @@ input:valid:not(:placeholder-shown) {
         font-weight: bold;
         line-height: 1.4;
         cursor: pointer;
+        @media screen and (max-width: $medium-screen-width) {
+            line-height: 1.6;
+        }
     }
 }
-.title {
+
+.filter-title {
     padding-bottom: 20px;
     color: $indigo;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
     font-weight: bold;
     line-height: 1.3;
+    @media screen and (max-width: $small-screen-width) {
+        padding-bottom: 0;
+    }
+    @media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
+        padding-bottom: 10px;
+    }
 }
+
 .filter-variations {
     display: flex;
     margin-bottom: 20px;
@@ -319,17 +423,26 @@ input:valid:not(:placeholder-shown) {
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 1px solid $gray-light;
+
     &__element {
         width: 25%;
+        @media screen and (max-width: $small-screen-width) {
+            width: 100%;
+            margin-top: 15px;
+        }
+        @media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
+            width: 50%;
+        }
     }
 }
+
 .custom-radio {
     &__element {
         vertical-align: top;
         width: 15px;
         height: 15px;
         margin: 0 3px 0 0;
-        & + label {
+        & + .custom-radio__label {
             display: inline-block;
             width: 100%;
             padding: 11px 30px 11px 55px;
@@ -338,26 +451,32 @@ input:valid:not(:placeholder-shown) {
             box-shadow: 0 2px $gray-light;
             cursor: pointer;
         }
+
         &:checked {
-            & + label {
+            & + .custom-radio__label {
                 color: $white;
                 background-color: $deepskyblue;
                 box-shadow: 0 2px $deepskyblue-dark inset;
+
                 &:before {
                     background-color: $deepskyblue;
                     box-shadow: 0 0 2px 2px $white;
                 }
+
                 &:after {
                     opacity: 1;
                     background-color: $white;
                 }
             }
         }
+
         &:not(checked) {
             position: absolute;
             opacity: 0;
-            & + label {
+
+            & + .custom-radio__label {
                 position: relative;
+
                 &:before {
                     content: '';
                     position: absolute;
@@ -369,6 +488,7 @@ input:valid:not(:placeholder-shown) {
                     border-radius: 50%;
                     background-color: $white;
                 }
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -384,143 +504,119 @@ input:valid:not(:placeholder-shown) {
                 }
             }
         }
+
         &:focus {
-            & + label {
+            & + .custom-radio__label {
                 box-shadow: 0 0 8px $deepskyblue;
             }
         }
     }
+
     &__label {
-        @extend .extend-two;
+        color: $gray-lighter;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.4;
     }
 }
+
+.moon {
+    display: none;
+    position: fixed;
+    width: 440px;
+    height: 440px;
+    left: 50%;
+    top: 50%;
+    background-color: $white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px $deepskyblue;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    @media screen and (max-width: $small-screen-width) {
+        width: 300px;
+        height: 300px;
+    }
+
+    &__button {
+        position: absolute;
+        top: 25px;
+        right: 60px;
+        width: 50px;
+        height: 50px;
+        background-color: $deepskyblue;
+        border-radius: 50%;
+        box-shadow: 0 0 6px $deepskyblue;
+        cursor: pointer;
+        @media screen and (max-width: $small-screen-width) {
+            top: 16px;
+            right: 36px;
+            width: 40px;
+            height: 40px;
+        }
+
+        &--close {
+            &:before {
+                content: '\0353';
+                position: absolute;
+                top: -37px;
+                right: 24px;
+                font-size: 60px;
+                color: $white;
+                @media screen and (max-width: $small-screen-width) {
+                    top: -33px;
+                    right: 20px;
+                    font-size: 51px;
+                }
+            }
+        }
+
+        &:hover,
+        &focus {
+            background-color: $azure;
+            transition: 0.5s;
+
+            &:before {
+                color: $deepskyblue;
+            }
+        }
+    }
+}
+
+.overlay {
+    &:after {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $deepskyblue;
+        opacity: 0.2;
+    }
+}
+
 .placeholder::-webkit-input-placeholder {
     color: $gray;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
 }
+
 .placeholder::-moz-placeholder {
     color: $gray;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
 }
+
 .placeholder:-moz-placeholder {
     color: $gray;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
 }
+
 .placeholder:-ms-input-placeholder {
     color: $gray;
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
-}
-@media screen and (max-width: $medium-screen-width) {
-    body {
-        padding: 0 10px;
-    }
-    .custom-checkbox {
-        margin-top: 15px;
-        &__label {
-            line-height: 1.6;
-        }
-    }
-    .form-unit {
-        &__checkbox {
-            &--element {
-                label {
-                    line-height: 1.4;
-                }
-                .custom-checkbox {
-                    margin-top: 0;
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width: $small-screen-width) {
-    .intro {
-        margin-bottom: 20px;
-    }
-    .form-filter {
-        &__section {
-            &--order {
-                flex-wrap: wrap;
-                .custom-select {
-                    margin-top: 15px;
-                }
-            }
-        }
-    }
-    .filter-account {
-        &__select {
-            width: 100%;
-        }
-        &__checkbox {
-            margin-bottom: 0;
-        }
-    }
-    .custom-select {
-        width: 100%;
-    }
-    .form-unit {
-        margin-right: 0;
-        &__radio {
-            justify-content: space-between;
-            &--element {
-                width: 100%;
-            }
-        }
-        &__input {
-            width: 100%;
-        }
-    }
-    .filter-variations {
-        &__element {
-            width: 100%;
-            margin-top: 15px;
-        }
-    }
-    .title {
-        padding-bottom: 0;
-    }
-    .custom-checkbox {
-        &__input {
-            &:checked {
-                & + label {
-                    &:after {
-                        top: 7px;
-                        left: -4px;
-                    }
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
-    .filter-variations {
-        &__element {
-            width: 50%;
-        }
-    }
-    .custom-select {
-        width: 100%;
-    }
-    .form-unit {
-        margin-right: 10px;
-        &__radio {
-            justify-content: space-between;
-            &--element {
-                width: 100%;
-            }
-        }
-        &__input {
-            width: 100%;
-        }
-        &__label {
-            padding-top: 10px;
-        }
-    }
-    .title {
-        padding-bottom: 10px;
-    }
 }

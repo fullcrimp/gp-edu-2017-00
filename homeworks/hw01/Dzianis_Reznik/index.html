@@ -15,137 +15,110 @@
   <header class="header">
     <img src="img/logo.jpg" alt="MoneySuperMarket" class="header__logo">
   </header>
-  <main class="main">
-    <form class="main__search">
-      <div class="section">
-        <div class="intro">
-          <span class="intro__text">We've found you 32 results based on a starting balance of</span>
-          <div class="input-wrapper input-wrapper--intro">
-            <div class="money">
-              <input type="number" class="money__input" required>
-            </div>
-          </div>
+  <form class="search">
+    <div class="search__section">
+      <div class="search__intro">We've found you 32 results based on a starting balace of
+        <div class="input-box input-box--money">
+          <input type="number" class="input-box__input input-box__input--money" required>
         </div>
-        <div class="inputs">
-          <div class="inputs__options">
-            <div class="form-block">
-              <h5 class="form-block__header">Account type(s)</h5>
-              <div class="form-block__input">
-                <div class="input-wrapper">
-                  <div class="dropdown">
-                    <select name="accounts" id="" class="dropdown__select" required>
+      </div>
+      <div class="inputs">
+        <div class="inputs__item">
+          <h5 class="inputs__title">Account type(s)</h5>
+            <div class="input-box input-box--dropdown">
+              <select name="accounts" id="" class="input-box__input input-box__input--dropdown" required>
                   <option class="dropdown__option" value="" hidden disabled selected>Select...</option>
                         <option class="dropdown__option" value="1">Option 1</option>
                         <option class="dropdown__option" value="2">Option 2</option>
                         <option class="dropdown__option" value="3">Option 3</option>
-                      </select>
-                  </div>
-                </div>
-              </div>
+              </select>
+
             </div>
-          </div>
-          <div class="inputs__msmshow">
-            <div class="form-block">
-              <div class="form-block__input form-block__input--autowidth">
-                <div class="checkbox-free">
-                  <input type="checkbox" id="checkbox-free" class="checkbox-free__input">
-                  <label for="checkbox-free" class="checkbox-free__label">Only show accounts I can open through MoneySupermarket (5)</label>
-                </div>
-              </div>
+        </div>
+        <div class="inputs__item inputs__item--checkbox-free">
+            <div class="checkbox-free">
+              <input type="checkbox" id="checkbox-free" class="checkbox-free__input">
+              <label for="checkbox-free" class="checkbox-free__label">Only show accounts I can open through MoneySupermarket (5)</label>
             </div>
-          </div>
         </div>
       </div>
-      <div class="section section--underlined">
-        <div class="caption">
-          <span class="caption__text">Filter results by:</span>
+    </div>
+    <div class="search__section search__section--underlined">
+      <div class="search__caption">Filter results by:</div>
+      <div class="inputs">
+        <div class="inputs__item">
+          <h5 class="inputs__title">Transfer in</h5>
+              <div class="input-box input-box--radio">
+                <input type="radio" name="answer" id="yes" class="input-box__input input-box__input--radio" required>
+                <label for="yes" class="input-box__label input-box__label--radio">Yes</label>
+              </div>
+              <div class="input-box input-box--radio">
+                <input type="radio" name="answer" id="no" class="input-box__input input-box__input--radio">
+                <label for="no" class="input-box__label input-box__label--radio">No</label>
+              </div>
         </div>
-        <div class="inputs">
-          <div class="form-block">
-            <h5 class="form-block__header">Transfer in</h5>
-            <div class="form-block__input">
-              <div class="input-wrapper input-wrapper--half">
-                <div class="radio">
-                  <input type="radio" name="answer" id="yes" class="radio__input" required>
-                  <label for="yes" class="radio__label">Yes</label>
-                </div>
+        <div class="inputs__item">
+          <h5 class="inputs__title">Account opening</h5>
+              <div class="input-box input-box--checkbox">
+                <input type="checkbox" name="phone" id="phone" class="input-box__input input-box__input--checkbox">
+                <label for="phone" class="input-box__label input-box__label--checkbox">Opt in phone</label>
               </div>
-              <div class="input-wrapper input-wrapper--half">
-                <div class="radio">
-                  <input type="radio" name="answer" id="no" class="radio__input">
-                  <label for="no" class="radio__label">No</label>
-                </div>
+            <div class="input-wrapper">
+                <div class="input-box input-box--checkbox">
+                <input type="checkbox" name="text" id="text" class="input-box__input input-box__input--checkbox">
+                <label for="text" class="input-box__label input-box__label--checkbox">Opt in text</label>
               </div>
             </div>
-          </div>
-          <div class="form-block">
-            <h5 class="form-block__header">Account opening</h5>
-            <div class="form-block__input">
-              <div class="input-wrapper">
-                <div class="checkbox">
-                  <input type="checkbox" name="phone" id="phone" class="checkbox__input">
-                  <label for="phone" class="checkbox__label">Opt in phone</label>
-                </div>
-              </div>
-              <div class="input-wrapper">
-                <div class="checkbox">
-                  <input type="checkbox" name="text" id="text" class="checkbox__input">
-                  <label for="text" class="checkbox__label">Opt in text</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-block">
-            <h5 class="form-block__header">Managing your account</h5>
-            <div class="form-block__input">
-              <div class="input-wrapper">
-                <div class="dropdown">
-                  <select name="accounts" id="" class="dropdown__select" required>
-                      <option class="dropdown__option" value="" hidden disabled selected>Select...</option>
+        </div>
+        <div class="inputs__item">
+          <h5 class="inputs__title">Managing your account</h5>
+          <div class="input-box input-box--dropdown">
+            <select name="accounts" id="" class="input-box__input input-box__input--dropdown" required>
+                <option class="dropdown__option" value="" hidden disabled selected>Select...</option>
                       <option class="dropdown__option" value="1">Option 1</option>
                       <option class="dropdown__option" value="2">Option 2</option>
                       <option class="dropdown__option" value="3">Option 3</option>
-              </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-block">
-            <h5 class="form-block__header">Notice period or term</h5>
-            <div class="form-block__input">
-              <div class="input-wrapper">
-                <div class="password">
-                  <input type="password" class="password__input" minlength=8 required>
-                </div>
-              </div>
-            </div>
+            </select>
+
           </div>
         </div>
-        <div class="link">
-          <a href="#" class="link__text">Show me all available filters</a>
+        <div class="inputs__item">
+          <h5 class="inputs__title">Notice period or term</h5>
+            <div class="input-wrapper">
+              <div class="input-box">
+                <input type="password" class="input-box__input" minlength=8 required>
+              </div>
+            </div>
         </div>
       </div>
-      <div class="section">
-        <div class="caption">
-          <span class="caption__text">Order results by:</span>
-          <div class="caption__input">
-            <div class="input-wrapper input-wrapper--caption">
-              <div class="dropdown">
-                <select id="" class="dropdown__select" required>
+      <a class="search__link">Show me all available filters</a>
+      </div>
+    </div>
+    <div class="search__section">
+      <div class="search__caption">Order results by:
+        <div class="input-box input-box--dropdown input-box--dropdown-wide">
+          <select name="accounts" id="" class="input-box__input input-box__input--dropdown" required>
               <option class="dropdown__option" value="" hidden disabled selected>Select...</option>
-                    <option class="dropdown__option" value="1">Interest rate (AER)</option>
+                    <option class="dropdown__option" value="1">Option 1</option>
                     <option class="dropdown__option" value="2">Option 2</option>
                     <option class="dropdown__option" value="3">Option 3</option>
-              </select>
-              </div>
-            </div>
-          </div>
+          </select>
+
         </div>
       </div>
-      <button style="display: none" type="submit" name="button"></button>
-    </form>
-  </main>
+      <button style="margin: auto" type="button" id="showMoon" name="moon">Moon</button>
+    </div>
+    <button style="display: none" type="submit" name="button"></button>
+
+  </form>
+  <div id="modal" class="modal">
+    <div class="modal__moon"></div>
+</div>
   <footer class="footer"></footer>
+
+  <script type="text/javascript" src="js/script.js">
+
+  </script>
 </body>
 
 </html>

@@ -1,25 +1,7 @@
 @import 'form-variables.scss';
-.input-text {
-    font-family: $filter__main-ff;
-    color: $grey-fc;
-    font-size: $input-area-fs;
-    font-weight: bold;
-    line-height: 20px;
-}
-
-.shadow-props-outer {
-    border: 0;
-    box-shadow: 0 2px 1px 0 #949899;
-    border-radius: 5px;
-}
-
-.shadow-props-inner {
-    border: 0;
-    box-shadow: inset 0 1px 1px 0 #949899;
-    border-radius: 5px;
-}
 
 * {
+    font-family: $filter__main-ff;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -47,32 +29,27 @@
         margin-right: 10px;
         width: 20px;
         height: 20px;
-        color: #00adef;
+        color: $sky-blue;
+        &--results {
+            position: absolute;
+            opacity: 0;
+        }
     }
-
-    &__input--results {
-        @extend .checkbox__input;
-        position: absolute;
-        opacity: 0;
-    }
-
     &__input--results:not(checked)+&__label--results {
         position: relative;
     }
-
     &__input--results:not(checked)+&__label--results:before {
         box-sizing: border-box;
         position: absolute;
         top: 50%;
         left: 15px;
         transform: translate(0, -50%);
-        background: white;
-        border: 1px solid $border-grey;
+        background: $white;
+        border: 1px solid $grey;
         width: 20px;
         height: 20px;
         content: '';
     }
-
     &__input--results:not(checked)+&__label--results:after {
         box-sizing: border-box;
         position: absolute;
@@ -82,42 +59,39 @@
         left: 8px;
         opacity: 0;
         font-size: 30px;
-        color: white;
+        color: $white;
         content: '\031A';
         transform: rotate(140deg);
     }
-
     &__input--results:checked+&__label--results {
-        background: #00adef;
-        color: white;
+        background: $sky-blue;
+        color: $white;
     }
-
     &__input--results:checked+&__label--results:after {
         opacity: 1;
     }
-    
     &__input--results:checked+&__label--results:before {
-        border: 2px solid white;
-        background: #00adef;
+        border: 2px solid $white;
+        background: $sky-blue;
     }
-    
     &__label {
-        font-family: $filter__main-ff;
         color: $checkbox-color;
         font-weight: bold;
-        font-size: 14px;
+        font-size: $input-area-fs;
         line-height: 19px;
         width: 100%;
         height: 100%;
-    }
-
-    &__label--results {
-        @extend .input-text;
-        @extend .shadow-props-outer;
-        padding: 10px 15px;
-        padding-left: 45px;
-        width: 100%;
-        height: 100%;
+        &--results {
+            padding: 10px 15px 10px 45px;
+            width: 100%;
+            height: 100%;
+            color: $grey;
+            font-size: $input-area-fs;
+            line-height: 20px;
+            border: 0;
+            box-shadow: 0 2px 1px 0 $grey;
+            border-radius: 5px;
+        }
     }
 }
 
@@ -131,11 +105,9 @@
         position: absolute;
         opacity: 0;
     }
-
     &__radibtn:not(checked)+&__label {
         position: relative;
     }
-
     &__radiobtn:not(checked)+&__label:before {
         box-sizing: border-box;
         box-shadow: inset 0 1px 1px 0;
@@ -144,39 +116,40 @@
         left: 15px;
         transform: translate(0, -50%);
         border-radius: 50%;
-        background: white;
+        background: $white;
         width: 20px;
         height: 20px;
         content: '';
     }
-
     &__radiobtn:not(checked)+&__label:after {
         box-sizing: border-box;
         position: absolute;
         top: 50%;
         left: 18px;
         transform: translate(0, -50%);
-        border: 3px solid #00adef;
+        border: 3px solid $sky-blue;
         border-radius: 50%;
-        background: white;
+        background: $white;
         width: 14px;
         height: 14px;
         opacity: 0;
         content: '';
     }
-
     &__radiobtn:checked+&__label {
-        background: #00adef;
-        color: white;
+        background: $sky-blue;
+        color: $white;
     }
-    
     &__radiobtn:checked+&__label:after {
         opacity: 1;
     }
-
     &__label {
-        @extend .input-text;
-        @extend .shadow-props-outer;
+        color: $grey;
+        font-size: $input-area-fs;
+        font-weight: bold;
+        line-height: 20px;
+        border: 0;
+        box-shadow: 0 2px 1px 0 $grey;
+        border-radius: 5px;
         width: 100%;
         height: 100%;
         padding: 10px 15px;
@@ -188,14 +161,18 @@
     width: 100%;
     position: relative;
     &__select {
-        @extend .input-text;
-        @extend .shadow-props-outer;
+        color: $grey;
+        font-size: $input-area-fs;
+        font-weight: bold;
+        line-height: 20px;
+        border: 0;
+        box-shadow: 0 2px 1px 0 $grey;
+        border-radius: 5px;
         padding: 10px 50px 10px 20px;
         width: 100%;
         background-color: $bgbutton;
         -webkit-appearance: button;
     }
-
     &::after,
     &::before {
         position: absolute;
@@ -209,13 +186,15 @@
         right: 0;
         border-radius: 0 5px 5px 0;
     }
-
     &:before {
-        @extend .input-text;
+        color: $grey;
+        font-size: $input-area-fs;
+        font-weight: bold;
+        line-height: 20px;
         content: '\2304';
         height: 75%;
         width: 10px;
-        color: #00adef;
+        color: $sky-blue;
         top: 50%;
         right: 20px;
         transform: translate(0, -50%);
@@ -225,9 +204,12 @@
 .password {
     width: 100%;
     &__input {
-        @extend .input-text;
+        color: $grey;
+        font-size: $input-area-fs;
+        font-weight: bold;
+        line-height: 20px;
         border: 0;
-        box-shadow: inset 0 1px 1px 0 #949899;
+        box-shadow: inset 0 1px 1px 0 $grey;
         border-radius: 5px;
         padding: 10px 15px;
         background-color: $bgbutton;
@@ -240,11 +222,9 @@
     flex-flow: row wrap;
     margin: 0 10px 20px 10px;
     align-items: center;
-
     &__heading {
         width: 100%;
         padding-bottom: 20px;
-        font-family: $filter__main-ff;
         font-size: $filter__section-title-fs;
         color: $filter__section-title-fc;
         line-height: $filter__section-title-lh;
@@ -261,15 +241,13 @@
         &--order {
             width: auto;
             margin: 0 10px 0 0;
-            padding: 0; 
+            padding: 0;
         }
     }
-
     &__text {
         width: 144px;
         position: relative;
     }
-
     &__text:before {
         font-family: "Open Sans", "sans-serif";
         color: #566266;
@@ -281,25 +259,20 @@
         left: 15px;
         transform: translate(0, -50%);
     }
-
     &__area {
         margin-bottom: 20px;
         margin-right: 30px;
-
         &--order {
             margin-bottom: 0;
             margin-right: 30px;
         }
-
         @media screen and (max-width: $break-medium) {
             width: 100%;
         }
-
         @media screen and (max-width: $break-small) {
             width: 100%;
         }
     }
-
     &__wraper {
         display: flex;
         flex-flow: row wrap;
@@ -307,16 +280,13 @@
         width: 100%;
         margin: 30px 0px 10px 0px;
     }
-
     &__area-title {
         padding-bottom: 10px;
         color: #2B3133;
-        font-family: $filter__main-ff;
-        font-size: 14px;
+        font-size: $input-area-fs;
         font-weight: bold;
         line-height: 19px;
     }
-
     &__checkbox {
         display: inline-block;
         width: 200px;
@@ -333,9 +303,7 @@
         @media screen and (max-width: $break-small) {
             width: 100%;
         }
-        
     }
-
     &__radio {
         display: inline-block;
         background-color: $bgbutton;
@@ -347,17 +315,13 @@
         @media screen and (max-width: $break-small) {
             width: 100%;
         }
-        
     }
-
     &__radio:nth-child(1) {
         margin-right: 10px;
     }
-
     &__checkbox:nth-child(1) {
         margin-right: 10px;
     }
-
     &__dropdown {
         display: flex;
         align-items: center;
@@ -376,7 +340,6 @@
             width: 100%;
         }
     }
-
     &__password {
         display: flex;
         align-items: center;
@@ -388,22 +351,16 @@
             width: 100%;
         }
     }
-
     &--order {
         display: flex;
         align-items: center;
-       // margin: 20px 10px;
-        flex-flow:  row nowrap;
+        flex-flow: row nowrap;
     }
-
     @media screen and (max-width: $break-medium) {
         width: 100%;
     }
     @media screen and (max-width: $break-small) {
         width: 100%;
-    }
-    @media screen and (min-width: $break-medium) {
-
     }
 }
 
@@ -418,16 +375,15 @@
         padding-left: 26px;
         border: 0;
         border-radius: 5px;
-        box-shadow: inset 0 1px 1px 0 #949899;
+        box-shadow: inset 0 1px 1px 0 $grey;
     }
 }
 
 .submit {
     &__input {
-        @extend .input-text;
         display: none;
         border: 0;
-        box-shadow: 0 1px 1px 0 #949899;
+        box-shadow: 0 1px 1px 0 $grey;
         border-radius: 5px;
         padding: 10px 15px;
         background-color: $bgbutton;
@@ -447,7 +403,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
     }
 }
 
@@ -455,8 +410,8 @@
     width: 520px;
     height: 520px;
     border-radius: 50%;
-    color: white;
-    background-color: #00adef;
+    color: $white;
+    background-color: $sky-blue;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -464,15 +419,14 @@
     @media screen and (max-width: $break-small) {
         width: 350px;
         height: 350px;
-    } 
-
+    }
     &__button {
         position: absolute;
         width: 50px;
         height: 50px;
-        border: 2px solid white;
-        color: white;
-        background-color: #00adef;
+        border: 2px solid $white;
+        color: $white;
+        background-color: $sky-blue;
         border-radius: 50%;
         right: 50px;
         top: 50px;
@@ -483,18 +437,16 @@
             height: 40px;
         }
     }
-
     &__button:hover {
         background-color: darken( #00adef, 5%);
     }
-
 }
 
 .button__moon-switch {
     width: 200px;
     height: 40px;
     border: 0;
-    box-shadow: 0 1px 1px 0 #949899;
+    box-shadow: 0 1px 1px 0 $grey;
     border-radius: 5px;
     padding: 10px 15px;
     background-color: $bgbutton;
@@ -508,69 +460,3 @@
 .scroll-hander {
     overflow: hidden;
 }
-
-// @media screen and (max-width: $break-small) {
-//     .input-area {
-//         width: 100%;
-//         margin-right: 10px;
-//         &__inputs,
-//         &__dropdown,
-//         &__password,
-//         &__checkbox {
-//             width: 100%;
-//         }
-//         &__radio {
-//             width: 48.5%;
-//         }
-//         &__checkbox {
-//             margin-right: 0px;
-//         }
-//         &__checkbox:nth-child(1) {
-//             margin-right: 0px;
-//             margin-bottom: 5px;
-//         }
-//     }
-//     .results {
-//         &__check-area,
-//         &__radio-area,
-//         &__dropdown,
-//         &__password {
-//             width: 100%;
-//         }
-//     }
-//     .order {
-//         flex-wrap: nowrap;
-//         width: 100%;
-//         &__dropdown {
-//             width: 100%;
-//         }
-//     }
-//     .account,
-//     .account {
-//         width: 100%;
-//         &__dropdown {
-//             width: 100%;
-//         }
-// @media screen and (max-width: $break-medium) {
-//     .input-area {
-//         margin-right: 10px;
-//     }
-// }
-
-@media screen and (min-width: $break-medium) {
-
-}
-//         &__checkbox:nth-child(1) {
-//             margin-right: 10px;
-//         }
-//     }
-// }
-
-// @media screen and (min-width: 720px) {
-//     .input-area {
-//         margin-right: 30px;
-//         &__checkbox:nth-child(1) {
-//             margin-right: 10px;
-//         }
-//     }
-// }

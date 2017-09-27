@@ -24,22 +24,22 @@
     flex-flow: row nowrap;
     align-items: center;
     width: 100%;
-    
+
     &__input {
         margin-right: 10px;
         width: 20px;
         height: 20px;
         color: $sky-blue;
 
-        &--theme_button {
+        &--button {
             position: absolute;
             opacity: 0;
 
-            &:not(checked)+.checkbox__label--theme-button {
+            &:not(checked)+.checkbox__label--button {
                 position: relative;
             }
 
-            &:not(checked)+.checkbox__label--theme-button:before {
+            &:not(checked)+.checkbox__label--button:before {
                 box-sizing: border-box;
                 position: absolute;
                 top: 50%;
@@ -52,7 +52,7 @@
                 content: '';
             }
 
-            &:not(checked)+.checkbox__label--theme-button:after {
+            &:not(checked)+.checkbox__label--button:after {
                 box-sizing: border-box;
                 position: absolute;
                 width: 14px;
@@ -66,16 +66,16 @@
                 transform: rotate(140deg);
             }
 
-            &:checked+.checkbox__label--theme-button {
+            &:checked+.checkbox__label--button {
                 background: $sky-blue;
                 color: $white;
             }
 
-            &:checked+.checkbox__label--theme-button:after {
+            &:checked+.checkbox__label--button:after {
                 opacity: 1;
             }
 
-            &:checked+.checkbox__label--theme-button:before {
+            &:checked+.checkbox__label--button:before {
                 border: 2px solid $white;
                 background: $sky-blue;
             }
@@ -89,7 +89,7 @@
         width: 100%;
         height: 100%;
 
-        &--theme-button {
+        &--button {
             padding: 10px 15px 10px 45px;
             width: 100%;
             height: 100%;

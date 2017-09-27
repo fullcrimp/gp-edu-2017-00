@@ -3,7 +3,7 @@ let showMoon = document.querySelector('.button__moon-switch');
 let hideMoon = document.querySelector('.moon__button');
 
 let moonSwitch = function() {
-    moon.classList.toggle('toggled');
+    moon.classList.toggle('moon-wraper--toggled');
     document.body.classList.toggle('scroll-hander');
 }    
 

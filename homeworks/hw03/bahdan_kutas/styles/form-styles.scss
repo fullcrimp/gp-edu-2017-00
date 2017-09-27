@@ -404,6 +404,9 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    &--toggled {
+        display: block;
+    }
 }
 
 .moon {
@@ -451,10 +454,6 @@
     padding: 10px 15px;
     background-color: $bgbutton;
     width: 100%;
-}
-
-.toggled {
-    display: block;
 }
 
 .scroll-hander {

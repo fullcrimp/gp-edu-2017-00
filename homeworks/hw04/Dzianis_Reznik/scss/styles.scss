@@ -1,0 +1,149 @@
+$screen-sm: 480px;
+$screen-md: 720px;
+$black: #000;
+$white: #fff;
+$blue: #00AEEF;
+$grey: #d0d0d0;
+$grey-darker: #566266;
+$grey-darkest: #2B3133;
+$green: #3ea800;
+$ice: #f2f8fa;
+$purple: #562873;
+$purple-light: #f9f7fb;
+$red: #ef383f;
+
+* {
+  box-sizing: border-box;
+}
+.bestbuy-body{
+  background-color: $ice;
+  font-family: 'Open Sans', sans-serif;
+}
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-bottom: $grey solid 1px;
+
+  &__logo {
+    max-height: 60px;
+  }
+
+  &__menu{
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-item{
+    max-height: 60px;
+    font-size: 16px;
+    padding: 5px 15px;
+    color: $purple;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:not(:first-child){
+      border-left: $purple 1px solid;
+    }
+  }
+}
+
+.breadcrumbs{
+  display: flex;
+  margin: 20px;
+
+  &__crumb{
+    color: $blue;
+    text-decoration: none;
+
+    &:not(:last-child)::after{
+      content: ' >';
+    }
+    &:not(:first-child){
+      margin-left: 5px;
+    }
+
+    &--active{
+      color: $black;
+    }
+  }
+}
+
+.card{
+  max-width: 980px;
+  margin: auto;
+  background-color: $white;
+
+  &__section{
+    display: flex;
+    align-items: center;
+
+    &--header{
+      justify-content: space-between;
+      border-bottom: $grey 1px solid;
+    }
+  }
+
+  &__button{
+    margin: 0 30px;
+  }
+
+  &__detail{
+    padding: 0 30px;
+    max-width: 150px;
+
+    &--purple{
+      background-color: $purple-light;
+      color: $purple;
+    }
+    &--link{
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+
+  &__logo{
+    max-height: 60px;
+    margin: 15px 30px;
+  }
+
+  &__description{
+    display: flex;
+    flex-direction: column;
+    color: $grey-darker;
+    font-size: 12px;
+    align-content: center;
+  }
+
+  &__name{
+    font-weight: bold;
+    font-size: 14px;
+    color: $black;
+  }
+}
+
+.go-button{
+  background-color: $green;
+  height: 45px;
+  width: 140px;
+  border: none;
+  border-radius: 50px 50px 50px 50px;
+  color: $white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.totals{
+  margin: 0;
+  border-top: $grey 1px solid;
+
+}

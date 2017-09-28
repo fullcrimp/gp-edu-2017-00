@@ -294,7 +294,7 @@ $purple: #562873;
   &__section {
     margin: auto;
     max-width: 980px;
-    padding: 0 10px 20px 10px;
+    padding: 0 10px 20px;
 
     &--underlined {
       border-bottom: $grey solid 1px;
@@ -324,7 +324,7 @@ $purple: #562873;
   }
 
   &__caption {
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
     display: flex;
     align-items: center;
     color: $purple;
@@ -349,7 +349,7 @@ $purple: #562873;
   }
 
   &__item {
-    margin: 20px 0 0 0;
+    margin: 20px 0 0;
     @media screen and (min-width: $screen-md) {
       &:not(:last-child) {
         margin-right: 30px;

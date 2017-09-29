@@ -4,18 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnCloseMoon = document.getElementById('btnCloseMoon');
     const moonElement = document.getElementById('moonElement');
 
-    function showMoonElement() {
-        moonElement.style.display = 'block';
-        body.style.overflow = 'hidden';
-        body.className = 'overlay';
+    function switchMoonState() {
+        moonElement.classList.toggle('display-block');
+        body.classList.toggle('overflow-hidden');
     }
 
-    function hideMoonElement() {
-        moonElement.style.display = 'none';
-        body.style.overflow = 'visible';
-        body.classList.toggle('overlay');
-    }
-
-    btnShowMoon.addEventListener('click', showMoonElement);
-    btnCloseMoon.addEventListener('click', hideMoonElement);
+    window.addEventListener('click', function(event) {
+        if (event.target === moonElement) {
+            switchMoonState();
+        }
+    });
+    btnShowMoon.addEventListener('click', switchMoonState);
+    btnCloseMoon.addEventListener('click', switchMoonState);
 });

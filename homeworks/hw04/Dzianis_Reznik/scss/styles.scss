@@ -15,10 +15,12 @@ $red: #ef383f;
 * {
   box-sizing: border-box;
 }
-.bestbuy-body{
+
+.bestbuy-body {
   background-color: $ice;
   font-family: 'Open Sans', sans-serif;
 }
+
 .page-header {
   display: flex;
   align-items: center;
@@ -30,12 +32,12 @@ $red: #ef383f;
     max-height: 60px;
   }
 
-  &__menu{
+  &__menu {
     display: flex;
     align-items: center;
   }
 
-  &__menu-item{
+  &__menu-item {
     max-height: 60px;
     font-size: 16px;
     padding: 5px 15px;
@@ -43,48 +45,50 @@ $red: #ef383f;
     font-weight: bold;
     text-decoration: none;
 
-    &:not(:first-child){
+    &:not(:first-child) {
       border-left: $purple 1px solid;
     }
   }
 }
 
-.breadcrumbs{
+.breadcrumbs {
   display: flex;
   margin: 20px;
 
-  &__crumb{
+  &__crumb {
     color: $blue;
     text-decoration: none;
 
-    &:not(:last-child)::after{
+    &:not(:last-child)::after {
       content: ' >';
     }
-    &:not(:first-child){
+
+    &:not(:first-child) {
       margin-left: 5px;
     }
 
-    &--active{
+    &--active {
       color: $black;
     }
   }
 }
+
 .search {
   &__section {
     margin: auto;
     max-width: 980px;
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
     color: $grey-darker;
-
-    @media screen and (max-width: 1010px){
+    @media screen and (max-width: 1010px) {
       margin: 0;
-      padding: 10px 10px;
+      padding: 10px;
     }
 
     &--underlined {
       border-bottom: $grey solid 1px;
     }
-}
+  }
+
   &__caption {
     margin-top: 20px;
     display: flex;
@@ -103,17 +107,18 @@ $red: #ef383f;
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
   }
-  &__note{
+
+  &__note {
     font-size: 14px;
   }
 }
+
 .input-box {
   position: relative;
-  margin: 10px 10px;
+  margin: 10px;
   height: 40px;
   display: inline-block;
-
-  @media screen and (max-width: $screen-md){
+  @media screen and (max-width: $screen-md) {
     width: 100%;
     margin: 10px 0;
   }
@@ -137,7 +142,8 @@ $red: #ef383f;
       padding: 10px 40px 10px 20px;
       color: $grey-darker;
     }
-    &--small{
+
+    &--small {
       font-size: 14px;
       font-weight: 600;
     }
@@ -155,85 +161,94 @@ $red: #ef383f;
     }
   }
 }
-.card{
+
+.card {
   max-width: 980px;
   margin: auto;
   background-color: $white;
   border-bottom: $grey 2px solid;
 
-  &__section{
+  &__section {
     display: flex;
-    padding-right: 30px;
 
-    &--header{
+    &--header {
       align-items: center;
       border-bottom: $grey 1px solid;
     }
-    &--between{
-      justify-content: space-between;
-    }
 
-    @media screen and (max-width: 1010px){
+    &--between {
+      justify-content: space-between;
       padding-right: 30px;
-    }
-    &--column-tablet{
-      @media screen and (max-width: $screen-md){
-        flex-direction: column;
-        align-items: stretch;
+      @media screen and (max-width: $screen-sm) {
         padding-right: 0;
       }
     }
-}
-  &__details{
-    display: flex;
-
-    @media screen and (max-width: $screen-md){
-      padding-right: 30px;
+    @media screen and (max-width: $screen-md) {
+      flex-direction: column;
+      align-items: stretch;
     }
   }
-  &__detail{
+
+  &__details {
+    display: flex;
+    @media screen and (max-width: $screen-md) {
+    }
+    @media screen and (max-width: $screen-sm) {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+  }
+
+  &__detail {
     padding: 15px 0 15px 30px;
     font-size: 10px;
     color: $grey-darker;
 
-    &--purple{
+    &--purple {
       background-color: $purple-light;
       color: $purple;
       width: 123px;
     }
-
-    @media screen and (max-width: $screen-md){
+    @media screen and (max-width: $screen-md) {
       max-width: 120px;
     }
+    @media screen and (max-width: $screen-sm) {
+      width: 50%;
+    }
   }
-  &__detail-title{
 
-    &--purple{
+  &__detail-title {
+    &--purple {
       font-weight: bold;
       color: $purple;
     }
   }
-  &__detail-content{
+
+  &__detail-content {
     margin-top: 6px;
     line-height: 18px;
 
-    &--center{
+    &--center {
       text-align: center;
     }
   }
-  &__strong{
+
+  &__strong {
     display: block;
     font-size: 14px;
     color: $black;
 
-    &--purple{
-      color:$purple;
+    &--purple {
+      color: $purple;
     }
-    &--small{
+
+    &--small {
       font-size: 12px;
     }
   }
-  &__chance{
+
+  &__chance {
     border: $blue 2px solid;
     border-radius: 5px;
     padding: 2px 6px;
@@ -247,16 +262,16 @@ $red: #ef383f;
   }
 }
 
-.brand{
+.brand {
   display: flex;
   align-items: center;
 
-  &__logo{
+  &__logo {
     max-height: 60px;
     margin: 15px 30px;
   }
 
-  &__description{
+  &__description {
     display: flex;
     flex-direction: column;
     color: $grey-darker;
@@ -264,14 +279,14 @@ $red: #ef383f;
     align-content: center;
   }
 
-  &__name{
+  &__name {
     font-weight: bold;
     font-size: 14px;
     color: $black;
   }
 }
 
-.go-button{
+.go-button {
   background-color: $green;
   height: 45px;
   width: 140px;
@@ -283,47 +298,57 @@ $red: #ef383f;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-}
-.link{
-  display: inline-block;
-    position: relative;
 
-    text-decoration: none;
-    color: $blue;
-    text-align: center;
-    font-weight: bold;
-    margin: 0 auto;
-    font-size: 14px;
-    padding-right: 12px;
-
-    &::after{
-      content: '>';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      margin-top: -7px;
+  &--desktop{
+    @media screen and (max-width: $screen-sm) {
+      display: none;
     }
+  }
+  &--mobile{
+    @media screen and (min-width: $screen-sm) {
+      display: none;
+    }
+  }
 }
 
-.totals{
+.link {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: $blue;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto;
+  font-size: 14px;
+  padding-right: 12px;
+
+  &::after {
+    content: '>';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -7px;
+  }
+}
+
+.totals {
   display: inline-block;
   max-width: 320px;
   margin: 0;
   border-top: $grey 1px solid;
   list-style-type: none;
   padding: 15px 0 15px 30px;
-
-  @media screen and (max-width: $screen-md){
+  @media screen and (max-width: $screen-md) {
     max-width: none;
+    padding-right: 30px;
   }
 
-
-
-  &__title{
+  &__title {
     font-weight: bold;
     font-size: 14px;
   }
-  &__item{
+
+  &__item {
     color: $grey-darker;
     font-size: 12px;
     padding-left: 15px;
@@ -331,46 +356,48 @@ $red: #ef383f;
     margin-top: 10px;
     line-height: 16px;
 
-    &--pro::before{
+    &--pro::before {
       content: "\f00c";
       color: $green;
       font-family: FontAwesome;
       position: absolute;
-      left: 0px;
+      left: 0;
     }
-    &--con::before{
+
+    &--con::before {
       content: "\f068";
       color: $red;
       font-family: FontAwesome;
       position: absolute;
-      left: 0px;
+      left: 0;
     }
   }
 }
-.common-link{
+
+.common-link {
   text-decoration: none;
   color: $grey-darker;
 
-  &--blue{
+  &--blue {
     color: $blue;
     font-weight: bold;
   }
-  &:hover{
+
+  &:hover {
     color: $blue;
   }
 }
 
-.addition{
+.addition {
   background-color: $purple-light;
   font-weight: bold;
-  padding: 20px 0px 20px 30px;
-
-  @media screen and (max-width: 1010px){
+  padding: 20px 0 20px 30px;
+  @media screen and (max-width: 1010px) {
     padding-right: 30px;
   }
 }
 
-.next-button{
+.next-button {
   text-align: center;
   display: block;
   margin: 30px auto;

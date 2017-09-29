@@ -73,8 +73,14 @@ $red: #ef383f;
   &__section {
     margin: auto;
     max-width: 980px;
-    padding: 0 0 20px 0;
+    padding: 10px 0 10px 0;
     color: $grey-darker;
+
+    @media screen and (max-width: 1010px){
+      margin: 0;
+      padding: 10px 10px;
+    }
+
     &--underlined {
       border-bottom: $grey solid 1px;
     }
@@ -82,6 +88,7 @@ $red: #ef383f;
   &__caption {
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     color: $purple;
     font-size: 18px;
@@ -95,7 +102,6 @@ $red: #ef383f;
     color: $grey-darkest;
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
-    margin-right: 10px;
   }
   &__note{
     font-size: 14px;
@@ -106,6 +112,11 @@ $red: #ef383f;
   margin: 10px 10px;
   height: 40px;
   display: inline-block;
+
+  @media screen and (max-width: $screen-md){
+    width: 100%;
+    margin: 10px 0;
+  }
 
   &__input {
     height: 100%;
@@ -152,6 +163,7 @@ $red: #ef383f;
 
   &__section{
     display: flex;
+    padding-right: 30px;
 
     &--header{
       align-items: center;
@@ -160,30 +172,41 @@ $red: #ef383f;
     &--between{
       justify-content: space-between;
     }
-  }
 
-  &__button{
-    margin: 0 30px;
-  }
+    @media screen and (max-width: 1010px){
+      padding-right: 30px;
+    }
+    &--column-tablet{
+      @media screen and (max-width: $screen-md){
+        flex-direction: column;
+        align-items: stretch;
+        padding-right: 0;
+      }
+    }
+}
   &__details{
     display: flex;
+
+    @media screen and (max-width: $screen-md){
+      padding-right: 30px;
+    }
   }
   &__detail{
     padding: 15px 0 15px 30px;
     font-size: 10px;
     color: $grey-darker;
-    line-height: 18px;
 
     &--purple{
       background-color: $purple-light;
       color: $purple;
       width: 123px;
     }
-    &--more{
-      margin-right: 30px;
+
+    @media screen and (max-width: $screen-md){
+      max-width: 120px;
     }
   }
-  &__detail-header{
+  &__detail-title{
 
     &--purple{
       font-weight: bold;
@@ -192,6 +215,7 @@ $red: #ef383f;
   }
   &__detail-content{
     margin-top: 6px;
+    line-height: 18px;
 
     &--center{
       text-align: center;
@@ -261,22 +285,41 @@ $red: #ef383f;
   font-weight: bold;
 }
 .link{
+  display: inline-block;
+    position: relative;
+
     text-decoration: none;
     color: $blue;
     text-align: center;
     font-weight: bold;
-    margin: 0;
+    margin: 0 auto;
     font-size: 14px;
+    padding-right: 12px;
+
+    &::after{
+      content: '>';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -7px;
+    }
 }
 
 .totals{
+  display: inline-block;
   max-width: 320px;
   margin: 0;
   border-top: $grey 1px solid;
   list-style-type: none;
   padding: 15px 0 15px 30px;
 
-  &__header{
+  @media screen and (max-width: $screen-md){
+    max-width: none;
+  }
+
+
+
+  &__title{
     font-weight: bold;
     font-size: 14px;
   }
@@ -308,6 +351,10 @@ $red: #ef383f;
   text-decoration: none;
   color: $grey-darker;
 
+  &--blue{
+    color: $blue;
+    font-weight: bold;
+  }
   &:hover{
     color: $blue;
   }
@@ -317,6 +364,10 @@ $red: #ef383f;
   background-color: $purple-light;
   font-weight: bold;
   padding: 20px 0px 20px 30px;
+
+  @media screen and (max-width: 1010px){
+    padding-right: 30px;
+  }
 }
 
 .next-button{

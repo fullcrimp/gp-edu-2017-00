@@ -14,6 +14,8 @@ html, body {
 
 body {
     background-color: $azure;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
     @media screen and (max-width: $medium-screen-width) {
         padding: 0 10px;
     }
@@ -63,6 +65,128 @@ input:valid:not(:placeholder-shown) {
     &:focus {
         box-shadow: 0 2px $gray-light inset;
     }
+
+    &--background {
+        &-green {
+            background-color: $juicy-grass;
+        }
+        &-white {
+            background-color: $white;
+        }
+    }
+
+    &--border {
+        border: 2px solid $deepskyblue;
+    }
+
+    &--shadow {
+        &-none {
+            box-shadow: none;
+        }
+    }
+
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
+    &--color {
+        &-white {
+            color: $white;
+        }
+        &-deepskyblue {
+            color: $deepskyblue;
+        }
+    }
+
+    &--radius {
+        &-30 {
+            border-radius: 30px;
+        }
+    }
+
+    &--font {
+        &-18 {
+            font-size: 18px;
+        }
+        &-16 {
+            font-size: 16px;
+        }
+    }
+
+    &--hover {
+        &-background {
+            &:hover,
+            &:focus {
+                background-color: $juicy-grass-dark;
+            }
+        }
+
+        &-shadow {
+            &:hover,
+            &:focus {
+                box-shadow: 0 0px 3px $deepskyblue;
+            }
+        }
+    }
+}
+
+.link {
+    position: relative;
+    padding: 0 25px 0 20px;
+    font-weight: bold;
+    color: $deepskyblue;
+    text-decoration: none;
+
+    &--badges {
+        &-arrow {
+            &:after {
+                content: "\0349";
+                position: absolute;
+                top: -25px;
+                right: 0;
+                font-size: 35px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &:hover,
+    &:focus {
+        color: $deepskyblue-dark;
+    }
+}
+
+.list-item {
+    position: relative;
+    padding-left: 20px;
+    margin: 10px 0;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 29px;
+        font-weight: bold;
+    }
+
+    &--badge {
+        &-tick {
+            &:before {
+                content: "\031A";
+                top: -19px;
+                color: $juicy-grass;
+                transform: rotate(145deg);
+            }
+        }
+
+        &-dash {
+            &:before {
+                content: "\1428";
+                top: -9px;
+                color: $red;
+            }
+        }
+    }
 }
 
 .page-header {
@@ -101,7 +225,7 @@ input:valid:not(:placeholder-shown) {
         color: $indigo;
         background-color: transparent;
 
-        &-sign-in {
+        &--sign-in {
             padding-right: 40px;
             border-right: 1px solid $indigo;
 
@@ -134,7 +258,6 @@ input:valid:not(:placeholder-shown) {
 
     &__link {
         text-decoration: none;
-        font-family: "Open Sans", sans-serif;
         font-size: 14px;
 
         &--visited {
@@ -158,10 +281,155 @@ input:valid:not(:placeholder-shown) {
     }
 }
 
-.result-item {
-    &__header {
-        &-image {
-            height: 80px;
+.result-unit {
+    max-width: 980px;
+    margin-bottom: 30px;
+    background-color: $white;
+    border-bottom: 1px solid $gray-light;
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+
+        &-link {
+            width: 20%;
+            padding: 15px;
+            text-align: right;
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 25px;
+        border-bottom: 1px solid $gray-light;
+
+        &-description {
+            display: flex;
+            align-items: center;
+
+            &-image {
+                height: 85px;
+                margin: 15px 20px 15px 0;
+            }
+        }
+
+        &--padding {
+            &-0 {
+                padding: 0;
+            }
+
+            &-top {
+                &-15 {
+                    padding-top: 15px;
+                }
+            }
+        }
+
+        &--align-items {
+            &-stretch {
+                align-items: stretch;
+            }
+            &-start {
+                align-items: flex-start;
+            }
+        }
+
+        &--width {
+            &-85 {
+                width: 85%;
+            }
+        }
+
+        &--border {
+            &-none {
+                border: none;
+            }
+        }
+
+    }
+
+    &__info {
+        width: 100%;
+
+        &-title {
+            color: $gray-dark;
+            font-size: 16px;
+
+            &--color {
+                color: $gray;
+            }
+
+            &--font {
+                font-weight: normal;
+                font-size: 13px;
+            }
+        }
+
+        &-description {
+            font-size: 13px;
+            color: $gray;
+
+            &-fee {
+                display: inline-block;
+                width: 100%;
+                font-weight: bold;
+                color: $gray-dark;
+            }
+            &--strong {
+                display: inline-block;
+                width: 100%;
+                color: $gray-dark;
+                font-size: 18px;
+            }
+        }
+
+        &-suggestion {
+            color: $deepskyblue;
+            margin: 4px 0;
+            padding: 3px;
+            text-align: center;
+            border: 2px solid $deepskyblue;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        &-link {
+            text-align: center;
+        }
+
+        &--color {
+            &-indigo {
+                & > * {
+                    color: $indigo;
+                    & > * {
+                        color: $indigo;
+                    }
+                }
+            }
+        }
+
+        &--background {
+            background-color: $indigo-lighter;
+        }
+
+        &--padding {
+            &-15 {
+                padding: 15px;
+            }
+
+            &-left {
+                &-25 {
+                    padding-left: 25px;
+                }
+            }
+
+            &-right {
+                &-25 {
+                    padding-right: 25px;
+                }
+            }
         }
     }
 }

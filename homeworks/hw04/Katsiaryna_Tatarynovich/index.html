@@ -19,8 +19,8 @@
         </div>
         <nav class="header-nav">
             <ul class="header-nav__list">
-                <li class="header-nav__item header-nav__item-sign-in">
-                    <button type="button" name="button-sign-in" class="header-nav__button header-nav__button-sign-in">Sign in</button>
+                <li class="header-nav__item">
+                    <button type="button" name="button-sign-in" class="header-nav__button header-nav__button--sign-in">Sign in</button>
                 </li><!--
                 --><li class="header-nav__item">
                     <button type="button" name="button-retrieve" class="header-nav__button">Retrieve quotes</button>
@@ -38,14 +38,205 @@
             </li>
         </ul>
     </section>
-    <section class="result-item">
-        <div class="result-item__header">
-            <img src="img/credit-card.png" alt="Imade of credit card" class="result-item__header-image">
-            <h3 class="result-item__header-title">Halifax</h3>
-            <p class="result-item__header-text">0% Balance Transfer Free Offer</p>
-            
+    <div class="wrap">
+        <form action="url" method="GET" id="form-filter" class="form-filter">
+            <section class="form-filter__section form-filter__section--intro">
+                <span for="form-filter-price">We've found you <span>32</span> results based on a starting balance of</span>
+                <div class="input-badge input-badge--money">
+                    <input type="number" id="form-filter-price" class="input placeholder" placeholder="" max="1000000" min="0" required />
+                </div><!--
+                --><span>.</span>
+            </section>
+            <section class="form-filter__section form-filter__section--account">
+                <div class="form-unit">
+                    <label for="form-filter-account-type" class="form-unit__label">Account type(s)</label>
+                    <div class="custom-select">
+                        <select id="form-filter-account-type" class="custom-select__element" required>
+                            <option value="" disabled selected hidden>Select</option>
+                            <option value="type1">Account type 1</option>
+                            <option value="type2">Account type 2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="form-filter-specific-account-type" class="custom-checkbox__input" />
+                    <label for="form-filter-specific-account-type" class="custom-checkbox__label">Only show account I can open through MoneySupermarket (<span>5</span>)</label>
+                </div>
+            </section>
+            <section class="form-filter__section form-filter__section--result">
+                <h2 class="filter-title">Filter results by:</h2>
+                <div class="filter-variations">
+                    <div class="filter-variations__element">
+                        <div class="form-unit">
+                            <label class="form-unit__label">Transfer in:</label>
+                            <div class="form-unit__radio">
+                                <div class="form-unit__radio--element">
+                                    <div class="custon-radio">
+                                        <input type="radio" id="filter-by-choice-yes" class="custom-radio__element" name="filter-by-choice" value="yes" required>
+                                        <label for="filter-by-choice-yes" class="custom-radio__label">Yes</label>
+                                    </div>
+                                </div>
+                                <div class="form-unit__radio--element">
+                                    <div class="custon-radio">
+                                        <input type="radio" id="filter-by-choice-no" class="custom-radio__element" name="filter-by-choice" value="no">
+                                        <label for="filter-by-choice-no" class="custom-radio__label">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-variations__element">
+                        <div class="form-unit">
+                            <label class="form-unit__label">Transfer in:</label>
+                            <div class="form-unit__checkbox">
+                                <div class="form-unit__checkbox--element">
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="filter-by-opt-phone" name="filter-by-opt" value="opt-in-phone" class="custom-checkbox__input">
+                                        <label for="filter-by-opt-phone" class="custom-checkbox__label">Opt in phone</label>
+                                    </div>
+                                </div>
+                                <div class="form-unit__checkbox--element">
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" id="filter-by-opt-text" name="filter-by-opt" value="opt-in-text" class="custom-checkbox__input">
+                                        <label for="filter-by-opt-text" class="custom-checkbox__label">Opt in text</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-variations__element">
+                        <div class="form-unit">
+                            <label for="form-filter-account-type-two" class="form-unit__label">Transfer in:</label>
+                            <div class="custom-select">
+                                <select id="form-filter-account-type-two" class="custom-select__element" required>
+                                    <option value="" selected hidden disabled>--Please select--</option>
+                                    <option value="select1">Select type 2</option>
+                                    <option value="select2">Select type 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-variations__element">
+                        <div class="form-unit">
+                            <label for="passwod" class="form-unit__label">Transfer in:</label>
+                            <input type="password" class="form-unit__input placeholder" placeholder="&#183;&#183;&#183;&#183;&#183;&#183;" required >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="form-filter__section form-filter__section--order">
+                <h2 class="filter-title">Order results by:</h2>
+                <div class="custom-select">
+                    <select class="custom-select__element" required>
+                        <option value="" disabled hidden selected>Select</option>
+                        <option value="1">Select type 2</option>
+                        <option value="2">Select type 3</option>
+                    </select>
+                </div>
+            </section>
+            <!-- <button type="submit" name="button"></button> -->
+        </form>
+        <section class="result-unit">
+            <div class="result-unit__item">
+                <div class="result-unit__item-description">
+                    <img src="img/credit-card.png" alt="Imade of credit card" class="result-unit__item-description-image">
+                    <div class="result-unit__info">
+                        <h3 class="result-unit__info-title">Halifax</h3>
+                        <p class="result-unit__info-description">0% Balance Transfer Free Offer</p>
+                    </div>
+                </div>
+                <div class="result-unit__button">
+                    <button class="button button--background-green button--hover-background button--uppercase button--color-white button--radius-30 button--font-18">go to site</button>
+                </div>
+            </div>
+            <div class="result-unit__details">
+                <div class="result-unit__item result-unit__item--padding-0 result-unit__item--align-items-stretch">
+                    <div class="result-unit__info result-unit__info--padding-15 result-unit__info--padding-left-25 result-unit__info--color-indigo result-unit__info--background">
+                        <h4 class="result-unit__info-title result-unit__info-title--color result-unit__info-title--font">Balance transfer</h4>
+                        <p class="result-unit__info-description">
+                            <strong class="result-unit__info-description--strong">0% 41 months</strong> then 18.95%
+                            <span class="result-unit__info-description-fee">0% fee</span>
+                        </p>
+                    </div>
+                    <div class="result-unit__info result-unit__info--padding-15">
+                        <h4 class="result-unit__info-title result-unit__info-title--color result-unit__info-title--font">Purchases</h4>
+                        <p class="result-unit__info-description">
+                            <strong class="result-unit__info-description--strong">0% 6 months</strong> then 18.95%
+                        </p>
+                    </div>
+                    <div class="result-unit__info result-unit__info--padding-15">
+                        <h4 class="result-unit__info-title result-unit__info-title--color result-unit__info-title--font">Rewards</h4>
+                        <p class="result-unit__info-description">
+                            <strong class="result-unit__info-description--strong">No rewards</strong>
+                        </p>
+                    </div>
+                    <div class="result-unit__info result-unit__info--padding-15">
+                        <h4 class="result-unit__info-title result-unit__info-title--color result-unit__info-title--font">Representative APR</h4>
+                        <p class="result-unit__info-description">
+                            <strong class="result-unit__info-description--strong">18.9% APR</strong> variable
+                        </p>
+                    </div>
+                    <div class="result-unit__info result-unit__info--padding-right-25 result-unit__info--padding-15">
+                        <h4 class="result-unit__info-title result-unit__info-title--color result-unit__info-title--font">Chance of approval</h4>
+                        <div class="result-unit__info-suggestion">Will you get this card?</div>
+                        <div class="result-unit__info-link">
+                            <a href="#" class="link link--badges-arrow">Start</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-unit__details-link">
+                    <a href="#" class="link link--badges-arrow">More details</a>
+                </div>
+            </div>
+            <div class="result-unit__item result-unit__item--width-85 result-unit__item--padding-top-15 result-unit__item--align-items-start result-unit__item--border-none">
+                <div class="result-unit__info result-unit__info--padding-right-25">
+                    <h5 class="result-unit__info-title">Great for</h5>
+                    <ul class="result-unit__info-description">
+                        <li class="list-item list-item--badge-tick">Suitable for
+                            first buyers looking to save for the deposit on your first home
+                        </li>
+                        <li class="list-item list-item--badge-tick">Start saving
+                            with a deposit from &#163;1 and pay money in as othen
+                            as you like
+                        </li>
+                        <li class="list-item list-item--badge-tick">Chose between
+                            monthly or annual interest
+                        </li>
+                    </ul>
+                </div>
+                <div class="result-unit__info">
+                    <h5 class="result-unit__info-title">But be aware that</h5>
+                    <ul class="result-unit__info-description">
+                        <li class="list-item list-item--badge-dash">You can
+                            only deposit up to &#163;1,200 in the first month,
+                            and then up to &#163;200 per month thereafter
+                        </li>
+                        <li class="list-item list-item--badge-dash">The Govermant
+                            will give you a 25% tax-free bonus on the money you
+                            put away, subject to eligibility
+                        </li>
+                        <li class="list-item list-item--badge-dash">To view the
+                            Scheme Rules in full, please visit helptobuy.gov.uk/isa
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="result-unit__item result-unit__item--padding-0">
+                <div class="result-unit__info result-unit__info--background result-unit__info--padding-15 result-unit__info--padding-right-25 result-unit__info--padding-left-25">
+                    <p class="result-unit__info-description">
+                        <strong class="result-unit__info-description--strong">Representative Example: If
+                            you spend &#163;1,200 at a purchase interest rate of
+                            18.95% p.a. (variable) your representative rate will be 18.9% APR
+                            (variable).
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="pagination-button">
+            <button class="button button--background-white button--color-deepskyblue button--radius-30 button--font-16 button--border button--shadow-none button--hover-shadow">See the next 20 cards</button>
         </div>
-    </section>
+    </div>
     <script src="js/app.js"></script>
 </body>
 </html>

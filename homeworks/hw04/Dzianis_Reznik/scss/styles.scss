@@ -69,38 +69,157 @@ $red: #ef383f;
     }
   }
 }
+.search {
+  &__section {
+    margin: auto;
+    max-width: 980px;
+    padding: 0 0 20px 0;
+    color: $grey-darker;
+    &--underlined {
+      border-bottom: $grey solid 1px;
+    }
+}
+  &__caption {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    color: $purple;
+    font-size: 18px;
+    font-weight: bold;
+  }
 
+  &__intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: $grey-darkest;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  &__note{
+    font-size: 14px;
+  }
+}
+.input-box {
+  position: relative;
+  margin: 10px 10px;
+  height: 40px;
+  display: inline-block;
+
+  &__input {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 1px 1px 0 $grey;
+    color: $grey;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 20px;
+
+    &--dropdown {
+      width: 100%;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      padding: 10px 40px 10px 20px;
+      color: $grey-darker;
+    }
+    &--small{
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  &--dropdown {
+    &::after {
+      content: "\f078";
+      font-family: FontAwesome;
+      color: $blue;
+      position: absolute;
+      top: 13px;
+      right: 15px;
+      font-size: 12px;
+    }
+  }
+}
 .card{
   max-width: 980px;
   margin: auto;
   background-color: $white;
+  border-bottom: $grey 2px solid;
 
   &__section{
     display: flex;
-    align-items: center;
 
     &--header{
-      justify-content: space-between;
+      align-items: center;
       border-bottom: $grey 1px solid;
+    }
+    &--between{
+      justify-content: space-between;
     }
   }
 
   &__button{
     margin: 0 30px;
   }
-
+  &__details{
+    display: flex;
+  }
   &__detail{
-    padding: 0 30px;
-    max-width: 150px;
+    padding: 15px 0 15px 30px;
+    font-size: 10px;
+    color: $grey-darker;
+    line-height: 18px;
 
     &--purple{
       background-color: $purple-light;
       color: $purple;
+      width: 123px;
     }
-    &--link{
-      text-decoration: none;
-      color: $blue;
+    &--more{
+      margin-right: 30px;
     }
+  }
+  &__detail-header{
+
+    &--purple{
+      font-weight: bold;
+      color: $purple;
+    }
+  }
+  &__detail-content{
+    margin-top: 6px;
+
+    &--center{
+      text-align: center;
+    }
+  }
+  &__strong{
+    display: block;
+    font-size: 14px;
+    color: $black;
+
+    &--purple{
+      color:$purple;
+    }
+    &--small{
+      font-size: 12px;
+    }
+  }
+  &__chance{
+    border: $blue 2px solid;
+    border-radius: 5px;
+    padding: 2px 6px;
+    text-align: center;
+    font-weight: bold;
+    color: $blue;
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 120px;
+    margin-bottom: 10px;
   }
 }
 
@@ -141,9 +260,74 @@ $red: #ef383f;
   align-items: center;
   font-weight: bold;
 }
+.link{
+    text-decoration: none;
+    color: $blue;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    font-size: 14px;
+}
 
 .totals{
+  max-width: 320px;
   margin: 0;
   border-top: $grey 1px solid;
+  list-style-type: none;
+  padding: 15px 0 15px 30px;
 
+  &__header{
+    font-weight: bold;
+    font-size: 14px;
+  }
+  &__item{
+    color: $grey-darker;
+    font-size: 12px;
+    padding-left: 15px;
+    position: relative;
+    margin-top: 10px;
+    line-height: 16px;
+
+    &--pro::before{
+      content: "\f00c";
+      color: $green;
+      font-family: FontAwesome;
+      position: absolute;
+      left: 0px;
+    }
+    &--con::before{
+      content: "\f068";
+      color: $red;
+      font-family: FontAwesome;
+      position: absolute;
+      left: 0px;
+    }
+  }
+}
+.common-link{
+  text-decoration: none;
+  color: $grey-darker;
+
+  &:hover{
+    color: $blue;
+  }
+}
+
+.addition{
+  background-color: $purple-light;
+  font-weight: bold;
+  padding: 20px 0px 20px 30px;
+}
+
+.next-button{
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+  border: $blue 2px solid;
+  background-color: $white;
+  border-radius: 25px;
+  padding: 5px 25px;
+  font-weight: bold;
+  color: $blue;
+  cursor: pointer;
 }

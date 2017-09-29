@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>hw04</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
@@ -21,41 +21,106 @@
       <a class="breadcrumbs__crumb breadcrumbs__crumb--active" href="#">Results</a>
     </div>
     <div class="main">
+      <form class="search">
+        <div class="search__section">
+          <div class="search__intro">
+            <span>We've found 52 cards. You have selected</span>
+            <div class="input-box input-box--dropdown">
+              <select type="number" class="input-box__input input-box__input--dropdown" required>
+                <option value="1">Balance transfer cards</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="search__section search__section--underlined">
+          <span class="search__note">You can also <a href="#" class="link">go back</a> and ammend your personal details</span>
+        </div>
+        <div class="search__section">
+          <div class="search__caption">
+            <span>Order results by:</span>
+            <div class="input-box input-box--dropdown">
+              <select type="number" class="input-box__input input-box__input--dropdown input-box__input--small" required>
+                <option value="1">Balance transfer</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
       <div class="card">
-        <div class="card__section card__section--header">
+        <div class="card__section card__section--header card__section--between">
           <div class="brand">
             <img src="img/card-logo.jpg" alt="logo" class="brand__logo">
             <div class="brand__description">
-              <div class="brand__name">Halifax</div>0% Balance transfer Fee Offer
+              <span class="brand__name">Halifax</span>
+              <span>0% Balance Transfer Fee Offer</span>
             </div>
           </div>
           <div class="card__button">
             <a href="#" class="go-button">GO TO SITE</a>
           </div>
         </div>
-        <div class="card__section">
-          <div class="card__detail card__detail--purple">Lorem ipsum dolor sit amet.</div>
-          <div class="card__detail">Lorem ipsum dolor sit amet.</div>
-          <div class="card__detail">Lorem ipsum dolor sit amet.</div>
-          <div class="card__detail">Lorem ipsum dolor sit amet.</div>
-          <div class="card__detail">Lorem ipsum dolor sit amet.</div>
-          <a class="card__detail card__detail--link" href="#">More details ></a>
+        <div class="card__section card__section--between">
+          <div class="card__details">
+          <div class="card__detail card__detail--purple">
+            <div class="card__detail-header card__detail-header--purple">Balance transfer</div>
+            <div class="card__detail-content">
+              <strong class="card__strong card__strong--purple">0% 41 months</strong>then 18.95%
+              <strong class="card__strong card__strong--purple card__strong--small">0% fee</strong>
+            </div>
+          </div>
+          <div class="card__detail">
+            <div class="card__detail-header">Purchases</div>
+            <div class="card__detail-content">
+              <strong class="card__strong">0% 6 months</strong>then 18.95%
+            </div>
+          </div>
+          <div class="card__detail">
+            <div class="card__detail-header">Rewards</div>
+            <div class="card__detail-content">
+              <strong class="card__strong">No rewards</strong>
+            </div>
+          </div>
+          <div class="card__detail">
+            <div class="card__detail-header">Representative APR</div>
+            <div class="card__detail-content">
+              <strong class="card__strong">18.9% APR</strong>variable
+            </div>
+          </div>
+          <div class="card__detail card__detail">
+            <div class="card__detail-header">Chance of approval</div>
+            <div class="card__detail-content card__detail-content--center">
+              <div class="card__chance">Will you get this card?</div>
+              <a class="link" href="#">Start ></a>
+            </div>
+          </div>
+        </div>
+          <div class="card__detail card__detail--more">
+            <a class="link" href="#">More details ></a>
+          </div>
         </div>
         <div class="card__section">
           <ul class="totals">
-            <li class="totals__header"></li>
-            <li class="totals__item totals__item--pro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolore repudiandae atque iusto voluptates! Sint.</li>
-            <li class="totals__item totals__item--pro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere atque, nobis culpa necessitatibus molestiae nam.</li>
-            <li class="totals__item totals__item--pro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa saepe, deserunt minima assumenda neque voluptates.</li>
+            <li class="totals__header">Great for</li>
+            <li class="totals__item totals__item--pro">Suitable for first time buyers looking to save for the deposit on your first home</li>
+            <li class="totals__item totals__item--pro">Start saving with a deposit from &#163;1 and pay money in as often you like</li>
+            <li class="totals__item totals__item--pro">Choose between monthly or annual interest</li>
           </ul>
           <ul class="totals">
-            <li class="totals__header"></li>
-            <li class="totals__item totals__item--con">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eum eveniet, eaque dignissimos omnis earum.</li>
-            <li class="totals__item totals__item--con">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta voluptatem beatae animi aliquid debitis ipsa!</li>
-            <li class="totals__item totals__item--con">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cum, numquam architecto mollitia quaerat, error?</li>
+            <li class="totals__header">But be aware that</li>
+            <li class="totals__item totals__item--con">You can only deposit up to &#163;1,200 in the first month, and then up to &#163;200 per month thereafter</li>
+            <li class="totals__item totals__item--con">The Government will give you a 25% tax-free bonus on the money you put away, subject to eligibillity</li>
+            <li class="totals__item totals__item--con">To view the Scheme Rules in full, please visit <a href="#" class="common-link">helptobuy.gov.uk/isa</a></li>
           </ul>
+        </div>
+        <div class="addition">
+          Representative Example: If you spend &#163;1,200 at a purchase interest rate of 18.95% p.a. (variable) your representative rate will be 18.9% APR (variable).
         </div>
       </div>
+      <button type="button" class="next-button">See the next 20 cards</button>
     </div>
   </body>
 </html>

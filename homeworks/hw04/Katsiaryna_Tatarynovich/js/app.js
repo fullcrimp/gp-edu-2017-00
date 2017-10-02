@@ -1,19 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const body = document.body;
-    const btnShowMoon = document.getElementById('btnShowMoon');
-    const btnCloseMoon = document.getElementById('btnCloseMoon');
-    const moonElement = document.getElementById('moonElement');
+    const mediumScreenWidth = 720;
+    const detailsWrap = document.getElementById('detailsWrap');
+    const goToSiteLink = document.getElementById('goToSiteLink');
+    const moreDetailsLink = document.getElementById('moreDetailsLink');
 
-    function switchMoonState() {
-        moonElement.classList.toggle('display-block');
-        body.classList.toggle('overflow-hidden');
+    function moveGoToSiteLink() {
+        if (screen.width < mediumScreenWidth) {
+            detailsWrap.insertBefore(goToSiteLink, moreDetailsLink);
+        }
     }
 
-    window.addEventListener('click', function(event) {
-        if (event.target === moonElement) {
-            switchMoonState();
-        }
-    });
-    btnShowMoon.addEventListener('click', switchMoonState);
-    btnCloseMoon.addEventListener('click', switchMoonState);
+    moveGoToSiteLink();
+
 });

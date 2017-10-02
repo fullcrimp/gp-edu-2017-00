@@ -383,27 +383,8 @@ input:valid:not(:placeholder-shown) {
         .button {
             text-decoration: none;
         }
-
-        &--display {
-            &-mobile {
-                @media screen and (min-width: $medium-screen-width) {
-                    display: none;
-                }
-            }
-
-            &-desktop {
-                @media screen and (max-width: $medium-screen-width) {
-                    display: none;
-                }
-            }
-        }
-
-        &--width {
-            &-mobile {
-                &-90 {
-                    width: 90%;
-                }
-            }
+        @media screen and (max-width: $medium-screen-width) {
+            width: 90%;
         }
     }
 

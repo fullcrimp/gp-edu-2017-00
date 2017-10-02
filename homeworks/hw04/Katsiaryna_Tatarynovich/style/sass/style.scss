@@ -69,6 +69,11 @@ input:valid:not(:placeholder-shown) {
         border-radius: 30px;
         text-transform: uppercase;
         font-size: 18px;
+        @media screen and (max-width: $medium-screen-width) {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
 
         &:hover,
         &:focus {
@@ -99,9 +104,9 @@ input:valid:not(:placeholder-shown) {
     text-decoration: none;
 
     &--badges {
-    padding: 0 25px 0 20px;
-    @media screen and (max-width: $large-screen-width) {
-        padding-left: 0;
+    padding: 0 25px 0 0;
+    @media screen and (max-width: $medium-screen-width) {
+        padding-left: 20px;
     }
 
         &-arrow {
@@ -184,7 +189,7 @@ input:valid:not(:placeholder-shown) {
 
     &__button {
         position: relative;
-        padding: 5px 15px;
+        padding: 5px 0 5px 10px;
         font-family: "Open Sans", sans-serif;
         font-size: 14px;
         font-weight: bold;
@@ -192,7 +197,7 @@ input:valid:not(:placeholder-shown) {
         background-color: transparent;
 
         &--sign-in {
-            padding-right: 40px;
+            padding-right: 33px;
             border-right: 1px solid $indigo;
 
             &:after {
@@ -200,7 +205,7 @@ input:valid:not(:placeholder-shown) {
                 font-family: "FontAwesome";
                 position: absolute;
                 top: 5px;
-                right: 15px;
+                right: 9px;
                 font-size: 22px;
             }
         }
@@ -260,16 +265,103 @@ input:valid:not(:placeholder-shown) {
         width: 85%;
         padding: 25px 25px 0 25px;
         @media screen and (max-width: $large-screen-width) {
+            width: 80%;
+        }
+        @media screen and (max-width: $medium-screen-width) {
+            flex-wrap: wrap;
             width: 100%;
+            padding: 25px 15px 0 15px;
+        }
+    }
+
+    &__description {
+        font-size: 13px;
+        color: $gray;
+
+        &-fee {
+            display: inline-block;
+            width: 100%;
+            font-weight: bold;
+            color: $gray-dark;
+        }
+        &--strong {
+            display: inline-block;
+            width: 100%;
+            color: $gray-dark;
+            font-size: 18px;
         }
     }
 
     &__details {
         display: flex;
         justify-content: space-between;
-        @media screen and (max-width: $large-screen-width) {
+        @media screen and (max-width: $medium-screen-width) {
             flex-direction: column;
             align-items: center;
+        }
+
+        &-items {
+            display: flex;
+            align-items: stretch;
+            padding: 0;
+            border-bottom: 1px solid $gray-light;
+            @media screen and (max-width: $medium-screen-width) {
+                flex-wrap: wrap;
+                border-bottom: 0;
+            }
+        }
+
+        &-item {
+            width: 100%;
+            padding: 15px;
+            @media screen and (max-width: $medium-screen-width) {
+                width: 50%;
+            }
+
+            &--color {
+                &-indigo {
+                    & > * {
+                        color: $indigo;
+                        & > * {
+                            color: $indigo;
+                        }
+                    }
+                }
+            }
+
+            &--background {
+                background-color: $indigo-lighter;
+            }
+
+            &--padding {
+                &-left {
+                    &-md {
+                        &-25 {
+                            @media screen and (min-width: $medium-screen-width) {
+                                padding-left: 25px;
+                            }
+                        }
+                    }
+                }
+
+                &-right {
+                    &-md {
+                        &-25 {
+                            @media screen and (min-width: $medium-screen-width) {
+                                padding-right: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &--mobile {
+                @media screen and (max-width: $medium-screen-width) {
+                    width: 100%;
+                    text-align: center;
+                    border-top: 1px solid $gray-light;
+                }
+            }
         }
 
         &-link {
@@ -277,6 +369,9 @@ input:valid:not(:placeholder-shown) {
             padding: 15px;
             text-align: right;
             @media screen and (max-width: $large-screen-width) {
+                width: 35%;
+            }
+            @media screen and (max-width: $medium-screen-width) {
                 width: 100%;
                 text-align: center;
                 border-bottom: 1px solid $gray-light;
@@ -288,6 +383,42 @@ input:valid:not(:placeholder-shown) {
         .button {
             text-decoration: none;
         }
+
+        &--display {
+            &-mobile {
+                @media screen and (min-width: $medium-screen-width) {
+                    display: none;
+                }
+            }
+
+            &-desktop {
+                @media screen and (max-width: $medium-screen-width) {
+                    display: none;
+                }
+            }
+        }
+
+        &--width {
+            &-mobile {
+                &-90 {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    &__title {
+        color: $gray-dark;
+        font-size: 16px;
+
+        &--color {
+            color: $gray;
+        }
+
+        &--font {
+            font-weight: normal;
+            font-size: 13px;
+        }
     }
 
     &__item {
@@ -296,6 +427,9 @@ input:valid:not(:placeholder-shown) {
         align-items: center;
         padding: 0 25px;
         border-bottom: 1px solid $gray-light;
+        @media screen and (max-width: $medium-screen-width) {
+            padding: 0 15px;
+        }
 
         &-description {
             display: flex;
@@ -345,38 +479,6 @@ input:valid:not(:placeholder-shown) {
     &__info {
         width: 100%;
 
-        &-title {
-            color: $gray-dark;
-            font-size: 16px;
-
-            &--color {
-                color: $gray;
-            }
-
-            &--font {
-                font-weight: normal;
-                font-size: 13px;
-            }
-        }
-
-        &-description {
-            font-size: 13px;
-            color: $gray;
-
-            &-fee {
-                display: inline-block;
-                width: 100%;
-                font-weight: bold;
-                color: $gray-dark;
-            }
-            &--strong {
-                display: inline-block;
-                width: 100%;
-                color: $gray-dark;
-                font-size: 18px;
-            }
-        }
-
         &-suggestion {
             color: $deepskyblue;
             margin: 4px 0;
@@ -385,6 +487,11 @@ input:valid:not(:placeholder-shown) {
             border: 2px solid $deepskyblue;
             border-radius: 3px;
             font-weight: bold;
+            @media screen and (max-width: $medium-screen-width) {
+                color: $juicy-grass;
+                font-size: 18px;
+                border: none;
+            }
         }
 
         &-link {
@@ -394,21 +501,9 @@ input:valid:not(:placeholder-shown) {
         &-example {
             padding: 15px 25px;
             background-color: $indigo-lighter;
-        }
-
-        &--color {
-            &-indigo {
-                & > * {
-                    color: $indigo;
-                    & > * {
-                        color: $indigo;
-                    }
-                }
+            @media screen and (max-width: $medium-screen-width) {
+                padding: 15px;
             }
-        }
-
-        &--background {
-            background-color: $indigo-lighter;
         }
 
         &--padding {
@@ -434,13 +529,13 @@ input:valid:not(:placeholder-shown) {
 .wrap {
     max-width: 980px;
     margin: 0 auto;
-    @media screen and (max-width: $large-screen-width) {
-        padding: 0 10px;
-    }
 }
 
 .form-filter {
     margin: 10px 0;
+    @media screen and (max-width: $large-screen-width) {
+        padding: 0 10px;
+    }
 
     &__section {
 

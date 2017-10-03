@@ -562,7 +562,7 @@ body {
         &--checked {
             background-color: $sky-blue;
         }
-        &--next {
+        &--inactive {
             background-color: $border-grey;
         }
 
@@ -619,8 +619,10 @@ body {
 
         }
 
-        &--next {
+        &--inactive {
             background-color: $border-grey;
+            pointer-events: none;
+            cursor: default;
         }
 
         &--current {
@@ -649,6 +651,10 @@ body {
         right: 50%;
         transform: translate(50%, 0);
         margin-bottom: 10px;
+
+        &--current {
+            color: $purple;
+        }
 
         &--checked {
             text-decoration: underline;

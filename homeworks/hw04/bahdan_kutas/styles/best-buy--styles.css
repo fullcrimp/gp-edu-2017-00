@@ -586,7 +586,7 @@ body {
   background-color: #00adef;
 }
 
-.pagination__stage--next {
+.pagination__stage--inactive {
   background-color: #d0d0d0;
 }
 
@@ -647,8 +647,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.pagination__link--next {
+.pagination__link--inactive {
   background-color: #d0d0d0;
+  pointer-events: none;
+  cursor: default;
 }
 
 .pagination__link--current {
@@ -676,6 +678,10 @@ body {
   right: 50%;
   transform: translate(50%, 0);
   margin-bottom: 10px;
+}
+
+.pagination__text--current {
+  color: #562873;
 }
 
 .pagination__text--checked {

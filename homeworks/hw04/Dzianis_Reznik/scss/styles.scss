@@ -433,14 +433,26 @@ $red: #ef383f;
 .pagination{
   padding: 0 100px;
   display: flex;
+  justify-content: center;
   margin: auto;
+  flex-wrap: wrap;
   max-width: 950px;
+  @media screen and (max-width: $screen-sm){
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0 30px;
+  }
   &__line {
     display: block;
     background-color: $grey;
+    margin-bottom: 75px;
     height: 2px;
-    width: 33.3333333%;
+    width: 33.33%;
+    min-width: 220px;
     position: relative;
+    @media screen and (max-width: 880px){
+      min-width: auto;
+    }
 
     &--completed{
       background-color: $blue;
@@ -471,6 +483,7 @@ $red: #ef383f;
         height: 30px;
         background-color: $blue;
         border-radius: 50%;
+        position: absolute;
         font-family: FontAwesome;
       }
     }
@@ -481,7 +494,6 @@ $red: #ef383f;
         display: block;
         width: 22px;
         height: 22px;
-        z-index: 100;
         top: 2px;
         left: 2px;
         position: absolute;
@@ -495,14 +507,22 @@ $red: #ef383f;
     }
   }
   &__title{
-    width: 200px;
-    left: -100px;
+    width: 160px;
+    left: -80px;
     top:20px;
     position: absolute;
     text-align: center;
     font-size: 20px;
     font-weight: 600;
     color: $grey;
+    @media screen and (max-width: 880px){
+      width: 100px;
+      font-size: 18px;
+      left: -50px;
+    }
+    @media screen and (max-width: $screen-sm){
+      display: none;
+    }
 
     &--completed{
       color: $blue;
@@ -513,7 +533,10 @@ $red: #ef383f;
     }
     &--last{
       left:auto;
-      right: -100px;
+      right: -80px;
+      @media screen and (max-width: 880px){
+        right: -50px;
+      }
     }
   }
 }

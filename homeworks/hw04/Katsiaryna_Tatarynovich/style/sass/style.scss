@@ -1068,6 +1068,115 @@ input:valid:not(:placeholder-shown) {
 .pagination {
     display: flex;
     justify-content: center;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__list-item {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+}
+
+.pagination-link {
+    display: inline-block;
+    height: 100%;
+    text-decoration: none;
+    color: $gray-light;
+    font-weight: bold;
+    text-align: center;
+
+    &__badge {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+
+        &:after {
+            content: attr(data-stage);
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background-color: $gray-light;
+            color: $white;
+            line-height: 2.08;
+        }
+    }
+
+    &--current {
+        color: $indigo;
+    }
+
+    &--available {
+        color: $deepskyblue;
+    }
+
+    &__badge {
+        .pagination-link--current & {
+            position: relative;
+
+            &:after {
+                background-color: $indigo;
+            }
+
+            &:before {
+                content: "";
+                width: 22px;
+                height: 22px;
+                position: absolute;
+                border: 2px solid $white;
+                border-radius: 50%;
+                top: 2px;
+                right: 34%;
+            }
+        }
+    }
+
+    &__badge {
+        .pagination-link--available & {
+            &:after {
+                content: "\031A";
+                transform: rotate(145deg);
+                background-color: $deepskyblue;
+                font-size: 26px;
+                line-height: 1.9;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                border-top: 2px solid $deepskyblue;
+                top: 15px;
+            }
+        }
+    }
+
+    &__caption {
+        .pagination-link--available & {
+            text-decoration: underline;
+        }
+    }
+
+    &--disable {
+        cursor: not-allowed;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            border-top: 2px solid $gray-light;
+            top: 15px;
+            right: 50%;
+            z-index: -2;
+        }
+    }
 }
 
 .display-block {

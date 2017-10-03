@@ -97,12 +97,13 @@ input:valid:not(:placeholder-shown) {
 
 .link {
     position: relative;
-    padding: 0 25px 0 20px;
     font-weight: bold;
     color: $deepskyblue;
     text-decoration: none;
 
     &--badges {
+    padding: 0 25px 0 20px;
+
         &-arrow {
             &:after {
                 content: "\0349";
@@ -263,6 +264,12 @@ input:valid:not(:placeholder-shown) {
         }
     }
 
+    &__link {
+        .button {
+            text-decoration: none;
+        }
+    }
+
     &__item {
         display: flex;
         justify-content: space-between;
@@ -364,6 +371,11 @@ input:valid:not(:placeholder-shown) {
             text-align: center;
         }
 
+        &-example {
+            padding: 15px 25px;
+            background-color: $indigo-lighter;
+        }
+
         &--color {
             &-indigo {
                 & > * {
@@ -400,18 +412,23 @@ input:valid:not(:placeholder-shown) {
 }
 
 .wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 .form-filter {
     margin: 10px 0;
 
     &__section {
-        margin: 10px;
+
+        &-text {
+            margin: 10px 0;
+            font-size: 13px;
+            color: $gray;
+        }
 
         &-intro {
+            margin: 10px 0;
             color: $gray;
             font-size: 20px;
             line-height: 1.4;
@@ -424,7 +441,7 @@ input:valid:not(:placeholder-shown) {
             display: flex;
             flex-wrap: wrap;
             align-items: flex-end;
-            margin-bottom: 20px;
+            margin: 10px 0 20px 0;
 
             .form-unit {
                 @media screen and (max-width: $small-screen-width) {
@@ -440,8 +457,15 @@ input:valid:not(:placeholder-shown) {
             }
         }
 
+        &-result {
+            margin: 10px 0;
+        }
+
         &-order {
             display: flex;
+            margin: 25px 0;
+            padding-top: 20px;
+            border-top: 1px solid $gray-light;
             @media screen and (max-width: $small-screen-width) {
                 flex-wrap: wrap;
             }
@@ -615,6 +639,7 @@ input:valid:not(:placeholder-shown) {
 .custom-select {
     position: relative;
     display: inline-block;
+    margin: 0 10px;
     @media screen and (max-width: $large-screen-width) {
         width: 100%;
     }
@@ -755,12 +780,10 @@ input:valid:not(:placeholder-shown) {
 .filter-variations {
     display: flex;
     margin-bottom: 20px;
-    padding-bottom: 20px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 1px solid $gray-light;
 
     &__element {
         width: 25%;
@@ -940,6 +963,11 @@ input:valid:not(:placeholder-shown) {
             }
         }
     }
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
 }
 
 .display-block {

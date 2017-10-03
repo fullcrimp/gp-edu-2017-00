@@ -234,7 +234,7 @@ body {
   background-color: white;
 }
 
-.card__general {
+.card__specs {
   display: flex;
   flex-flow: row wrap;
 }
@@ -254,16 +254,18 @@ body {
 .card__note, .card__type, .card__taxes {
   font-size: 10px;
   margin-bottom: 5px;
-  color: #949899;
   line-height: 10px;
 }
 
-.card__note--first, .card__type--first, .card__taxes--first {
-  color: #562873;
-  font-weight: bold;
+.card__offer {
+  color: #000000;
 }
 
-.card__note--first {
+.card__offer--fc-purple {
+  color: #562873;
+}
+
+.card__note--fw-normal {
   font-weight: normal;
 }
 
@@ -366,6 +368,7 @@ body {
   flex-flow: column wrap;
   max-width: 190px;
   padding: 20px 15px 20px 15px;
+  color: #949899;
 }
 
 @media screen and (min-width: 480px) {
@@ -413,6 +416,7 @@ body {
   background-color: #f9f7fb;
   color: #562873;
   max-width: 128px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 480px) {
@@ -491,7 +495,7 @@ body {
 .card__list-item--advantage:before {
   font-family: 'FontAwesome';
   content: '\f00c';
-  color: #3ea800;
+  color: #3fa800;
   position: absolute;
   left: 0px;
   top: 5px;
@@ -519,7 +523,7 @@ body {
   font-size: 16px;
   font-weight: bold;
   padding: 10px 20px;
-  background: #3ea800;
+  background: #3fa800;
   box-shadow: 0px 2px 1px 0px grey;
   color: white;
   font-family: "Open Sans";

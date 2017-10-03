@@ -1068,13 +1068,14 @@ input:valid:not(:placeholder-shown) {
 .pagination {
     display: flex;
     justify-content: center;
+}
 
-    &__list {
-        display: flex;
-        width: 100%;
-    }
+.pagination-list {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
 
-    &__list-item {
+    &__item {
         width: 100%;
         text-align: center;
         position: relative;
@@ -1103,11 +1104,10 @@ input:valid:not(:placeholder-shown) {
             border-radius: 50%;
             background-color: $gray-light;
             color: $white;
-            line-height: 2.08;
+            font-weight: bold;
+            line-height: 2.1;
         }
-    }
 
-    &__badge {
         .pagination-link--current & {
             position: relative;
 
@@ -1126,22 +1126,21 @@ input:valid:not(:placeholder-shown) {
                 right: 2px;
             }
         }
-    }
 
-    &__badge {
         .pagination-link--available & {
             &:after {
                 content: "\f00c";
                 font-family: "FontAwesome";
                 background-color: $deepskyblue;
                 font-weight: normal;
+                line-height: 2.2;
             }
 
             &:before {
                 content: "";
                 position: absolute;
                 width: 100%;
-                border-top: 2px solid $deepskyblue;
+                border-top: 1px solid $deepskyblue;
                 top: 20px;
                 z-index: -1;
             }
@@ -1173,7 +1172,7 @@ input:valid:not(:placeholder-shown) {
             content: "";
             position: absolute;
             width: 100%;
-            border-top: 2px solid $gray-light;
+            border-top: 1px solid $gray-light;
             top: 20px;
             right: 50%;
             z-index: -2;

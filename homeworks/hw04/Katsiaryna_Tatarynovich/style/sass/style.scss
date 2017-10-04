@@ -1127,6 +1127,12 @@ input:valid:not(:placeholder-shown) {
             }
         }
 
+        // .pagination-link--available:hover {
+        //     &:after {
+        //         background-color: $deepskyblue-dark;
+        //     }
+        // }
+
         .pagination-link--available & {
             &:after {
                 content: "\f00c";
@@ -1144,6 +1150,12 @@ input:valid:not(:placeholder-shown) {
                 top: 20px;
                 z-index: -1;
             }
+
+            // &:hover {
+            //     &:after {
+            //         background-color: $deepskyblue-dark;
+            //     }
+            // }
         }
     }
 
@@ -1163,6 +1175,16 @@ input:valid:not(:placeholder-shown) {
 
     &--available {
         color: $deepskyblue;
+
+        &:hover {
+            color: $deepskyblue-dark;
+
+            .pagination-link__badge {
+                &:after {
+                    background-color: $deepskyblue-dark;
+                }
+            }
+        }
     }
 
     &--disable {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="cardApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="style/css/style.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <script src="node_modules/angular/angular.js"></script>
     <script src="https://use.fontawesome.com/e331dce35e.js" async></script>
+    <script src="app.js"></script>
+    <script src="app/cards/cardModule.js"></script>
+    <script src="app/cards/cardComponent.js"></script>
 </head>
 <body>
     <header class="page-header">
@@ -89,106 +93,7 @@
                 </div>
             </section>
         </form>
-        <section class="result-unit">
-            <div class="result-unit__header">
-                <div class="result-unit__header-description">
-                    <img src="img/credit-card.png" alt="Imade of credit card" class="result-unit__header-description-image">
-                    <div class="result-unit__info">
-                        <h3 class="result-unit__title">Halifax</h3>
-                        <p class="result-unit__description">0% Balance Transfer Free Offer</p>
-                    </div>
-                </div>
-                <div class="result-unit__link result-unit__link--display-desktop">
-                    <a class="button button--green" href="#">go to site</a>
-                </div>
-            </div>
-            <div class="result-unit__details">
-                <div class="result-unit__details-items">
-                    <div class="result-unit__details-item result-unit__details-item--padding-left-md-25 result-unit__details-item--color-indigo result-unit__details-item--background">
-                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Balance transfer</h4>
-                        <p class="result-unit__description">
-                            <strong class="result-unit__description--strong">0% 41 months</strong> then 18.95%
-                            <span class="result-unit__description-fee">0% fee</span>
-                        </p>
-                    </div>
-                    <div class="result-unit__details-item">
-                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Purchases</h4>
-                        <p class="result-unit__description">
-                            <strong class="result-unit__description--strong">0% 6 months</strong> then 18.95%
-                        </p>
-                    </div>
-                    <div class="result-unit__details-item">
-                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Rewards</h4>
-                        <p class="result-unit__description">
-                            <strong class="result-unit__description--strong">No rewards</strong>
-                        </p>
-                    </div>
-                    <div class="result-unit__details-item">
-                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Representative APR</h4>
-                        <p class="result-unit__description">
-                            <strong class="result-unit__description--strong">18.9% APR</strong> variable
-                        </p>
-                    </div>
-                    <div class="result-unit__details-item result-unit__details-item--mobile result-unit__details-item--padding-right-md-25">
-                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Chance of approval</h4>
-                        <div class="result-unit__info-suggestion">Will you get this card?</div>
-                        <div class="result-unit__info-link">
-                            <a href="#" class="link link--arrow">Start</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-unit__link result-unit__link--display-mobile result-unit__link--width-mobile-90">
-                    <a class="button button--green" href="#">go to site</a>
-                </div>
-                <div class="result-unit__details-link">
-                    <a href="#" class="link link--arrow">More details</a>
-                </div>
-            </div>
-            <div class="result-unit__compare">
-                <div class="result-unit__info result-unit__info--padding-right-25">
-                    <h5 class="result-unit__title">Great for</h5>
-                    <ul class="result-unit__description">
-                        <li class="list-item list-item--tick">Suitable for
-                            first buyers looking to save for the deposit on your first home
-                        </li>
-                        <li class="list-item list-item--tick">Start saving
-                            with a deposit from &#163;1 and pay money in as othen
-                            as you like
-                        </li>
-                        <li class="list-item list-item--tick">Chose between
-                            monthly or annual interest
-                        </li>
-                    </ul>
-                </div>
-                <div class="result-unit__info">
-                    <h5 class="result-unit__title">But be aware that</h5>
-                    <ul class="result-unit__description">
-                        <li class="list-item list-item--dash">You can
-                            only deposit up to &#163;1,200 in the first month,
-                            and then up to &#163;200 per month thereafter
-                        </li>
-                        <li class="list-item list-item--dash">The Govermant
-                            will give you a 25% tax-free bonus on the money you
-                            put away, subject to eligibility
-                        </li>
-                        <li class="list-item list-item--dash">To view the
-                            Scheme Rules in full, please visit helptobuy.gov.uk/isa
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="result-unit__item result-unit__item--padding-0">
-                <div class="result-unit__info-example">
-                    <p class="result-unit__description result-unit__description--strong">
-                        <strong>Representative Example: If
-                            you spend &#163;1,200 at a purchase interest rate of
-                            18.95% p.a. (variable) your representative rate will be 18.9% APR
-                            (variable).
-                        </strong>
-                    </p>
-                </div>
-            </div>
-        </section>
+        <card></card>
         <div class="pagination">
             <button class="button button--deepskyblue">See the next 20 cards</button>
         </div>

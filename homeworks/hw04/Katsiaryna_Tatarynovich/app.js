@@ -1,0 +1,3 @@
+angular.module('cardApp', [
+    'card'
+]);

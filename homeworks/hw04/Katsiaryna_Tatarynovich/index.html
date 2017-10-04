@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="cardApp">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="style/css/style.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <script src="node_modules/angular/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.js"></script>
     <script src="https://use.fontawesome.com/e331dce35e.js" async></script>
-    <script src="app.js"></script>
-    <script src="app/cards/cardModule.js"></script>
-    <script src="app/cards/cardComponent.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/components/cards/cardModule.js"></script>
+    <script src="app/components/cards/cardComponent.js"></script>
+    <script src="app/directives/valueInputValidatorDirective.js"></script>
 </head>
 <body>
     <header class="page-header">
@@ -68,8 +70,27 @@
                 </a>
             </div>
         </div>
-        <form action="url" method="GET" id="form-filter" class="form-filter">
+        <form action="url" method="GET" id="form-filter" class="form-filter" name="formFilter">
             <section class="form-filter__section-intro">
+                <span for="form-filter-price">We've found you <span>32</span> results based on a starting balance of</span>
+                <div class="input-badge input-badge--money">
+                    <input
+                        type="number"
+                        id="form-filter-price"
+                        name="priceField"
+                        data-ng-model="valueInputValidator"
+                        data-value-input-validator="0"
+                        data-min-value = "0"
+                        class="input placeholder"
+                        placeholder=""
+                        required />
+                </div><!--
+                --><span>.</span>
+                <ul class="error-msgs" ng-messages="formFilter.priceField.$error">
+                	<li ng-message="minValueValidator">Your price has to be more than 0</li>
+                </ul>
+            </section>
+            <!-- <section class="form-filter__section-intro">
                 <span class="filter-text">We've found you <span>32</span> cards. You have selected</span>
                 <div class="custom-select custom-select--margin-screen-m-top">
                     <select id="form-filter-account-type-two" class="custom-select__element" required>
@@ -78,7 +99,7 @@
                         <option value="select2">Select type 3</option>
                     </select>
                 </div>
-            </section>
+            </section> -->
             <section class="form-filter__section-text">
                 <p>You can also <a href="#" class="link">go back</a> and amend your personal details</p>
             </section>
@@ -92,6 +113,7 @@
                     </select>
                 </div>
             </section>
+            <button type="submit" name="button">submit</button>
         </form>
         <card></card>
         <div class="pagination">

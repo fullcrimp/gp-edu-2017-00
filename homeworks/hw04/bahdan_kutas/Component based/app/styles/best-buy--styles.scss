@@ -232,6 +232,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+
     &__pagination {
         max-width: 980px;
         width: 100%;
@@ -244,8 +245,10 @@ body {
         }
         
     }
+
     &__card-wraper {
         max-width: 980px;
+        margin-bottom: 20px;
     }
 
 }
@@ -528,6 +531,10 @@ body {
     box-shadow: 0px 2px 1px 0px grey;
     color: $white;
     font-family: "Open Sans";
+
+    // &:hover  {
+    //     background-color: lighten( $border-grey, 10%);
+    // }
 }
 
 .link {
@@ -555,6 +562,11 @@ body {
 .pagination {
     display: flex;
     flex-flow: row nowrap;
+
+    &__number {
+        color: $white;
+    }
+
     &__stage {
         width: 33%;
         height: 2px;
@@ -587,6 +599,7 @@ body {
     }
 
     &__link {
+        font-weight: bold;
         text-decoration: none;
         text-align: center;
         display: block;
@@ -597,7 +610,13 @@ body {
         position: absolute;
         left: 0;
         top: -13px;
-        color: white;
+
+        &:hover {
+            background-color: lighten( $border-grey, 10%);
+            .pagination__text {
+                color: lighten( $border-grey, 10%);                
+            }
+        }
 
         &--position-last {
             left: -15px;
@@ -607,22 +626,37 @@ body {
             background-color: $sky-blue;
             font-size: 0;
 
+            &:hover {
+                background-color: lighten( $sky-blue, 10%);
+                .pagination__text--checked {
+                    color: lighten( $sky-blue, 10%);                
+                }
+            }
+
             &:after {
                 font-family: 'FontAwesome';
                 font-size: 20px;
                 content: '\f00c';
                 position: absolute;
+                color: white;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-
         }
 
         &--inactive {
             background-color: $border-grey;
             pointer-events: none;
             cursor: default;
+
+            &:hover {
+                background-color: lighten(  $border-grey, 10%);
+                .pagination__text--inactive {
+                    color: lighten( $border-grey, 10%);                
+                }
+            }
+
         }
 
         &--current {
@@ -639,13 +673,22 @@ body {
                 border: 2px solid $white;
                 transform: translate(-50%, -50%);
             }
+                
+            &:hover {
+                background-color: lighten(  $purple, 10%);
+                .pagination__text--current {
+                    color: lighten( $purple, 10%);                
+                }
+            }
         }
+
+
     }
 
     &__text {
         font-size: 14px;
         font-weight: bold;
-        color: #949899;
+        color: $grey;
         position: absolute;
         top: 30px;
         right: 50%;

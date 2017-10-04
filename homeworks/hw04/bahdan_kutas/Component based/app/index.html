@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="moneyApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/best-buy--styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <script src="https://use.fontawesome.com/e331dce35e.js" async></script>
+    <title>Credit Cards</title>
+</head>
+
+<body>
+    <money-header></money-header>
+    <div class="breadcrumbs-wraper">
+        <breadcrumbs></breadcrumbs>
+    </div>
+    <div class="search-wraper">
+        <search-form></search-form>
+    </div>
+    <div class="main">
+        <div class="main__pagination">
+            <pagination></pagination>
+        </div>
+        <card-list></card-list>
+    </div>
+
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="./app.js"></script>
+    <script src="./card-list/card-list.module.js"></script>
+    <script src="./card-list/card-list.component.js"></script>
+    <script src="./pagination/pagination.module.js"></script>
+    <script src="./pagination/pagination.component.js"></script>
+    <script src="./search-form/search-form.module.js"></script>
+    <script src="./search-form/search-form.component.js"></script>
+    <script src="./breadcrumbs/breadcrumbs.module.js"></script>
+    <script src="./breadcrumbs/breadcrumbs.component.js"></script>
+    <script src="./money-header/money-header.module.js"></script>
+    <script src="./money-header/money-header.component.js"></script>
+</body>
+
+</html>

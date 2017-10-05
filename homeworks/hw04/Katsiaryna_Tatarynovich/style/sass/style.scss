@@ -42,8 +42,12 @@ button {
     cursor: pointer;
 }
 
-input:valid:not(:placeholder-shown) {
-    box-shadow: 0 0 8px $green;
+.input.ng-invalid.ng-touched {
+    box-shadow: 0 0 8px $red;
+}
+
+.input.ng-valid.ng-touched {
+    box-shadow: 0 0 8px $juicy-grass;
 }
 
 .button {
@@ -1208,6 +1212,21 @@ input:valid:not(:placeholder-shown) {
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+.error-msgs {
+    font-size: 13px;
+    color: $red;
+    text-align: center;
+
+    &__item {
+        margin: 5px 0;
+
+        &:before {
+            content: '\2981';
+            margin-right: 5px;
+        }
+    }
 }
 
 .placeholder::-webkit-input-placeholder {

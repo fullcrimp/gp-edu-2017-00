@@ -75,19 +75,24 @@
                 <span for="form-filter-price">We've found you <span>32</span> results based on a starting balance of</span>
                 <div class="input-badge input-badge--money">
                     <input
-                        type="number"
                         id="form-filter-price"
+                        type="text"
                         name="priceField"
-                        data-ng-model="valueInputValidator"
-                        data-value-input-validator="0"
+                        data-ng-model="formFilter.data.priceField"
+                        data-value-input-validator
                         data-min-value = "0"
+                        data-max-value = "500000"
+                        data-custom-pattern = "[0-9]"
                         class="input placeholder"
                         placeholder=""
-                        required />
+                        format="currency" />
                 </div><!--
                 --><span>.</span>
                 <ul class="error-msgs" ng-messages="formFilter.priceField.$error">
-                	<li ng-message="minValueValidator">Your price has to be more than 0</li>
+                	<li ng-message="isValueValidator" class="error-msgs__item">Please, write down the price</li>
+                	<li ng-message="minValueValidator" class="error-msgs__item">Your price has to be more than 0</li>
+                	<li ng-message="maxValueValidator" class="error-msgs__item">Your price has to be less than 500000</li>
+                	<li ng-message="patternValueValidator" class="error-msgs__item">Please, write down the price</li>
                 </ul>
             </section>
             <!-- <section class="form-filter__section-intro">

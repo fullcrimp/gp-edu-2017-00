@@ -1,11 +1,9 @@
-'use strict';
+let card = {
+    templateUrl: 'app/components/cards/cardTemplate.html',
+    controller: function cardController($http) {
+        $http.get('app/data/mock.json')
+        .then(response => this.cards = response.data.results);
+    }
+};
 
-angular.
-    module('card').
-    component('card', {
-        templateUrl: 'app/components/cards/cardTemplate.html',
-        controller: function cardController($http) {
-            $http.get('app/data/mock.json')
-            .then(response => this.cards = response.data.results);
-        }
-    });
+export default card;

@@ -1,3 +1,6 @@
-'use strict';
+import component from './cardComponent.js';
 
-angular.module('card', []);
+let card = angular.module('card', [])
+    .component('cardComponent', component).name;
+
+export default card;

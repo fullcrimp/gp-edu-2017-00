@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style/css/style.min.css">
+    <link rel="stylesheet" href="dist/style/style.bundle.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.js"></script>
+    <!-- <script src="node_modules/angular/angular.js"></script> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.js"></script> -->
     <script src="https://use.fontawesome.com/e331dce35e.js" async></script>
-    <script src="app/app.js"></script>
-    <script src="app/components/cards/cardModule.js"></script>
-    <script src="app/components/cards/cardComponent.js"></script>
-    <script src="app/directives/valueInputValidatorDirective.js"></script>
+    <script src="dist/bundle.js"></script>
+    <!-- <script src="app/app.js"></script> -->
+    <!-- <script src="app/components/cards/cardModule.js"></script>
+    <script src="app/components/cards/cardComponent.js"></script> -->
+    <!-- <script src="app/directives/valueInputValidatorDirective.js"></script> -->
+    <!-- <script src="app/directives/minLengthValidatorDirective.js"></script>
+    <script src="app/directives/maxLengthValidatorDirective.js"></script>
+    <script src="app/directives/patternValidatorDirective.js"></script>
+    <script src="app/directives/intervalValidatorDirective.js"></script> -->
 </head>
 <body>
     <header class="page-header">
         <div class="page-header__logo">
             <a href="#" class="page-header__logo-link">
-                <img src="img/logo.png" alt="Money Super Market" class="page-header__logo-img">
+                <img src="app/img/logo.png" alt="Money Super Market" class="page-header__logo-img">
             </a>
         </div>
         <nav class="header-nav">
@@ -71,7 +76,7 @@
             </div>
         </div>
         <form action="url" method="GET" id="form-filter" class="form-filter" name="formFilter">
-            <section class="form-filter__section-intro">
+            <!-- <section class="form-filter__section-intro">
                 <span for="form-filter-price">We've found you <span>32</span> results based on a starting balance of</span>
                 <div class="input-badge input-badge--money">
                     <input
@@ -80,21 +85,22 @@
                         name="priceField"
                         data-ng-model="formFilter.data.priceField"
                         data-value-input-validator
-                        data-min-value = "0"
-                        data-max-value = "500000"
-                        data-custom-pattern = "[0-9]"
+                        data-min-length = "0"
+                        data-max-length = "9"
+                        data-interval = "[0, 70000]"
+                        data-custom-pattern = "(?:\d*\.)?\d+"
                         class="input placeholder"
-                        placeholder=""
+                        value="1000"
                         format="currency" />
                 </div><!--
-                --><span>.</span>
-                <ul class="error-msgs" ng-messages="formFilter.priceField.$error">
-                	<li ng-message="isValueValidator" class="error-msgs__item">Please, write down the price</li>
-                	<li ng-message="minValueValidator" class="error-msgs__item">Your price has to be more than 0</li>
-                	<li ng-message="maxValueValidator" class="error-msgs__item">Your price has to be less than 500000</li>
-                	<li ng-message="patternValueValidator" class="error-msgs__item">Please, write down the price</li>
+                --><!--<span>.</span>
+                <ul class="error-msgs" ng-messages="formFilter.priceField.$error" ng-show="formFilter.priceField.$dirty">
+                	<li ng-message="minLength" class="error-msgs__item">Your price's length has to be more or equal to 0</li>
+                	<li ng-message="maxLength" class="error-msgs__item">Your price's length has to be less or equal to 9</li>
+                	<li ng-message="patternCheck" class="error-msgs__item">Please, write down the price</li>
+                	<li ng-message="intervalCheck" class="error-msgs__item">Please, write down the price from 20 to 70000</li>
                 </ul>
-            </section>
+            </section> -->
             <!-- <section class="form-filter__section-intro">
                 <span class="filter-text">We've found you <span>32</span> cards. You have selected</span>
                 <div class="custom-select custom-select--margin-screen-m-top">

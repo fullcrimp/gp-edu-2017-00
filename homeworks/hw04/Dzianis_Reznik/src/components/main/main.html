@@ -1,0 +1,150 @@
+<div class="bestbuy-body">
+    <div class="page-header">
+        <img class="page-header__logo" src="img/logo.jpg" alt="MoneySuperMarket">
+        <div class="page-header__menu">
+            <a class="page-header__menu-item" href="#">Sign in <i class="fa fa-user-o" aria-hidden="true"></i></a>
+            <a class="page-header__menu-item" href="#">Retrieve quotes</a>
+        </div>
+    </div>
+    <div class="breadcrumbs">
+        <a class="breadcrumbs__crumb" href="#">Credit Cards</a>
+        <a class="breadcrumbs__crumb breadcrumbs__crumb--active" href="#">Results</a>
+    </div>
+    <div class="pagination">
+        <div class="pagination__line pagination__line--completed">
+            <div class="pagination__link">
+                <a href="#" class="pagination__circle pagination__circle--completed">1</a>
+                <a href="#" class="pagination__title pagination__title--completed">Your energy use</a>
+            </div>
+        </div>
+        <div class="pagination__line">
+            <div class="pagination__link">
+                <a href="#" class="pagination__circle pagination__circle--active">2</a>
+                <a href="#" class="pagination__title pagination__title--active">Results</a>
+            </div>
+        </div>
+        <div class="pagination__line">
+            <div class="pagination__link">
+                <a href="#" class="pagination__circle">3</a>
+                <a href="#" class="pagination__title">Switch</a>
+            </div>
+        </div>
+        <div class="pagination__line pagination__line--last">
+            <div class="pagination__link">
+                <a href="#" class="pagination__circle pagination__circle--last">4</a>
+                <a href="#" class="pagination__title pagination__title--last">Thanks</a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+      <form name="form" class="search">
+        <div class="search__section">
+          <div class="search__intro">We've found you 32 results based on a starting balace of
+            <div class="input-box input-box--money">
+              <input name="money" money-filter ng-model="money" min-length="2" max-length="7" range="50,1000000" value="50" class="input-box__input input-box__input--money" required>
+            </div>
+            <ul>
+              <li class="error-msg" ng-show="form.money.$error.range">Enter a value between 50 and 1,000,000</li>
+              <li class="error-msg" ng-show="form.money.$error.minLength">Enter more symbols</li>
+              <li class="error-msg" ng-show="form.money.$error.maxLength">Enter less symbols</li>
+            </ul>
+
+          </div>
+          <div class="inputs">
+            <div class="inputs__item">
+              <h5 class="inputs__title">Account type(s)</h5>
+              <div class="input-box input-box--dropdown">
+                <select name="accounts" id="" class="input-box__input input-box__input--dropdown" required>
+                      <option class="dropdown__option" value="" hidden disabled selected>Select...</option>
+                            <option class="dropdown__option" value="1">Option 1</option>
+                            <option class="dropdown__option" value="2">Option 2</option>
+                            <option class="dropdown__option" value="3">Option 3</option>
+                  </select>
+
+              </div>
+            </div>
+            <div class="inputs__item inputs__item--checkbox-free">
+              <div class="input-box input-box--checkbox-free">
+                <input type="checkbox" id="checkbox-free" class="input-box__input input-box__input--checkbox-free">
+                <label for="checkbox-free" class="input-box__label input-box__label--checkbox-free">Only show accounts I can open through MoneySupermarket (5)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search__section search__section--underlined">
+          <div class="search__caption">Filter results by:</div>
+          <div class="inputs">
+            <div class="inputs__item">
+              <h5 class="inputs__title">Transfer in</h5>
+              <div class="input-box input-box--radio">
+                <input type="radio" name="answer" id="yes" class="input-box__input input-box__input--radio" required>
+                <label for="yes" class="input-box__label input-box__label--radio">Yes</label>
+              </div>
+              <div class="input-box input-box--radio">
+                <input type="radio" name="answer" id="no" class="input-box__input input-box__input--radio">
+                <label for="no" class="input-box__label input-box__label--radio">No</label>
+              </div>
+            </div>
+            <div class="inputs__item">
+              <h5 class="inputs__title">Account opening</h5>
+              <div class="input-box input-box--checkbox">
+                <input type="checkbox" name="phone" id="phone" class="input-box__input input-box__input--checkbox">
+                <label for="phone" class="input-box__label input-box__label--checkbox">Opt in phone</label>
+              </div>
+              <div class="input-wrapper">
+                <div class="input-box input-box--checkbox">
+                  <input type="checkbox" name="text" id="text" class="input-box__input input-box__input--checkbox">
+                  <label for="text" class="input-box__label input-box__label--checkbox">Opt in text</label>
+                </div>
+              </div>
+            </div>
+            <div class="inputs__item">
+              <h5 class="inputs__title">Managing your account</h5>
+              <div class="input-box input-box--dropdown">
+                <select name="accounts" id="" class="input-box__input input-box__input--dropdown" required>
+                  <option class="dropdown__option" value="" hidden disabled selected>Select...</option>
+                        <option class="dropdown__option" value="1">Option 1</option>
+                        <option class="dropdown__option" value="2">Option 2</option>
+                        <option class="dropdown__option" value="3">Option 3</option>
+              </select>
+
+              </div>
+            </div>
+            <div class="inputs__item">
+              <h5 class="inputs__title">Email</h5>
+              <div class="input-wrapper">
+                <div class="input-box">
+                  <input name="email" regexp="/^(([^<>()\[\]\\.,;:\s@&quot;]+(\.[^<>()\[\]\\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/" class="input-box__input" ng-model="email" minlength=8 required>
+                </div>
+                <ul>
+                  <li  class="error-msg"ng-show="form.email.$error.regexp">Not valid email</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <a class="search__link">Show me all available filters</a>
+        </div>
+        <div class="search__section">
+          <div class="search__caption">Order results by:
+            <div class="input-box input-box--dropdown input-box--dropdown-wide">
+              <select name="accounts" id="" class="input-box__input input-box__input--dropdown" required>
+                  <option class="dropdown__option" value="" hidden disabled selected>Select...</option>
+                        <option class="dropdown__option" value="1">Option 1</option>
+                        <option class="dropdown__option" value="2">Option 2</option>
+                        <option class="dropdown__option" value="3">Option 3</option>
+              </select>
+
+            </div>
+          </div>
+        </div>
+        <div class="search__section search__section--underlined">
+            <span class="search__note">You can also</span>
+            <a href="#" class="common-link common-link--blue">go back</a>
+            <span class="search__note">and ammend your personal details</span>
+        </div>
+      </form>
+        <button style="display: none" type="submit" name="button"></button>
+        <card-list></card-list>
+        <button type="button" class="next-button">See the next 20 cards</button>
+    </div>
+</div>

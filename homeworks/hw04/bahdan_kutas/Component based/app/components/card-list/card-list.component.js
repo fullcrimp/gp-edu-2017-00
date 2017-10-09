@@ -7,9 +7,9 @@ class CardListController {
 }
 
 
-let cardListComponent = {
+const cardListComponent = {
     templateUrl: 'components/card-list/card-list.template.html',
-    controller: CardListController
+    controller: CardListController,
 };
 
 export default cardListComponent;

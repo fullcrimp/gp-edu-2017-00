@@ -1,4 +1,4 @@
-let mainComponent = {
+const mainComponent = {
     templateUrl: 'components/main-component/main-component.template.html',
 };
 

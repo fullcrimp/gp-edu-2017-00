@@ -8,12 +8,10 @@ const minLengthValidatorDirective = () => {
             const minLength = attr.minLength;
 
             ngModel.$validators.minLength = (modelValue, viewValue) => {
-                return ngModel.$isEmpty(viewValue) || viewValue.length >= minLength;
+                return ngModel.$isEmpty(modelValue) || modelValue.length >= minLength;
             };
         }
     };
 };
 
-angular
-    .module('app')
-    .directive('minLength', minLengthValidatorDirective);
+export default minLengthValidatorDirective;

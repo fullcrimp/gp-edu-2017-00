@@ -9,12 +9,10 @@ const patternValidatorDirective = () => {
             const regExp = new RegExp(pattern);
 
             ngModel.$validators.patternCheck = (modelValue, viewValue) => {
-                return ngModel.$isEmpty(viewValue) || regExp.test(viewValue);
+                return ngModel.$isEmpty(modelValue) || regExp.test(modelValue);
             };
         }
     };
 };
 
-angular
-    .module('app')
-    .directive('customPattern', patternValidatorDirective);
+export default patternValidatorDirective;

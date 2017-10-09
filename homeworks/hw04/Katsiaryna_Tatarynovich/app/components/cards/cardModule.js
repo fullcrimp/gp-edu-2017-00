@@ -1,6 +1,6 @@
 import component from './cardComponent.js';
 
-let card = angular.module('card', [])
-    .component('cardComponent', component).name;
+const card = angular.module('card', [])
+    .component('card', component).name;
 
 export default card;

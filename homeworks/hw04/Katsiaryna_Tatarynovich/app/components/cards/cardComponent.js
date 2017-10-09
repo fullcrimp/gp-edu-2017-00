@@ -1,4 +1,4 @@
-let card = {
+const card = {
     templateUrl: 'app/components/cards/cardTemplate.html',
     controller: function cardController($http) {
         $http.get('app/data/mock.json')

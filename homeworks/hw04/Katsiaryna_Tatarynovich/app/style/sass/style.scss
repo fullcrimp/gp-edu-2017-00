@@ -1,5 +1,7 @@
 @import 'variables.scss';
 @import '../../components/cards/card.scss';
+@import '../../components/input/myInput.scss';
+@import '../../components/form-filter/formFilter.scss';
 
 * {
     margin: 0;
@@ -41,22 +43,6 @@ select {
 
 button {
     cursor: pointer;
-}
-
-.input.ng-invalid.ng-touched {
-    box-shadow: 0 0 8px $red;
-}
-
-.input.ng-invalid.ng-dirty {
-    box-shadow: 0 0 8px $red;
-}
-
-.input.ng-valid.ng-touched {
-    box-shadow: 0 0 8px $juicy-grass;
-}
-
-.input.ng-valid.ng-dirty.ng-not-empty {
-    box-shadow: 0 0 8px $juicy-grass;
 }
 
 .button {
@@ -264,74 +250,6 @@ button {
     margin: 0 auto;
 }
 
-.form-filter {
-    margin: 10px 0;
-    @media screen and (max-width: $large-screen-width) {
-        padding: 0 10px;
-    }
-
-    &__section-text {
-        margin: 10px 0;
-        font-size: 13px;
-        color: $gray;
-    }
-
-    &__section-intro {
-        margin: 10px 0;
-        color: $gray;
-        font-size: 20px;
-        line-height: 1.4;
-        @media screen and (max-width: $small-screen-width) {
-            margin-bottom: 20px;
-        }
-    }
-
-    &__section-account {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-end;
-        margin: 10px 0 20px 0;
-
-        .form-unit {
-            @media screen and (max-width: $small-screen-width) {
-                width: 100%;
-            }
-        }
-
-        .custom-checkbox {
-            margin-bottom: 10px;
-            @media screen and (max-width: $small-screen-width) {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    &__section-result {
-        margin: 10px 0;
-    }
-
-    &__section-order {
-        display: flex;
-        margin: 25px 0;
-        padding-top: 20px;
-        border-top: 1px solid $gray-light;
-        @media screen and (max-width: $small-screen-width) {
-            flex-wrap: wrap;
-        }
-
-        .filter-title {
-            margin-right: 10px;
-            padding-top: 7px;
-        }
-
-        .custom-select {
-            @media screen and (max-width: $small-screen-width) {
-                margin-top: 15px;
-            }
-        }
-    }
-}
-
 .input-badge {
     display: inline-block;
     position: relative;
@@ -344,140 +262,6 @@ button {
             position: absolute;
             top: 6px;
             left: 20px;
-        }
-    }
-}
-
-.input {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    padding: 6px 15px 6px 40px;
-    background-color: $white;
-    box-shadow: 0 2px $gray-light inset;
-    border-radius: 5px;
-    color: $gray;
-    font-family: "Open Sans", sans-serif;
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-.form-unit {
-    margin-right: 30px;
-    @media screen and (max-width: $small-screen-width) {
-        margin-right: 0;
-    }
-    @media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
-        margin-right: 15px;
-    }
-
-    &__label {
-        display: block;
-        padding-bottom: 10px;
-        color: $gray-dark;
-        font-size: 14px;
-        font-weight: bold;
-        line-height: 1.4;
-        @media screen and (max-width: $large-screen-width) and (min-width: $small-screen-width) {
-            padding-top: 10px;
-        }
-    }
-
-    &__radio {
-        display: flex;
-        @media screen and (max-width: $large-screen-width) {
-            justify-content: space-between;
-        }
-
-        &--margin {
-            margin-right: 5px;
-        }
-
-        &--width {
-            width: 100%;
-        }
-    }
-
-    &__checkbox-element {
-        .custom-checkbox {
-            margin-bottom: 10px;
-
-            @media screen and (max-width: $medium-screen-width) {
-                margin-top: 0;
-            }
-
-            &__label {
-                @media screen and (max-width: $medium-screen-width) {
-                    line-height: 1.4;
-                }
-            }
-            &__input {
-                &:not(checked) {
-                    & + .custom-checkbox {
-                        &__label {
-                            display: inline-block;
-                            width: 100%;
-                            padding: 11px 30px 11px 50px;
-                            background-color: $white;
-                            box-shadow: 0 2px $gray-light;
-                            border-radius: 5px;
-
-                            &:before {
-                                top: 9px;
-                                left: 15px;
-                                background: $white;
-                            }
-
-                            &:after {
-                                top: 16px;
-                                left: 9px;
-                                color: $deepskyblue;
-                            }
-                        }
-                    }
-                }
-
-                &:checked {
-                    & + .custom-checkbox {
-                        &__label {
-                            color: $white;
-                            background-color: $deepskyblue;
-                            box-shadow: 0 2px $deepskyblue-dark inset;
-
-                            &:before {
-                                background-color: $deepskyblue;
-                                border-color: $white;
-                            }
-
-                            &:after {
-                                color: $white;
-                            }
-                        }
-                    }
-                }
-
-                &:focus {
-                    & + .custom-checkbox {
-                        &__label {
-                            box-shadow: 0 0 8px $deepskyblue;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    &__input {
-        padding: 10px 25px 10px 20px;
-        box-shadow: 0 2px $gray-light;
-        border-radius: 5px;
-        color: $gray;
-        font-family: "Open Sans", sans-serif;
-        font-size: 14px;
-        font-weight: bold;
-        line-height: 1.4;
-        @media screen and (max-width: $large-screen-width) {
-            width: 100%;
         }
     }
 }

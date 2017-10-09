@@ -1,0 +1,32 @@
+.input.ng-invalid.ng-touched {
+    box-shadow: 0 0 8px $red;
+}
+
+.input.ng-invalid.ng-dirty {
+    box-shadow: 0 0 8px $red;
+}
+
+.input.ng-valid.ng-touched {
+    box-shadow: 0 0 8px $juicy-grass;
+}
+
+.input.ng-valid.ng-dirty.ng-not-empty {
+    box-shadow: 0 0 8px $juicy-grass;
+}
+
+.input.ng-touched.ng-empty {
+    box-shadow: 0 0 8px $red;
+}
+.input {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 6px 15px 6px 40px;
+    background-color: $white;
+    box-shadow: 0 2px $gray-light inset;
+    border-radius: 5px;
+    color: $gray;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+}

@@ -34853,6 +34853,8 @@ const patternValidatorDirective = () => {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+
+
 const formatInputDirective = $filter => {
     return {
         restrict: 'A',
@@ -34867,18 +34869,15 @@ const formatInputDirective = $filter => {
             };
 
             ngModel.$validators.formatInput = (modelValue, viewValue) => {
-                // console.log('before: model ' + modelValue + ' view ' + viewValue);
                 let priceValue = viewValue;
 
                 if (Number(priceValue)) {
                     console.log('priceValue in if ' + priceValue);
                     priceValue = $filter('number')(Number(priceValue));
                 }
-                // console.log('filterPriceValue ' + filterPriceValue + ' typeof ' + typeof filterPriceValue);
 
                 element.on('focus', () => updateView(modelValue));
                 element.on('blur', () => updateView(priceValue));
-                // console.log('after: model ' + modelValue + ' view ' + viewValue);
 
                 return true;
             };

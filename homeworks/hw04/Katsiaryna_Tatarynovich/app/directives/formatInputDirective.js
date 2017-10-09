@@ -1,3 +1,5 @@
+'use strict';
+
 const formatInputDirective = ($filter) => {
     return {
         restrict: 'A',

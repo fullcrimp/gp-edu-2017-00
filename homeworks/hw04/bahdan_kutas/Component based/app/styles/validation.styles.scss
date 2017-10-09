@@ -13,6 +13,7 @@ form .ng-pristine {
 
 .messages {
     position: relative;
+    
     &__item {
         position: relative;
         &:after {
@@ -24,26 +25,31 @@ form .ng-pristine {
             font-family: $main-ff;
             content: '';
         }
+
         &--min-length {
             &::after {
                 content: 'Min length error!';
             }
         }
+
         &--required {
             &::after {
                 content: 'Fill the fieild please!';
             }
         }
+
         &--max-length {
             &::after {
                 content: 'Max length error!';
             }
         }
+
         &--pattern {
             &::after {
                 content: 'Unacceptable symbols!';
             }
         }
+
         &--range {
             &::after {
                 content: 'Range error!';

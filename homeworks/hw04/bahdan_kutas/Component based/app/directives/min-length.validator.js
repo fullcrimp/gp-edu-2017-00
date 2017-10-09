@@ -4,7 +4,7 @@ let minLengthValidator = () => {
         require: 'ngModel',
         link: (scope, element, attr, ngModel) => {
             ngModel.$validators.minLengthValidator = (modelValue, viewValue) => {
-                if (!ngModel.$touched) {
+                if (ngModel.$pristine) {
                     return true;
                 } else if (viewValue.length >= parseInt(attr.minLengthValidator)) {
                     return true;

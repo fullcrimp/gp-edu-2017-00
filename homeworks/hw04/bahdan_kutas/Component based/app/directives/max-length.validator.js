@@ -4,7 +4,7 @@ let maxLengthValidator = () => {
         require: 'ngModel',
         link: (scope, element, attr, ngModel) => {
             ngModel.$validators.maxLengthValidator = (modelValue, viewValue) => {
-                if (!ngModel.$touched) {
+                if (ngModel.$pristine) {
                     return true;
                 } else if (viewValue.length <= parseInt(attr.maxLengthValidator)) {
                     return true;

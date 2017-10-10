@@ -1,20 +1,20 @@
-function RangeValidator() {
-  return {
-    restrict: 'A',
-    require: 'ngModel',
-    link: function(scope, element, attr, ngModel) {
-      ngModel.$parsers.unshift(function(viewValue) {
-        viewValue = Number(viewValue);
-        ngModel.$setValidity('range', (!(ngModel.$isEmpty(viewValue)) && (viewValue <= Number(attr.range.split(',')[1])) && (viewValue >= Number(attr.range.split(',')[0]))));
+export default class RangeValidator {
+  constructor() {
+    this.restrict = 'A';
+    this.require = 'ngModel';
+    this.link = (scope, element, attr, ngModel) => {
+      ngModel.$parsers.unshift((viewValue) => {
+        viewValue = parseInt(viewValue);
+        ngModel.$setValidity('range', (!(ngModel.$isEmpty(viewValue)) && (viewValue <= parseInt(attr.range.split(
+          ',')[1])) && (viewValue >= parseInt(attr.range.split(',')[0]))));
         return viewValue;
       });
-      ngModel.$formatters.unshift(function(modelValue) {
-        modelValue = Number(modelValue);
-        ngModel.$setValidity('range', (!(ngModel.$isEmpty(modelValue)) && (modelValue <= Number(attr.range.split(',')[1])) && (modelValue >= Number(attr.range.split(',')[0]))));
+      ngModel.$formatters.unshift((modelValue) => {
+        modelValue = parseInt(modelValue);
+        ngModel.$setValidity('range', (!(ngModel.$isEmpty(modelValue)) && (modelValue <= parseInt(attr.range.split(
+          ',')[1])) && (modelValue >= parseInt(attr.range.split(',')[0]))));
         return modelValue;
       });
     }
   }
 }
-
-export default RangeValidator;

@@ -82,6 +82,14 @@
   @media screen and (max-width: $screen-sm) {
     width: 100%;
   }
+  .ng-dirty{
+    &.ng-valid-min-length, &.ng-valid-max-length, &.ng-valid-regexp, &.ng-valid-range{
+      border: 2px green solid;
+    }
+    &.ng-invalid-min-length, &.ng-invalid-max-length, &.ng-invalid-regexp, &.ng-invalid-range{
+      border: 2px red solid;
+    }
+  }
 
   &__label {
     width: 100%;
@@ -716,15 +724,6 @@
             }
         }
     }
-}
-
-.ng-dirty{
-  .ng-valid-min-length, .ng-valid-max-length, .ng-valid-regexp, .ng-valid-range{
-    border: 2px green solid;
-  }
-  .ng-invalid-min-length, .ng-invalid-max-length, .ng-invalid-regexp, .ng-invalid-range{
-    border: 2px red solid;
-  }
 }
 
 .error-msg{

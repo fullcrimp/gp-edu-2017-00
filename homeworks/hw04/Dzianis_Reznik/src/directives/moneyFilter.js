@@ -1,25 +1,24 @@
-function MoneyFilter($filter) {
+export default class MoneyFilter {
+  constructor($filter) {
+    function format(value) {
+      if (value) return $filter('number')(value);
+    }
 
-  function format(value) {
-    if (value) return $filter('number')(value);
-  }
+    function unformat(value) {
+      if (value) return parseInt(value.replace(/,/g, ""));
+    }
 
-  function unformat(value) {
-    if (value) return value.replace(/D/g, '');
-  }
-
-  return {
-    restrict: 'A',
-    require: 'ngModel',
-    link: function(scope, element, attr, ngModel) {
-      element.on('blur', function() {
-        element.val(format(ngModel.$viewValue));
+    this.restrict = 'A';
+    this.require = 'ngModel';
+    this.link = (scope, element, attr, ngModel) => {
+      element.on('blur', () => {
+        ngModel.$setViewValue(format(ngModel.$viewValue));
+        ngModel.$render();
       });
-      element.on('focus', function() {
-        element.val(unformat(ngModel.$viewValue));
-      });
+      element.on('focus', () => {
+        ngModel.$setViewValue(unformat(ngModel.$viewValue));
+        ngModel.$render();
+      })
     }
   }
 }
-
-export default MoneyFilter;

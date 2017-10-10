@@ -14,9 +14,8 @@ export default class InputCheckValidator {
     }
     link(scope, element, attr, ngModel) {
         element.on('input', () => {
-            let modValue = this.formatter(ngModel.$viewValue);
-            element.val(modValue);
-            ngModel.$viewValue = modValue;
+            ngModel.$setViewValue(this.formatter(ngModel.$viewValue));
+            ngModel.$render();
         });
     }
 }

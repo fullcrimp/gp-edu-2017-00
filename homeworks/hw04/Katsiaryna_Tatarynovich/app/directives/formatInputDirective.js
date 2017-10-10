@@ -1,33 +1,29 @@
 'use strict';
 
-const formatInputDirective = ($filter) => {
-    return {
-        restrict: 'A',
-        require: 'ngModel',
-        scope: {
-            ngModel: '='
-        },
-        link: (scope, element, attr, ngModel) => {
-            const updateView = (value) => {
-                ngModel.$viewValue = value;
-                ngModel.$render();
-            };
+export class FormatInputDirective {
+    constructor($filter) {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+        this.$filter = $filter;
+    }
 
-            ngModel.$validators.formatInput = (modelValue, viewValue) => {
-                let priceValue = viewValue;
+    link(scope, element, attr, ngModel) {
+        const updateView = (value) => {
+            ngModel.$viewValue = value;
+            ngModel.$render();
+        };
 
-                if (Number(priceValue)) {
-                    console.log('priceValue in if ' + priceValue);
-                    priceValue = $filter('number')(Number(priceValue));
-                }
+        ngModel.$validators.formatInput = (modelValue, viewValue) => {
+            let priceValue = viewValue;
 
-                element.on('focus', () => updateView(modelValue));
-                element.on('blur', () => updateView(priceValue));
+            if (Number(priceValue)) {
+                priceValue = this.$filter('number')(Number(priceValue));
+            }
 
-                return true;
-            };
-        }
-    };
-};
+            element.on('focus', () => updateView(viewValue));
+            element.on('blur', () => updateView(priceValue));
 
-export default formatInputDirective;
+            return true;
+        };
+    }
+}

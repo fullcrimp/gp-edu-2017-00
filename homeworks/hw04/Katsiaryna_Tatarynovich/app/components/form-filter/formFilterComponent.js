@@ -1,5 +1,5 @@
-const formFilter = {
+const formFilterComponent = {
     templateUrl: 'app/components/form-filter/formFilterTemplate.html'
 };
 
-export default formFilter;
+export default formFilterComponent;

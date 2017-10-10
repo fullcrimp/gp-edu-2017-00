@@ -1,30 +1,19 @@
 <form action="url" method="GET" id="form-filter" class="form-filter" name="formFilter">
     <section class="form-filter__section-intro">
-        <span for="form-filter-price">We've found you <span>32</span> results based on a starting balance of</span>
+        <span>We've found you <span>32</span> results based on a starting balance of</span>
         <div class="input-badge input-badge--money">
             <my-input></my-input>
         </div><!--
         --><span>.</span>
         <ul class="error-msgs" ng-messages="formFilter.priceField.$error" ng-show="formFilter.priceField.$dirty">
             <li ng-message="minLength" class="error-msgs__item">Your price's length has to be more or equal to 0</li>
-            <li ng-message="maxLength" class="error-msgs__item">Your price's length has to be less or equal to 9</li>
-            <li ng-message="patternCheck" class="error-msgs__item">Please, write down the price</li>
+            <li ng-message="maxLength" class="error-msgs__item">Your price's length has to be less or equal to 13</li>
             <li ng-message="intervalCheck" class="error-msgs__item">Please, write down the price from 20 to 70000</li>
         </ul>
     </section>
     <section class="form-filter__section-text">
         <p>You can also <a href="#" class="link">go back</a> and amend your personal details</p>
     </section>
-    <!-- <section class="form-filter__section-intro">
-        <span class="filter-text">We've found you <span>32</span> cards. You have selected</span>
-        <div class="custom-select custom-select--margin-screen-m-top">
-            <select id="form-filter-account-type-two" class="custom-select__element" required>
-                <option value="" selected hidden disabled>--Balance transfer cards--</option>
-                <option value="select1">Select type 2</option>
-                <option value="select2">Select type 3</option>
-            </select>
-        </div>
-    </section> -->
     <section class="form-filter__section-account">
         <div class="form-unit">
             <label for="form-filter-account-type" class="form-unit__label">Account type(s)</label>
@@ -89,7 +78,7 @@
             <div class="filter-variations__element">
                 <div class="form-unit">
                     <label for="passwod" class="form-unit__label">Transfer in:</label>
-                    <input type="password" class="form-unit__input placeholder" placeholder="&#183;&#183;&#183;&#183;&#183;&#183;" required >
+                    <input type="password" class="form-unit__input placeholder" placeholder="&#183;&#183;&#183;&#183;&#183;&#183;" required>
                 </div>
             </div>
         </div>
@@ -104,5 +93,5 @@
             </select>
         </div>
     </section>
-    <!-- <button type="submit" name="button">submit</button> -->
+    <button type="submit" name="button" class="button">submit</button>
 </form>

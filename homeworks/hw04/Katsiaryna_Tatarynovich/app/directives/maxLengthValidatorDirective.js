@@ -1,17 +1,16 @@
 'use strict';
 
-const maxLengthValidatorDirective = () => {
-    return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: (scope, element, attr, ngModel) => {
-            const maxLength = attr.maxLength;
+export class MaxLengthValidatorDirective {
+    constructor() {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+    }
 
-            ngModel.$validators.maxLength = (modelValue, viewValue) => {
-                return (maxLength < 0) || ngModel.$isEmpty(modelValue) || (modelValue.length <= maxLength);
-            };
-        }
-    };
-};
+    link(scope, element, attr, ngModel) {
+        const maxLength = attr.maxLength;
 
-export default maxLengthValidatorDirective;
+        ngModel.$validators.maxLength = (modelValue, viewValue) => {
+            return (maxLength < 0) || ngModel.$isEmpty(modelValue) || (modelValue.length <= maxLength);
+        };
+    }
+}

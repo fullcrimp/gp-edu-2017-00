@@ -1,18 +1,17 @@
 'use strict';
 
-const patternValidatorDirective = () => {
-    return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: (scope, element, attr, ngModel) => {
-            const pattern = attr.customPattern;
-            const regExp = new RegExp(pattern);
+export class PatternValidatorDirective {
+    constructor() {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+    }
 
-            ngModel.$validators.patternCheck = (modelValue, viewValue) => {
-                return ngModel.$isEmpty(modelValue) || regExp.test(modelValue);
-            };
-        }
-    };
-};
+    link(scope, element, attr, ngModel) {
+        const pattern = attr.customPattern;
+        const regExp = new RegExp(pattern);
 
-export default patternValidatorDirective;
+        ngModel.$validators.patternCheck = (modelValue, viewValue) => {
+            return ngModel.$isEmpty(modelValue) || regExp.test(modelValue);
+        };
+    }
+}

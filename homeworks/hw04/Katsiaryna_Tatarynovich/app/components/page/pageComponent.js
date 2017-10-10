@@ -1,5 +1,5 @@
-const page = {
+const pageComponent = {
     templateUrl: 'app/components/page/pageTemplate.html'
 };
 
-export default page;
+export default pageComponent;

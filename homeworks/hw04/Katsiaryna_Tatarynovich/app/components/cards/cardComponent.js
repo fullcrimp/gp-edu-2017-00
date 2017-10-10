@@ -1,4 +1,4 @@
-const card = {
+const cardComponent = {
     templateUrl: 'app/components/cards/cardTemplate.html',
     controller: function cardController($http) {
         $http.get('app/data/mock.json')
@@ -6,4 +6,4 @@ const card = {
     }
 };
 
-export default card;
+export default cardComponent;

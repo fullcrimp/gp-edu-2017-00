@@ -73,15 +73,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_messages__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_intervalValidatorDirective_js__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_maxLengthValidatorDirective_js__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_minLengthValidatorDirective_js__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_patternValidatorDirective_js__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_formatInputDirective_js__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_page_pageComponent_js__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_input_myInputComponent_js__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_form_filter_formFilterComponent_js__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_cards_cardComponent_js__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_IntervalValidatorDirective_js__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_MaxLengthValidatorDirective_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_MinLengthValidatorDirective_js__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_PatternValidatorDirective_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_OnlyNumberDirective_js__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_FormatInputDirective_js__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_page_pageComponent_js__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_input_myInputComponent_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_form_filter_formFilterComponent_js__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_cards_cardComponent_js__ = __webpack_require__(14);
 
 
 
@@ -96,7 +97,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('app', [__WEBPACK_IMPORTED_MODULE_1_angular_messages___default.a]).component('page', __WEBPACK_IMPORTED_MODULE_7__components_page_pageComponent_js__["a" /* default */]).component('formFilter', __WEBPACK_IMPORTED_MODULE_9__components_form_filter_formFilterComponent_js__["a" /* default */]).component('myInput', __WEBPACK_IMPORTED_MODULE_8__components_input_myInputComponent_js__["a" /* default */]).component('card', __WEBPACK_IMPORTED_MODULE_10__components_cards_cardComponent_js__["a" /* default */]).directive('interval', __WEBPACK_IMPORTED_MODULE_2__directives_intervalValidatorDirective_js__["a" /* default */]).directive('maxLength', __WEBPACK_IMPORTED_MODULE_3__directives_maxLengthValidatorDirective_js__["a" /* default */]).directive('minLength', __WEBPACK_IMPORTED_MODULE_4__directives_minLengthValidatorDirective_js__["a" /* default */]).directive('customPattern', __WEBPACK_IMPORTED_MODULE_5__directives_patternValidatorDirective_js__["a" /* default */]).directive('formatInput', ['$filter', __WEBPACK_IMPORTED_MODULE_6__directives_formatInputDirective_js__["a" /* default */]]);
+
+__WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('app', [__WEBPACK_IMPORTED_MODULE_1_angular_messages___default.a]).component('page', __WEBPACK_IMPORTED_MODULE_8__components_page_pageComponent_js__["a" /* default */]).component('formFilter', __WEBPACK_IMPORTED_MODULE_10__components_form_filter_formFilterComponent_js__["a" /* default */]).component('myInput', __WEBPACK_IMPORTED_MODULE_9__components_input_myInputComponent_js__["a" /* default */]).component('card', __WEBPACK_IMPORTED_MODULE_11__components_cards_cardComponent_js__["a" /* default */]).directive('interval', __WEBPACK_IMPORTED_MODULE_2__directives_IntervalValidatorDirective_js__["a" /* IntervalValidatorDirective */]).directive('maxLength', __WEBPACK_IMPORTED_MODULE_3__directives_MaxLengthValidatorDirective_js__["a" /* MaxLengthValidatorDirective */]).directive('minLength', __WEBPACK_IMPORTED_MODULE_4__directives_MinLengthValidatorDirective_js__["a" /* MinLengthValidatorDirective */]).directive('customPattern', __WEBPACK_IMPORTED_MODULE_5__directives_PatternValidatorDirective_js__["a" /* PatternValidatorDirective */]).directive('onlyNumber', __WEBPACK_IMPORTED_MODULE_6__directives_OnlyNumberDirective_js__["a" /* OnlyNumberDirective */]).directive('formatInput', ['$filter', __WEBPACK_IMPORTED_MODULE_7__directives_FormatInputDirective_js__["a" /* FormatInputDirective */]]);
 
 /***/ }),
 /* 1 */
@@ -34761,22 +34763,23 @@ function ngMessageDirectiveFactory() {
 "use strict";
 
 
-const intervalValidatorDirective = () => {
-    return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: (scope, element, attr, ngModel) => {
-            const interval = attr.interval;
-            const arrInterval = interval.slice(1, interval.length - 1).split(',');
+class IntervalValidatorDirective {
+    constructor() {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+    }
 
-            ngModel.$validators.intervalCheck = (modelValue, viewValue) => {
-                return ngModel.$isEmpty(modelValue) || Number(modelValue) < Number(arrInterval[1]) && Number(modelValue) > Number(arrInterval[0]);
-            };
-        }
-    };
-};
+    link(scope, element, attr, ngModel) {
+        const interval = attr.interval;
+        const arrInterval = interval.slice(1, interval.length - 1).split(',');
 
-/* harmony default export */ __webpack_exports__["a"] = (intervalValidatorDirective);
+        ngModel.$validators.intervalCheck = (modelValue, viewValue) => {
+            return ngModel.$isEmpty(modelValue) || Number(modelValue) < Number(arrInterval[1]) && Number(modelValue) > Number(arrInterval[0]);
+        };
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = IntervalValidatorDirective;
+
 
 /***/ }),
 /* 6 */
@@ -34785,21 +34788,22 @@ const intervalValidatorDirective = () => {
 "use strict";
 
 
-const maxLengthValidatorDirective = () => {
-    return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: (scope, element, attr, ngModel) => {
-            const maxLength = attr.maxLength;
+class MaxLengthValidatorDirective {
+    constructor() {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+    }
 
-            ngModel.$validators.maxLength = (modelValue, viewValue) => {
-                return maxLength < 0 || ngModel.$isEmpty(modelValue) || modelValue.length <= maxLength;
-            };
-        }
-    };
-};
+    link(scope, element, attr, ngModel) {
+        const maxLength = attr.maxLength;
 
-/* harmony default export */ __webpack_exports__["a"] = (maxLengthValidatorDirective);
+        ngModel.$validators.maxLength = (modelValue, viewValue) => {
+            return maxLength < 0 || ngModel.$isEmpty(modelValue) || modelValue.length <= maxLength;
+        };
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = MaxLengthValidatorDirective;
+
 
 /***/ }),
 /* 7 */
@@ -34808,21 +34812,22 @@ const maxLengthValidatorDirective = () => {
 "use strict";
 
 
-const minLengthValidatorDirective = () => {
-    return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: (scope, element, attr, ngModel) => {
-            const minLength = attr.minLength;
+class MinLengthValidatorDirective {
+    constructor() {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+    }
 
-            ngModel.$validators.minLength = (modelValue, viewValue) => {
-                return ngModel.$isEmpty(modelValue) || modelValue.length >= minLength;
-            };
-        }
-    };
-};
+    link(scope, element, attr, ngModel) {
+        const minLength = attr.minLength;
 
-/* harmony default export */ __webpack_exports__["a"] = (minLengthValidatorDirective);
+        ngModel.$validators.minLength = (modelValue, viewValue) => {
+            return ngModel.$isEmpty(modelValue) || modelValue.length >= minLength;
+        };
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = MinLengthValidatorDirective;
+
 
 /***/ }),
 /* 8 */
@@ -34831,22 +34836,23 @@ const minLengthValidatorDirective = () => {
 "use strict";
 
 
-const patternValidatorDirective = () => {
-    return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: (scope, element, attr, ngModel) => {
-            const pattern = attr.customPattern;
-            const regExp = new RegExp(pattern);
+class PatternValidatorDirective {
+    constructor() {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+    }
 
-            ngModel.$validators.patternCheck = (modelValue, viewValue) => {
-                return ngModel.$isEmpty(modelValue) || regExp.test(modelValue);
-            };
-        }
-    };
-};
+    link(scope, element, attr, ngModel) {
+        const pattern = attr.customPattern;
+        const regExp = new RegExp(pattern);
 
-/* harmony default export */ __webpack_exports__["a"] = (patternValidatorDirective);
+        ngModel.$validators.patternCheck = (modelValue, viewValue) => {
+            return ngModel.$isEmpty(modelValue) || regExp.test(modelValue);
+        };
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = PatternValidatorDirective;
+
 
 /***/ }),
 /* 9 */
@@ -34855,84 +34861,107 @@ const patternValidatorDirective = () => {
 "use strict";
 
 
-const formatInputDirective = $filter => {
-    return {
-        restrict: 'A',
-        require: 'ngModel',
-        scope: {
-            ngModel: '='
-        },
-        link: (scope, element, attr, ngModel) => {
-            const updateView = value => {
-                ngModel.$viewValue = value;
-                ngModel.$render();
-            };
+class OnlyNumberDirective {
+    constructor() {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+    }
 
-            ngModel.$validators.formatInput = (modelValue, viewValue) => {
-                let priceValue = viewValue;
+    link(scope, element, attr, ngModel) {
+        element.on('input', () => {
+            let onlyNumberValue = ngModel.$viewValue.replace(/[^0-9\.]/g, '');
 
-                if (Number(priceValue)) {
-                    console.log('priceValue in if ' + priceValue);
-                    priceValue = $filter('number')(Number(priceValue));
-                }
+            ngModel.$setViewValue(onlyNumberValue);
+            ngModel.$render();
+        });
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = OnlyNumberDirective;
 
-                element.on('focus', () => updateView(modelValue));
-                element.on('blur', () => updateView(priceValue));
-
-                return true;
-            };
-        }
-    };
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (formatInputDirective);
 
 /***/ }),
 /* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const page = {
-    templateUrl: 'app/components/page/pageTemplate.html'
-};
 
-/* harmony default export */ __webpack_exports__["a"] = (page);
+
+class FormatInputDirective {
+    constructor($filter) {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+        this.$filter = $filter;
+    }
+
+    link(scope, element, attr, ngModel) {
+        const updateView = value => {
+            ngModel.$viewValue = value;
+            ngModel.$render();
+        };
+
+        ngModel.$validators.formatInput = (modelValue, viewValue) => {
+            let priceValue = viewValue;
+
+            if (Number(priceValue)) {
+                priceValue = this.$filter('number')(Number(priceValue));
+            }
+
+            element.on('focus', () => updateView(viewValue));
+            element.on('blur', () => updateView(priceValue));
+
+            return true;
+        };
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = FormatInputDirective;
+
 
 /***/ }),
 /* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const myInput = {
-    templateUrl: 'app/components/input/myInputTemplate.html'
+const pageComponent = {
+    templateUrl: 'app/components/page/pageTemplate.html'
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (myInput);
+/* harmony default export */ __webpack_exports__["a"] = (pageComponent);
 
 /***/ }),
 /* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const formFilter = {
-    templateUrl: 'app/components/form-filter/formFilterTemplate.html'
+const myInputComponent = {
+    templateUrl: 'app/components/input/myInputTemplate.html'
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (formFilter);
+/* harmony default export */ __webpack_exports__["a"] = (myInputComponent);
 
 /***/ }),
 /* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const card = {
+const formFilterComponent = {
+    templateUrl: 'app/components/form-filter/formFilterTemplate.html'
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (formFilterComponent);
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const cardComponent = {
     templateUrl: 'app/components/cards/cardTemplate.html',
     controller: function cardController($http) {
         $http.get('app/data/mock.json').then(response => this.cards = response.data.results);
     }
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (card);
+/* harmony default export */ __webpack_exports__["a"] = (cardComponent);
 
 /***/ })
 /******/ ]);

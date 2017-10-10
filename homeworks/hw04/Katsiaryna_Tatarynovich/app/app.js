@@ -1,11 +1,12 @@
 import angular from 'angular';
 import ngMessages from 'angular-messages';
 
-import intervalValidatorDirective from './directives/intervalValidatorDirective.js';
-import maxLengthValidatorDirective from './directives/maxLengthValidatorDirective.js';
-import minLengthValidatorDirective from './directives/minLengthValidatorDirective.js';
-import patternValidatorDirective from './directives/patternValidatorDirective.js';
-import formatInputDirective from './directives/formatInputDirective.js';
+import { IntervalValidatorDirective } from './directives/IntervalValidatorDirective.js';
+import { MaxLengthValidatorDirective } from './directives/MaxLengthValidatorDirective.js';
+import { MinLengthValidatorDirective } from './directives/MinLengthValidatorDirective.js';
+import { PatternValidatorDirective } from './directives/PatternValidatorDirective.js';
+import { OnlyNumberDirective } from './directives/OnlyNumberDirective.js';
+import { FormatInputDirective } from './directives/FormatInputDirective.js';
 
 import pageComponent from './components/page/pageComponent.js';
 import myInputComponent from './components/input/myInputComponent.js';
@@ -20,8 +21,9 @@ angular.module('app', [
     .component('myInput', myInputComponent)
     .component('card', cardComponent)
 
-    .directive('interval', intervalValidatorDirective)
-    .directive('maxLength', maxLengthValidatorDirective)
-    .directive('minLength', minLengthValidatorDirective)
-    .directive('customPattern', patternValidatorDirective)
-    .directive('formatInput', ['$filter', formatInputDirective]);
+    .directive('interval', IntervalValidatorDirective)
+    .directive('maxLength', MaxLengthValidatorDirective)
+    .directive('minLength', MinLengthValidatorDirective)
+    .directive('customPattern', PatternValidatorDirective)
+    .directive('onlyNumber', OnlyNumberDirective)
+    .directive('formatInput', ['$filter', FormatInputDirective]);

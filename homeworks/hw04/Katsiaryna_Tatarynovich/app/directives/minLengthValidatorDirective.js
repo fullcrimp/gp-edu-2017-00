@@ -1,17 +1,16 @@
 'use strict';
 
-const minLengthValidatorDirective = () => {
-    return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: (scope, element, attr, ngModel) => {
-            const minLength = attr.minLength;
+export class MinLengthValidatorDirective {
+    constructor() {
+        this.restrict = 'A';
+        this.require = 'ngModel';
+    }
 
-            ngModel.$validators.minLength = (modelValue, viewValue) => {
-                return ngModel.$isEmpty(modelValue) || modelValue.length >= minLength;
-            };
-        }
-    };
-};
+    link(scope, element, attr, ngModel) {
+        const minLength = attr.minLength;
 
-export default minLengthValidatorDirective;
+        ngModel.$validators.minLength = (modelValue, viewValue) => {
+            return ngModel.$isEmpty(modelValue) || modelValue.length >= minLength;
+        };
+    }
+}

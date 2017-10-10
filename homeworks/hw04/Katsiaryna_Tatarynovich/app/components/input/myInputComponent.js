@@ -1,5 +1,5 @@
-const myInput = {
+const myInputComponent = {
     templateUrl: 'app/components/input/myInputTemplate.html'
 };
 
-export default myInput;
+export default myInputComponent;

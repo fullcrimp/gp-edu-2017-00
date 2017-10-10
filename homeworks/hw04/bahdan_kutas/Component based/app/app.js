@@ -10,15 +10,22 @@ import searchFormComponent from './components/search-form/search-form.component'
 import filterFormComponent from './components/filter-form/filter-form.component';
 import textInputComponent from './components/text-input/text-input.component';
 
-import rangeValidator from './directives/range.validator';
-import patternValidator from './directives/pattertn.validator';
-import minLengthValidator from './directives/min-length.validator';
-import maxLengthValidator from './directives/max-length.validator';
-import onblurFormatter from './directives/onblur-formatter.filter';
+import RangeValidator from './directives/range.validator';
+import PatternValidator from './directives/pattertn.validator';
+import MinLengthValidator from './directives/min-length.validator';
+import MaxLengthValidator from './directives/max-length.validator';
+import OnblurFormatter from './directives/onblur-formatter.filter';
 
-const moneyApp = angular.module('moneyApp', [
+export default angular.module('moneyApp', [
     ngMessages,
 ])
+
+    .directive('minLengthValidator', MinLengthValidator)
+    .directive('maxLengthValidator', MaxLengthValidator)
+    .directive('patternValidator', PatternValidator)
+    .directive('rangeValidator', RangeValidator)
+    .directive('onblurFormatter', ['$filter', OnblurFormatter])
+
     .component('mainComponent', mainComponent)
     .component('breadcrumbs', breadcrumbsComponent)
     .component('cardList', cardListComponent)
@@ -26,12 +33,4 @@ const moneyApp = angular.module('moneyApp', [
     .component('pagination', paginationComponent)
     .component('searchForm', searchFormComponent)
     .component('filterForm', filterFormComponent)
-    .component('textInput', textInputComponent)
-
-    .directive('minLengthValidator', minLengthValidator)
-    .directive('maxLengthValidator', maxLengthValidator)
-    .directive('patternValidator', patternValidator)
-    .directive('onblurFormatter', onblurFormatter)
-    .directive('rangeValidator', rangeValidator);
-
-export default moneyApp;
+    .component('textInput', textInputComponent);

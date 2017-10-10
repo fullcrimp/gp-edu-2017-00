@@ -1,12 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
         style: './app/styles/main.scss',
-        app: './app/app.js'
+        app: './app/app.js',
     },
 
     module: {
@@ -16,22 +16,22 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        outputPath: path.resolve(__dirname, 'dist/img')
-                    }
-                }]
+                        outputPath: path.resolve(__dirname, 'dist/img'),
+                    },
+                }],
             },
             {
                 test: /\.(sass|scss)$/,
-                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
             },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                }
-            }
-        ]
+                },
+            },
+        ],
     },
 
     // devtool: 'inline-source-map',
@@ -49,5 +49,5 @@ module.exports = {
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
-    }
+    },
 };

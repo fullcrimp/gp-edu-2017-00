@@ -15,6 +15,7 @@ import PatternValidator from './directives/pattertn.validator';
 import MinLengthValidator from './directives/min-length.validator';
 import MaxLengthValidator from './directives/max-length.validator';
 import OnblurFormatter from './directives/onblur-formatter.filter';
+import InputCheckValidator from './directives/inputcheck.validator';
 
 export default angular.module('moneyApp', [
     ngMessages,
@@ -24,6 +25,7 @@ export default angular.module('moneyApp', [
     .directive('maxLengthValidator', MaxLengthValidator)
     .directive('patternValidator', PatternValidator)
     .directive('rangeValidator', RangeValidator)
+    .directive('inputCheckValidator', InputCheckValidator)
     .directive('onblurFormatter', ['$filter', OnblurFormatter])
 
     .component('mainComponent', mainComponent)

@@ -5,7 +5,7 @@ export default class InputType {
     this.link = (scope, element, attr, ngModel) => {
       if (attr.inputType === 'number') {
         element.on('input', () => {
-          ngModel.$setViewValue(ngModel.$viewValue.replace(/[^0-9]+/g, ""));
+          ngModel.$setViewValue(ngModel.$viewValue.replace(/[^0-9]+/g, ''));
           ngModel.$render();
         });
       }

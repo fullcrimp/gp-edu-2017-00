@@ -1,0 +1,115 @@
+@import "../../variables.scss";
+
+.card {
+    max-width: 980px;
+    margin: 10px auto;
+    background-color: $white;
+    border-bottom: $grey 2px solid;
+
+    &__section {
+        display: flex;
+
+        @media screen and (max-width: $screen-md) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        &--header {
+            align-items: center;
+            border-bottom: $grey 1px solid;
+        }
+        &--between {
+            justify-content: space-between;
+            padding-right: 30px;
+            @media screen and (max-width: $screen-sm) {
+                padding-right: 0;
+            }
+            @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
+
+    &__details {
+        display: flex;
+        @media screen and (max-width: $screen-sm) {
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+    }
+
+    &__detail {
+        padding: 15px 0 15px 30px;
+        font-size: 10px;
+        color: $grey-darker;
+
+        &--purple {
+            background-color: $purple-light;
+            color: $purple;
+            width: 123px;
+        }
+        @media screen and (max-width: $screen-md) {
+            max-width: 120px;
+        }
+        @media screen and (max-width: $screen-sm) {
+            width: 50%;
+            max-width: 100%;
+        }
+        &--fullwidth-mobile {
+            @media screen and (max-width: $screen-sm) {
+                width: 100%;
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+        &--upperlined {
+            @media screen and (max-width: $screen-sm) {
+                border-top: $grey 1px solid;
+            }
+        }
+    }
+
+    &__detail-title {
+        &--purple {
+            font-weight: bold;
+            color: $purple;
+        }
+    }
+
+    &__detail-content {
+        margin-top: 6px;
+        line-height: 18px;
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    &__strong {
+        display: block;
+        font-size: 14px;
+        color: $black;
+
+        &--purple {
+            color: $purple;
+        }
+
+        &--small {
+            font-size: 12px;
+        }
+    }
+
+    &__chance {
+        border: $blue 2px solid;
+        border-radius: 5px;
+        padding: 2px 6px;
+        text-align: center;
+        font-weight: bold;
+        color: $blue;
+        font-size: 14px;
+        line-height: 16px;
+        max-width: 120px;
+        margin: 0 auto 10px auto;
+    }
+}

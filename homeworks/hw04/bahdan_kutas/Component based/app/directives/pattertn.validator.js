@@ -4,7 +4,7 @@ export default class PatternValidator {
         this.require = 'ngModel';
     }
     link(scope, element, attr, ngModel) {
-        const defaultPattern = /^\d+$/;
+        const defaultPattern = /^[\d,]+$/;
         ngModel.$validators.patternValidator = (modelValue, viewValue) => {
             if (!ngModel.$dirty) {
                 return true;

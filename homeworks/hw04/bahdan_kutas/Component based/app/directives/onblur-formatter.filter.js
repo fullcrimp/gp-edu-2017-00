@@ -21,10 +21,12 @@ export default class OnblurFormatter {
     }
     link(scope, element, attr, ngModel) {
         element.on('blur', () => {
-            element.val(this.formatter(ngModel.$viewValue));
+            ngModel.$setViewValue(this.formatter(ngModel.$viewValue));
+            ngModel.$render();
         });
         element.on('focus', () => {
-            element.val(this.unformatter(ngModel.$viewValue));
+            ngModel.$setViewValue(this.unformatter(ngModel.$viewValue));
+            ngModel.$render();
         });
     }
 }

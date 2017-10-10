@@ -5,7 +5,6 @@ export default class MinLengthValidator {
     }
     link(scope, element, attr, ngModel) {
         ngModel.$validators.minLengthValidator = (modelValue, viewValue) => {
-            console.log(ngModel.$dirty);
             if (!ngModel.$dirty) {
                 return true;
             } else if (viewValue.length >= parseInt(attr.minLengthValidator, 10)) {

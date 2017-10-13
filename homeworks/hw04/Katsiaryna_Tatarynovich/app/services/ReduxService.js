@@ -1,5 +1,10 @@
+import { TODOS } from '../constants/actionTypes';
+
 export class ReduxService {
-    // constructor() {
-    //
-    // }
+    setPriceFieldStatus(todo) {
+        return {
+            type: TODOS.THE_FIELD_PRICE_STATUS,
+            payload: todo
+        }
+    }
 }

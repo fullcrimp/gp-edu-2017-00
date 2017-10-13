@@ -46638,12 +46638,12 @@ exports['default'] = thunk;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__actions_filterFormActions__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_ReduxService__ = __webpack_require__(129);
 
 
 class ReduxDirective {
     constructor($ngRedux) {
-        $ngRedux.connect(this.mapStateToThis, __WEBPACK_IMPORTED_MODULE_0__actions_filterFormActions__["a" /* default */])(this);
+        $ngRedux.connect(this.mapStateToThis, __WEBPACK_IMPORTED_MODULE_0__services_ReduxService__["reduxService"])(this);
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = ReduxDirective;
@@ -46657,21 +46657,16 @@ class ReduxDirective {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants_actionTypes__ = __webpack_require__(50);
 
 
-const setPriceFieldStatus = todo => {
-    return {
-        type: __WEBPACK_IMPORTED_MODULE_0__constants_actionTypes__["a" /* TODOS */].THE_FIELD_PRICE_STATUS,
-        payload: todo
-    };
-};
+class ReduxService {
+    setPriceFieldStatus(todo) {
+        return {
+            type: __WEBPACK_IMPORTED_MODULE_0__constants_actionTypes__["a" /* TODOS */].THE_FIELD_PRICE_STATUS,
+            payload: todo
+        };
+    }
+}
+/* unused harmony export ReduxService */
 
-// const leavePriceFieldEmpty = (todo) => {
-//     return {
-//         type: TODOS.THE_FIELD_PRICE_IS_EMPTY,
-//         payload: todo
-//     }
-// }
-
-/* harmony default export */ __webpack_exports__["a"] = ({ setPriceFieldStatus });
 
 /***/ }),
 /* 130 */

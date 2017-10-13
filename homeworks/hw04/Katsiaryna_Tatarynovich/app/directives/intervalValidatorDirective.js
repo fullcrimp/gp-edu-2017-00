@@ -11,7 +11,9 @@ export class IntervalValidatorDirective {
         const arrInterval = interval.slice(1, interval.length - 1).split(',');
 
         ngModel.$validators.intervalCheck = (modelValue, viewValue) => {
-            return ngModel.$isEmpty(modelValue) || ((Number(modelValue) < Number(arrInterval[1])) && (Number(modelValue) > Number(arrInterval[0])));
+            return ngModel.$isEmpty(modelValue) ||
+                ((Number(modelValue) < Number(arrInterval[1])) &&
+                (Number(modelValue) > Number(arrInterval[0])));
         };
     }
 }

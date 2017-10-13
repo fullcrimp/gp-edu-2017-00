@@ -10,7 +10,9 @@ export class MaxLengthValidatorDirective {
         const maxLength = attr.maxLength;
 
         ngModel.$validators.maxLength = (modelValue, viewValue) => {
-            return (maxLength < 0) || ngModel.$isEmpty(modelValue) || (modelValue.length <= maxLength);
+            return (maxLength < 0) ||
+                ngModel.$isEmpty(modelValue) ||
+                (modelValue.length <= maxLength);
         };
     }
 }

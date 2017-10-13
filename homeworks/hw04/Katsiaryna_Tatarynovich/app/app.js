@@ -1,6 +1,11 @@
 import angular from 'angular';
 import ngMessages from 'angular-messages';
+import ngUiRouter from 'angular-ui-router';
+import ngRedux from 'ng-redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 
+import { ReduxDirective } from './directives/ReduxDirective.js';
 import { IntervalValidatorDirective } from './directives/IntervalValidatorDirective.js';
 import { MaxLengthValidatorDirective } from './directives/MaxLengthValidatorDirective.js';
 import { MinLengthValidatorDirective } from './directives/MinLengthValidatorDirective.js';
@@ -13,14 +18,25 @@ import myInputComponent from './components/input/myInputComponent.js';
 import formFilterComponent from './components/form-filter/formFilterComponent.js';
 import cardComponent from './components/cards/cardComponent.js';
 
-angular.module('app', [
-    ngMessages
-])
+import { rootReducer } from './reducers';
+
+angular
+    .module('app', [
+        ngMessages,
+        ngRedux,
+        ngUiRouter
+    ])
+    .config(($ngReduxProvider) => {
+        $ngReduxProvider
+            .createStoreWith(rootReducer, [logger, thunk]);
+
+    })
     .component('page', pageComponent)
     .component('formFilter', formFilterComponent)
     .component('myInput', myInputComponent)
     .component('card', cardComponent)
 
+    .directive('reduxDirective', ReduxDirective)
     .directive('interval', IntervalValidatorDirective)
     .directive('maxLength', MaxLengthValidatorDirective)
     .directive('minLength', MinLengthValidatorDirective)

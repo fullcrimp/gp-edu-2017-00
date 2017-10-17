@@ -1468,6 +1468,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+// import ReduxService from './services/ReduxService.js';
+
 
 
 
@@ -1485,7 +1487,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('app', [__WEBPACK_IMPORTED_MODULE_1_angular_messages___default.a, __WEBPACK_IMPORTED_MODULE_3_ng_redux__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2_angular_ui_router___default.a]).config($ngReduxProvider => {
     $ngReduxProvider.createStoreWith(__WEBPACK_IMPORTED_MODULE_17__reducers__["a" /* rootReducer */], [__WEBPACK_IMPORTED_MODULE_4_redux_logger___default.a, __WEBPACK_IMPORTED_MODULE_5_redux_thunk___default.a]);
-}).component('page', __WEBPACK_IMPORTED_MODULE_13__components_page_pageComponent_js__["a" /* default */]).component('formFilter', __WEBPACK_IMPORTED_MODULE_15__components_form_filter_formFilterComponent_js__["a" /* default */]).component('myInput', __WEBPACK_IMPORTED_MODULE_14__components_input_myInputComponent_js__["a" /* default */]).component('card', __WEBPACK_IMPORTED_MODULE_16__components_cards_cardComponent_js__["a" /* default */]).directive('reduxDirective', __WEBPACK_IMPORTED_MODULE_6__directives_ReduxDirective_js__["a" /* ReduxDirective */]).directive('interval', __WEBPACK_IMPORTED_MODULE_7__directives_IntervalValidatorDirective_js__["a" /* IntervalValidatorDirective */]).directive('maxLength', __WEBPACK_IMPORTED_MODULE_8__directives_MaxLengthValidatorDirective_js__["a" /* MaxLengthValidatorDirective */]).directive('minLength', __WEBPACK_IMPORTED_MODULE_9__directives_MinLengthValidatorDirective_js__["a" /* MinLengthValidatorDirective */]).directive('customPattern', __WEBPACK_IMPORTED_MODULE_10__directives_PatternValidatorDirective_js__["a" /* PatternValidatorDirective */]).directive('onlyNumber', __WEBPACK_IMPORTED_MODULE_11__directives_OnlyNumberDirective_js__["a" /* OnlyNumberDirective */]).directive('formatInput', ['$filter', __WEBPACK_IMPORTED_MODULE_12__directives_FormatInputDirective_js__["a" /* FormatInputDirective */]]);
+})
+// .service('reduxService', ReduxService)
+
+.component('page', __WEBPACK_IMPORTED_MODULE_13__components_page_pageComponent_js__["a" /* default */]).component('formFilter', __WEBPACK_IMPORTED_MODULE_15__components_form_filter_formFilterComponent_js__["a" /* default */]).component('myInput', __WEBPACK_IMPORTED_MODULE_14__components_input_myInputComponent_js__["a" /* default */]).component('card', __WEBPACK_IMPORTED_MODULE_16__components_cards_cardComponent_js__["a" /* default */]).directive('reduxDirective', __WEBPACK_IMPORTED_MODULE_6__directives_ReduxDirective_js__["a" /* ReduxDirective */]).directive('interval', __WEBPACK_IMPORTED_MODULE_7__directives_IntervalValidatorDirective_js__["a" /* IntervalValidatorDirective */]).directive('maxLength', __WEBPACK_IMPORTED_MODULE_8__directives_MaxLengthValidatorDirective_js__["a" /* MaxLengthValidatorDirective */]).directive('minLength', __WEBPACK_IMPORTED_MODULE_9__directives_MinLengthValidatorDirective_js__["a" /* MinLengthValidatorDirective */]).directive('customPattern', __WEBPACK_IMPORTED_MODULE_10__directives_PatternValidatorDirective_js__["a" /* PatternValidatorDirective */]).directive('onlyNumber', __WEBPACK_IMPORTED_MODULE_11__directives_OnlyNumberDirective_js__["a" /* OnlyNumberDirective */]).directive('formatInput', ['$filter', __WEBPACK_IMPORTED_MODULE_12__directives_FormatInputDirective_js__["a" /* FormatInputDirective */]]);
 
 /***/ }),
 /* 52 */
@@ -46638,12 +46643,17 @@ exports['default'] = thunk;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_ReduxService__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__actions_filterFormActions_js__ = __webpack_require__(129);
 
 
 class ReduxDirective {
-    constructor($ngRedux) {
-        $ngRedux.connect(this.mapStateToThis, __WEBPACK_IMPORTED_MODULE_0__services_ReduxService__["reduxService"])(this);
+    constructor() {
+        this.restrict = 'A';
+        this.controllerAs = '$ctrl';
+    }
+
+    controller($ngRedux) {
+        $ngRedux.connect(this.mapStateToThis, __WEBPACK_IMPORTED_MODULE_0__actions_filterFormActions_js__["a" /* default */])(this);
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = ReduxDirective;
@@ -46657,16 +46667,16 @@ class ReduxDirective {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants_actionTypes__ = __webpack_require__(50);
 
 
-class ReduxService {
-    setPriceFieldStatus(todo) {
-        return {
-            type: __WEBPACK_IMPORTED_MODULE_0__constants_actionTypes__["a" /* TODOS */].THE_FIELD_PRICE_STATUS,
-            payload: todo
-        };
-    }
-}
-/* unused harmony export ReduxService */
+const setPriceFieldStatus = (value, error, isValid) => {
+    return {
+        type: __WEBPACK_IMPORTED_MODULE_0__constants_actionTypes__["a" /* TODOS */].THE_FIELD_PRICE_STATUS,
+        value: value,
+        payload: error,
+        isValid: isValid
+    };
+};
 
+/* harmony default export */ __webpack_exports__["a"] = ({ setPriceFieldStatus });
 
 /***/ }),
 /* 130 */
@@ -46686,7 +46696,9 @@ class IntervalValidatorDirective {
         const arrInterval = interval.slice(1, interval.length - 1).split(',');
 
         ngModel.$validators.intervalCheck = (modelValue, viewValue) => {
-            return ngModel.$isEmpty(modelValue) || Number(modelValue) < Number(arrInterval[1]) && Number(modelValue) > Number(arrInterval[0]);
+            let isInValidValue = ngModel.$isEmpty(modelValue) || Number(modelValue) < Number(arrInterval[1]) && Number(modelValue) > Number(arrInterval[0]);
+
+            return isInValidValue;
         };
     }
 }
@@ -46833,8 +46845,16 @@ class FormatInputDirective {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+class PageController {
+    constructor() {}
+}
+
 const pageComponent = {
-    templateUrl: 'app/components/page/pageTemplate.html'
+    templateUrl: 'app/components/page/pageTemplate.html',
+    controller: PageController,
+    bindings: {
+        setPriceFieldStatus: '&'
+    }
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (pageComponent);
@@ -46850,7 +46870,10 @@ class myInputController {
 
 const myInputComponent = {
     templateUrl: 'app/components/input/myInputTemplate.html',
-    controller: myInputController
+    controller: myInputController,
+    bindings: {
+        setPriceFieldStatus: '&'
+    }
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (myInputComponent);
@@ -46860,8 +46883,15 @@ const myInputComponent = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+class formFilterController {
+    constructor() {}
+}
+
 const formFilterComponent = {
-    templateUrl: 'app/components/form-filter/formFilterTemplate.html'
+    templateUrl: 'app/components/form-filter/formFilterTemplate.html',
+    bindings: {
+        setPriceFieldStatus: '&'
+    }
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (formFilterComponent);
@@ -46916,7 +46946,6 @@ const todosReducer = (state = initialState, action) => {
     switch (action.type) {
         case __WEBPACK_IMPORTED_MODULE_0__constants_actionTypes__["a" /* TODOS */].THE_FIELD_PRICE_STATUS:
             return _extends({}, state, { valid: action.payload });
-        // return Object.assign({}, state, {valid: action.payload});
         default:
             return state;
     }

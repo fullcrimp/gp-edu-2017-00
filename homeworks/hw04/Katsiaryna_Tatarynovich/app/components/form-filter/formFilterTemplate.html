@@ -2,7 +2,7 @@
     <section class="form-filter__section-intro">
         <span>We've found you <span>32</span> results based on a starting balance of</span>
         <div class="input-badge input-badge--money">
-            <my-input></my-input>
+            <my-input set-price-field-status="$ctrl.setPriceFieldStatus({value: value, error: error, isValid: isValid})"></my-input>
         </div><!--
         --><span>.</span>
         <ul class="error-msgs" ng-messages="formFilter.priceField.$error" ng-show="formFilter.priceField.$dirty">

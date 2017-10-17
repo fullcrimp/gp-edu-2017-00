@@ -5,6 +5,8 @@ import ngRedux from 'ng-redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
+// import ReduxService from './services/ReduxService.js';
+
 import { ReduxDirective } from './directives/ReduxDirective.js';
 import { IntervalValidatorDirective } from './directives/IntervalValidatorDirective.js';
 import { MaxLengthValidatorDirective } from './directives/MaxLengthValidatorDirective.js';
@@ -31,6 +33,8 @@ angular
             .createStoreWith(rootReducer, [logger, thunk]);
 
     })
+    // .service('reduxService', ReduxService)
+
     .component('page', pageComponent)
     .component('formFilter', formFilterComponent)
     .component('myInput', myInputComponent)

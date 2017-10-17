@@ -1,10 +1,10 @@
 import './cardList.scss';
+import './img/card-logo.jpg';
+import mock from '../../lib/mock.json';
 
 class CardListController {
-  constructor($http) {
-    $http.get('lib/mock.json').then((response) => {
-      this.cards = response.data.results;
-    })
+  constructor() {
+    this.cards = mock.results;
   }
 }
 

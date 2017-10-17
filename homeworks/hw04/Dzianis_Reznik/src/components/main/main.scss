@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../variables.scss";
 
 * {
     box-sizing: border-box;
@@ -82,11 +82,11 @@
   @media screen and (max-width: $screen-sm) {
     width: 100%;
   }
-  .ng-dirty{
-    &.ng-valid-min-length, &.ng-valid-max-length, &.ng-valid-regexp, &.ng-valid-range{
+  .ng-touched{
+    &.ng-valid{
       border: 2px green solid;
     }
-    &.ng-invalid-min-length, &.ng-invalid-max-length, &.ng-invalid-regexp, &.ng-invalid-range{
+    &.ng-invalid{
       border: 2px red solid;
     }
   }
@@ -198,6 +198,7 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     line-height: 20px;
+    padding: 10px 15px 10px 15px;
 
     &--money {
       font-size: 20px;
@@ -726,7 +727,10 @@
     }
 }
 
-.error-msg{
-  color: red;
-  font-size: 16px;
+.error{
+  display: block;
+  &__msg{
+    color: red;
+    font-size: 16px;
+  }
 }

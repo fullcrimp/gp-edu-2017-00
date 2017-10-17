@@ -3,16 +3,10 @@ export default class RegExpValidator {
     this.restrict = 'A';
     this.require = 'ngModel';
     this.link = (scope, element, attr, ngModel) => {
-      ngModel.$parsers.unshift((viewValue) => {
+      ngModel.$validators.regexp = function(modelValue, viewValue) {
         let regexp = new RegExp(attr.regexp.slice(1, attr.regexp.length - 1));
-        ngModel.$setValidity('regexp', regexp.test(viewValue));
-        return viewValue;
-      });
-      ngModel.$formatters.unshift((modelValue) => {
-        let regexp = new RegExp(attr.regexp.slice(1, attr.regexp.length - 1));
-        ngModel.$setValidity('regexp', regexp.test(modelValue));
-        return modelValue;
-      });
+        if (viewValue) return (regexp.test(viewValue));
+      }
     }
   }
 }

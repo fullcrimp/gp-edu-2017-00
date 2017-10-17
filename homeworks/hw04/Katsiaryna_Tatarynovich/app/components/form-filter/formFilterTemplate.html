@@ -2,7 +2,7 @@
     <section class="form-filter__section-intro">
         <span>We've found you <span>32</span> results based on a starting balance of</span>
         <div class="input-badge input-badge--money">
-            <my-input set-price-field-status="$ctrl.setPriceFieldStatus({value: value, error: error, isValid: isValid})"></my-input>
+            <money-input set-price-field-status="$ctrl.setPriceFieldStatus({value: value, error: error, isValid: isValid})"></my-input>
         </div><!--
         --><span>.</span>
         <ul class="error-msgs" ng-messages="formFilter.priceField.$error" ng-show="formFilter.priceField.$dirty">
@@ -78,7 +78,7 @@
             <div class="filter-variations__element">
                 <div class="form-unit">
                     <label for="passwod" class="form-unit__label">Transfer in:</label>
-                    <input type="password" class="form-unit__input placeholder" placeholder="&#183;&#183;&#183;&#183;&#183;&#183;" required>
+                    <password-input set-password-field-status="$ctrl.setPasswordFieldStatus({error: error, isValid: isValid})"></password-input>
                 </div>
             </div>
         </div>

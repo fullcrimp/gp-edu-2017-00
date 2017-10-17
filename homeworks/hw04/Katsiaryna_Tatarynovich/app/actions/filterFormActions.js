@@ -8,5 +8,12 @@ const setPriceFieldStatus = (value, error, isValid) => {
         isValid: isValid
     }
 }
+const setPasswordFieldStatus = (error, isValid) => {
+    return {
+        type: TODOS.THE_FIELD_PASSWORD_STATUS,
+        payload: error,
+        isValid: isValid
+    }
+}
 
-export default { setPriceFieldStatus };
+export default { setPriceFieldStatus, setPasswordFieldStatus };

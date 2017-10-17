@@ -7,7 +7,8 @@ class formFilterController {
 const formFilterComponent = {
     templateUrl: 'app/components/form-filter/formFilterTemplate.html',
     bindings: {
-        setPriceFieldStatus: '&'
+        setPriceFieldStatus: '&',
+        setPasswordFieldStatus: '&'
     }
 };
 

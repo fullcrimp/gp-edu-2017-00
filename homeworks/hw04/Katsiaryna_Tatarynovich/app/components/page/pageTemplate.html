@@ -52,7 +52,105 @@
             </a>
         </div>
     </div>
-    <form-filter set-price-field-status="$ctrl.setPriceFieldStatus({value: value, error: error, isValid: isValid})"></form-filter>
+    <form action="url" method="GET" id="form-filter" class="form-filter" name="formFilter">
+        <section class="form-filter__section-intro">
+            <span>We've found you <span>32</span> results based on a starting balance of</span>
+            <div class="input-badge input-badge--money">
+                <money-input set-price-field-status="$ctrl.setPriceFieldStatus(value, error, isValid)"></my-input>
+            </div><!--
+            --><span>.</span>
+            <ul class="error-msgs" ng-messages="formFilter.priceField.$error" ng-show="formFilter.priceField.$dirty">
+                <li ng-message="minLength" class="error-msgs__item">Your price's length has to be more or equal to 0</li>
+                <li ng-message="maxLength" class="error-msgs__item">Your price's length has to be less or equal to 13</li>
+                <li ng-message="intervalCheck" class="error-msgs__item">Please, write down the price from 20 to 1000000</li>
+            </ul>
+        </section>
+        <section class="form-filter__section-text">
+            <p>You can also <a href="#" class="link">go back</a> and amend your personal details</p>
+        </section>
+        <section class="form-filter__section-account">
+            <div class="form-unit">
+                <label for="form-filter-account-type" class="form-unit__label">Account type(s)</label>
+                <div class="custom-select">
+                    <select id="form-filter-account-type" class="custom-select__element" required>
+                        <option value="" disabled selected hidden>Select</option>
+                        <option value="type1">Account type 1</option>
+                        <option value="type2">Account type 2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="custom-checkbox">
+                <input type="checkbox" id="form-filter-specific-account-type" class="custom-checkbox__input" />
+                <label for="form-filter-specific-account-type" class="custom-checkbox__label">Only show account I can open through MoneySupermarket (<span>5</span>)</label>
+            </div>
+        </section>
+        <section class="form-filter__section-result">
+            <h2 class="filter-title">Filter results by:</h2>
+            <div class="filter-variations">
+                <div class="filter-variations__element">
+                    <div class="form-unit">
+                        <label class="form-unit__label">Transfer in:</label>
+                        <div class="form-unit__radio">
+                            <div class="custom-radio custom-radio--width custom-radio--margin">
+                                <input type="radio" id="filter-by-choice-yes" class="custom-radio__input" name="filter-by-choice" value="yes" required>
+                                <label for="filter-by-choice-yes" class="custom-radio__label">Yes</label>
+                            </div>
+                            <div class="custom-radio custom-radio--width ">
+                                <input type="radio" id="filter-by-choice-no" class="custom-radio__input" name="filter-by-choice" value="no">
+                                <label for="filter-by-choice-no" class="custom-radio__label">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-variations__element">
+                    <div class="form-unit">
+                        <label class="form-unit__label">Transfer in:</label>
+                        <div class="form-unit__checkbox">
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="filter-by-opt-phone" name="filter-by-opt" value="opt-in-phone" class="custom-checkbox__input">
+                                <label for="filter-by-opt-phone" class="custom-checkbox__label">Opt in phone</label>
+                            </div>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="filter-by-opt-text" name="filter-by-opt" value="opt-in-text" class="custom-checkbox__input">
+                                <label for="filter-by-opt-text" class="custom-checkbox__label">Opt in text</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-variations__element">
+                    <div class="form-unit">
+                        <label for="form-filter-account-type-two" class="form-unit__label">Transfer in:</label>
+                        <div class="custom-select custom-select--width-100">
+                            <select id="form-filter-account-type-two" class="custom-select__element" required>
+                                <option value="" selected hidden disabled>--Please select--</option>
+                                <option value="select1">Select type 2</option>
+                                <option value="select2">Select type 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-variations__element">
+                    <div class="form-unit">
+                        <label for="passwod" class="form-unit__label">Transfer in:</label>
+                        <password-input set-password-field-status="$ctrl.setPasswordFieldStatus(error, isValid)"></password-input>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="form-filter__section-order">
+            <h2 class="filter-title">Order results by:</h2>
+            <div class="custom-select">
+                <select class="custom-select__element" required>
+                    <option value="" disabled hidden selected>Balance transfer</option>
+                    <option value="1">Select type 2</option>
+                    <option value="2">Select type 3</option>
+                </select>
+            </div>
+        </section>
+        <button type="submit" name="button" class="button">submit</button>
+    </form>
+    <!-- <form-filter set-price-field-status="$ctrl.setPriceFieldStatus(value, error, isValid)" set-password-field-status="$ctrl.setPasswordFieldStatus(error, isValid)"></form-filter>
+     -->
     <card></card>
     <div class="pagination">
         <button class="button button--deepskyblue">See the next 20 cards</button>

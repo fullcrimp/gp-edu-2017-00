@@ -8,7 +8,8 @@ const pageComponent = {
     templateUrl: 'app/components/page/pageTemplate.html',
     controller: PageController,
     bindings: {
-        setPriceFieldStatus: '&'
+        setPriceFieldStatus: '&',
+        setPasswordFieldStatus: '&'
     }
 };
 

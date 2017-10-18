@@ -26,6 +26,9 @@ import InputType from './directives/inputType';
 angular.module('angularBestbuy', [
     ngRedux
   ])
+  .controller('bestBuyController', function($scope) {
+    $scope.kek = true;
+  })
   .config(($ngReduxProvider) => {
     $ngReduxProvider
       .createStoreWith(reducer, [thunk, logger]);

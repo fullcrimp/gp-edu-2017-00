@@ -7,10 +7,9 @@ export default class MaxLengthValidator {
         ngModel.$validators.maxLengthValidator = (modelValue, viewValue) => {
             if (!ngModel.$dirty) {
                 return true;
-            } else if (viewValue.length <= parseInt(attr.maxLengthValidator, 10)) {
+            } else if (viewValue.split(',').join('').length <= parseInt(attr.maxLengthValidator, 10)) {
                 return true;
             } return false;
         };
     }
 }
-

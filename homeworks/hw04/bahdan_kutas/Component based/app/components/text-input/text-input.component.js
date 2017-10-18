@@ -1,5 +1,16 @@
+import componentTemplate from './text-input.template.html';
+
+class TextInputController {
+    constructor() {
+    }
+}
+
 const textInputComponent = {
-    templateUrl: 'components/text-input/text-input.template.html',
+    bindings: {
+        setValue: '&',
+    },
+    controller: TextInputController,
+    template: componentTemplate,
 };
 
 export default textInputComponent;

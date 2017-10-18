@@ -1,5 +1,16 @@
+import componentTemplate from './filter-form.tempate.html';
+
+class FilterFormController {
+    constructor() {
+    }
+}
 const filterFormComponent = {
-    templateUrl: 'components/filter-form/filter-form.tempate.html',
+    bindings: {
+        setValue: '&',
+        setFormValidity: '&',
+    },
+    controller: FilterFormController,
+    template: componentTemplate,
 };
 
 export default filterFormComponent;

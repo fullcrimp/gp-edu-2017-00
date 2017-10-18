@@ -1,5 +1,7 @@
+import componentTemplate from './search-form.template.html';
+
 const searchFormComponent = {
-    templateUrl: 'components/search-form/search-form.template.html',
+    template: componentTemplate,
 };
 
 export default searchFormComponent;

@@ -1,0 +1,21 @@
+.breadcrumbs {
+    font-size: 0;
+
+    &__item {
+        color: $sky-blue;        
+        text-decoration: none;
+        font-size: 14px;
+
+        &--current {
+            color: $black;
+        }
+
+        &:not(:last-child) {
+            &:after {
+                font-family: 'FontAwesome';
+                content: '\f105';
+                margin: 0 10px;
+            }
+        }
+    }
+}

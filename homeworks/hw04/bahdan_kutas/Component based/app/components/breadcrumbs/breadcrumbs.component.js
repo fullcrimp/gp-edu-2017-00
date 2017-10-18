@@ -1,5 +1,7 @@
+import componentTemplate from './breadcrumbs.template.html';
+
 const breadcrumbsComponent = {
-    templateUrl: 'components/breadcrumbs/breadcrumbs.template.html',
+    template: componentTemplate,
 };
 
 export default breadcrumbsComponent;

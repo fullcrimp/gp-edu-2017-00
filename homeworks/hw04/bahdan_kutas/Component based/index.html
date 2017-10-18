@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="moneyApp">
+<html lang="en" ng-controller="msmAppController as msCtrl">    
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../dist/styles/style.bundle.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <script src="https://use.fontawesome.com/e331dce35e.js" async></script>
     <title>Credit Cards</title>
 </head>
 
 <body>
-    <main-component></main-component>
-    <script src="../dist/app.bundle.js"></script>
+    <main-component set-form-validity="msCtrl.setFormValidity(payloadObj)" set-value="msCtrl.setInputValidity(payloadObj)"></main-component>
 </body>
 
 </html>

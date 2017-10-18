@@ -6,11 +6,13 @@ export default class RangeValidator {
     link(scope, element, attr, ngModel) {
         const range = attr.rangeValidator.split(';').map(el => parseInt(el, 10));
         ngModel.$validators.rangeValidator = (modelValue, viewValue) => {
-            if (!ngModel.$dirty) {
-                return true;
-            } else if (parseInt(viewValue, 10) >= range[0] && parseInt(viewValue, 10) <= range[1]) {
-                return true;
-            } return false;
+            if (viewValue && ngModel.$dirty) {
+                const value = parseInt(viewValue.split(',').join(''), 10);
+                if (value >= range[0] && value <= range[1]) {
+                    return true;
+                } return false;
+            }
+            return true;
         };
     }
 }

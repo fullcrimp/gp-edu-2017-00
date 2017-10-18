@@ -1,5 +1,7 @@
+import componentTemplate from './pagination.template.html';
+
 const paginationComponent = {
-    templateUrl: 'components/pagination/pagination.template.html',
+    template: componentTemplate,
 };
 
 export default paginationComponent;

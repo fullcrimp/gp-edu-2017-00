@@ -1,5 +1,8 @@
 import angular from 'angular';
 import ngMessages from 'angular-messages';
+import ngRedux from 'ng-redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 import mainComponent from './components/main-component/main-component.component';
 import breadcrumbsComponent from './components/breadcrumbs/breadcrumbs.component';
@@ -17,9 +20,18 @@ import MaxLengthValidator from './directives/max-length.validator';
 import OnblurFormatter from './directives/onblur-formatter.filter';
 import InputCheckValidator from './directives/inputcheck.validator';
 
-export default angular.module('moneyApp', [
+import rootReducer from './reducers/root.reducer';
+import msmAppController from './directives/msmAppController';
+
+angular.module('msmApp', [
     ngMessages,
+    ngRedux,
 ])
+    .config(($ngReduxProvider) => {
+        $ngReduxProvider.createStoreWith(rootReducer, [thunk, logger]);
+    })
+
+    .controller('msmAppController', msmAppController)
 
     .directive('minLengthValidator', MinLengthValidator)
     .directive('maxLengthValidator', MaxLengthValidator)
@@ -36,3 +48,6 @@ export default angular.module('moneyApp', [
     .component('searchForm', searchFormComponent)
     .component('filterForm', filterFormComponent)
     .component('textInput', textInputComponent);
+
+angular.bootstrap(document, ['msmApp']);
+

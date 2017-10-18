@@ -9,13 +9,13 @@ export default class OnblurFormatter {
     }
     formatter(value) {
         if (value && this.isNumeric(value)) {
-            return this.filter('number')(parseInt(value, 10));
+            return this.filter('number')(value);
         }
         return value;
     }
     unformatter(value) {
-        if (value && this.isNumeric(value)) {
-            return parseInt(value.replace(/[^0-9\.]/g, ''), 10);
+        if (value) {
+            return value.replace(/[^0-9\.]/g, '');
         }
         return value;
     }

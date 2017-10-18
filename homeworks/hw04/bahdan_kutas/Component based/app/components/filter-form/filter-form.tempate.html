@@ -1,10 +1,10 @@
 <div class="form-wrapper">
-    <form class="filter" name="filterForm">
+    <form class="filter" name="filterForm" ng-submit="$ctrl.setFormValidity({payloadObj: {valid: filterForm.$valid, errors: filterForm.$error, submitted: filterForm.$submitted}})">
         <section class="section">
             <div class="section__wraper">
                 <h5 class="section__intro-heading">We’ve found you 32 results based on a starting balance of</h5>
                 <div class="section__text">
-                    <text-input></text-input>
+                    <text-input set-value="$ctrl.setValue({payloadObj: payloadObj})"></text-input>
                 </div>
                 <div class="messages" ng-messages="filterForm.textInput.$error" role="alert">
                     <div class="messages__item" ng-message="required" ></div>

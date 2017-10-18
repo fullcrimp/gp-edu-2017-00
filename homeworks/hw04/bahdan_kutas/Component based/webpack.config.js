@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -11,15 +12,6 @@ module.exports = {
 
     module: {
         rules: [
-            {
-                test: /\.(png|jpg|gif)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        outputPath: path.resolve(__dirname, 'dist/img'),
-                    },
-                }],
-            },
             {
                 test: /\.(sass|scss)$/,
                 loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
@@ -31,11 +23,25 @@ module.exports = {
                     loader: 'babel-loader',
                 },
             },
+            {
+                test: /\.html$/,
+                exclude: /node_modules/,
+                use: { loader: 'html-loader' },
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'img/[name].[ext]',
+                        },
+                    },
+                ],
+            },
         ],
     },
-
-    // devtool: 'inline-source-map',
-
+    // devtool: 'cheap-module-eval-source-map',
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new webpack.HotModuleReplacementPlugin(),
@@ -43,11 +49,15 @@ module.exports = {
             filename: 'styles/[name].bundle.css',
             allChunks: true,
         }),
+        new HtmlWebpackPlugin({
+            title: 'msm-task',
+            template: './index.html',
+            inject: 'body',
+        }),
     ],
 
     output: {
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: 'src/[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
     },
 };

@@ -1,5 +1,7 @@
+import componentTemplate from './checkbox.template.html';
+
 const checkboxComponent = {
-    templateUrl: 'components/checkbox/checkbox.template.html',
+    template: componentTemplate,
 };
 
 export default checkboxComponent;

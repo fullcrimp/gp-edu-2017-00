@@ -1,5 +1,17 @@
+import componentTemplate from './main-component.template.html';
+
+class MainComponentController {
+    constructor() {
+    }
+}
+
 const mainComponent = {
-    templateUrl: 'components/main-component/main-component.template.html',
+    bindings: {
+        setValue: '&',
+        setFormValidity: '&',
+    },
+    controller: MainComponentController,
+    template: componentTemplate,
 };
 
 export default mainComponent;

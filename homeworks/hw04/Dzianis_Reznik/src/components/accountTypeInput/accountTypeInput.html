@@ -1,0 +1,13 @@
+<select
+  class="input-box__input input-box__input--dropdown"
+  name="accountType"
+  ng-model="accountType"
+  dropdown-validator
+  ng-required
+  ng-change="$ctrl.sendAccountType({type: accountType})"
+>
+  <option class="dropdown__option" value="" hidden disabled selected>Select...</option>
+  <option class="dropdown__option" value="Type 1">Type 1</option>
+  <option class="dropdown__option" value="Type 2">Type 2</option>
+  <option class="dropdown__option" value="Type 3">Type 3</option>
+</select>

@@ -1,0 +1,13 @@
+<select
+  name="accountsManagement"
+  class="input-box__input input-box__input--dropdown"
+  ng-required
+  dropdown-validator
+  ng-model="management"
+  ng-change="$ctrl.sendAccountManagement({management: management})"
+>
+  <option class="dropdown__option" value="" hidden disabled selected>Select...</option>
+  <option class="dropdown__option" value="Manage 1">Manage 1</option>
+  <option class="dropdown__option" value="Manage 2">Manage 2</option>
+  <option class="dropdown__option" value="Manage 3">Manage 3</option>
+</select>

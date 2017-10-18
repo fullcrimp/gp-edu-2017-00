@@ -1,0 +1,82 @@
+<div class="card" ng-repeat="card in $ctrl.cards">
+    <div class="card__section card__section--header card__section--between">
+        <div class="brand">
+            <img src="img/card-logo.jpg" alt="logo" class="brand__logo">
+            <div class="brand__description">
+                <span class="brand__name">{{card.brandName}}</span>
+                <span>0% Balance Transfer Fee Offer</span>
+            </div>
+        </div>
+        <a href="#" class="go-button go-button--desktop">GO TO SITE</a>
+    </div>
+    <div class="card__section card__section--between">
+        <div class="card__details">
+            <div class="card__detail card__detail--purple">
+                <span class="card__detail-title card__detail-title--purple">Balance transfer</span>
+                <div class="card__detail-content">
+                    <strong class="card__strong card__strong--purple">0% 41 months</strong>
+                    <span>then 18.95%</span>
+                    <strong class="card__strong card__strong--purple card__strong--small">0% fee</strong>
+                </div>
+            </div>
+            <div class="card__detail">
+                <span class="card__detail-title">Purchases</span>
+                <div class="card__detail-content">
+                    <strong class="card__strong">0% 6 months</strong>
+                    <span>then 18.95%</span>
+                </div>
+            </div>
+            <div class="card__detail">
+                <span class="card__detail-title">Rewards</span>
+                <div class="card__detail-content">
+                    <strong class="card__strong">No rewards</strong>
+                </div>
+            </div>
+            <div class="card__detail">
+                <span class="card__detail-title">Representative APR</span>
+                <div class="card__detail-content">
+                    <strong class="card__strong">18.9% APR</strong>
+                    <span>variable</span>
+                </div>
+            </div>
+            <div class="card__detail card__detail--fullwidth-mobile card__detail--upperlined">
+                <span class="card__detail-title">Chance of approval</span>
+                <div class="card__detail-content card__detail-content--center">
+                    <div class="card__chance">Will you get this card?</div>
+                    <a class="link" href="#">Start</a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="go-button go-button--mobile">GO TO SITE</a>
+        <div class="card__detail  card__detail--fullwidth-mobile">
+            <a class="link" href="#">More details</a>
+        </div>
+    </div>
+    <div class="card__section card__section--column-tablet">
+        <ul class="totals">
+            <li class="totals__title">Great for</li>
+            <li class="totals__item totals__item--pro">Suitable for first time buyers looking to save for the
+                deposit on your first home
+            </li>
+            <li class="totals__item totals__item--pro">Start saving with a deposit from &#163;1 and pay money in
+                as often you like
+            </li>
+            <li class="totals__item totals__item--pro">Choose between monthly or annual interest</li>
+        </ul>
+        <ul class="totals">
+            <li class="totals__title">But be aware that</li>
+            <li class="totals__item totals__item--con">You can only deposit up to &#163;1,200 in the first
+                month, and then up to &#163;200 per month thereafter
+            </li>
+            <li class="totals__item totals__item--con">The Government will give you a 25% tax-free bonus on the
+                money you put away, subject to eligibillity
+            </li>
+            <li class="totals__item totals__item--con">To view the Scheme Rules in full, please visit
+                <a href="#" class="common-link">helptobuy.gov.uk/isa</a>
+            </li>
+        </ul>
+    </div>
+    <div class="addition">
+        <span>Representative Example: If you spend &#163;1,200 at a purchase interest rate of 18.95% p.a. (variable) your representative rate will be 18.9% APR (variable).</span>
+    </div>
+</div>

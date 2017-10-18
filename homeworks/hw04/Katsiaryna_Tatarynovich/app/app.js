@@ -16,7 +16,6 @@ import { FormatInputDirective } from './directives/FormatInputDirective.js';
 import pageComponent from './components/page/pageComponent.js';
 import moneyInputComponent from './components/input/moneyInputComponent.js';
 import passwordInputComponent from './components/input/passwordInputComponent.js';
-// import formFilterComponent from './components/form-filter/formFilterComponent.js';
 import cardComponent from './components/cards/cardComponent.js';
 
 import { rootReducer } from './reducers';
@@ -34,7 +33,6 @@ angular
     })
 
     .component('page', pageComponent)
-    // .component('formFilter', formFilterComponent)
     .component('moneyInput', moneyInputComponent)
     .component('passwordInput', passwordInputComponent)
     .component('card', cardComponent)

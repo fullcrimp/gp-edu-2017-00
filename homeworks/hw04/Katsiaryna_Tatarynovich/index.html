@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="app" redux-directive>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,35 @@
     <script src="dist/app.bundle.js"></script>
 </head>
 <body>
-    <page redux-directive></page>
+    <header class="page-header">
+        <div class="page-header__logo">
+            <a href="#" class="page-header__logo-link">
+                <img src="app/img/logo.png" alt="Money Super Market" class="page-header__logo-img">
+            </a>
+        </div>
+        <nav class="header-nav">
+            <ul class="header-nav__list">
+                <li class="header-nav__item">
+                    <button type="button" name="button-sign-in" class="header-nav__button header-nav__button--sign-in">Sign in</button>
+                </li><!--
+                --><li class="header-nav__item">
+                    <button type="button" name="button-retrieve" class="header-nav__button">Retrieve quotes</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="bread-crumb">
+        <ul class="bread-crumb__list">
+            <li class="bread-crumb__item">
+                <a href="#" class="bread-crumb__link bread-crumb__link--visited">Credit Cards</a>
+            </li><!--
+            --><li class="bread-crumb__item">
+                <a href="#" class="bread-crumb__link bread-crumb__link--current">Results</a>
+            </li>
+        </ul>
+    </section>
+    <div class="wrap">
+        <page set-form-filter-status="$ctrl.setFormFilterStatus(error, isValid, isSubmitted)" set-price-field-status="$ctrl.setPriceFieldStatus(value, error, isValid)" set-password-field-status="$ctrl.setPasswordFieldStatus(error, isValid)"></page>
+    </div>
 </body>
 </html>

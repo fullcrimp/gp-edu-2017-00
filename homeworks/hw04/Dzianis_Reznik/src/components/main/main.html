@@ -71,23 +71,23 @@
           <div class="inputs__item">
             <h5 class="inputs__title">Transfer in</h5>
             <div class="input-box input-box--radio">
-              <input type="radio" name="answer" id="yes" class="input-box__input input-box__input--radio" ng-required>
+              <input type="radio" id="yes" name="answer" class="input-box__input input-box__input--radio" ng-required ng-model="transfer" ng-value="enableTransfer" ng-change="$ctrl.sendTransfer(transfer)">
               <label for="yes" class="input-box__label input-box__label--radio">Yes</label>
             </div>
             <div class="input-box input-box--radio">
-              <input type="radio" name="answer" id="no" class="input-box__input input-box__input--radio">
+              <input type="radio" id="no" name="answer" class="input-box__input input-box__input--radio" ng-model="transfer" ng-value="disableTransfer"ng-change="$ctrl.sendTransfer(transfer)">
               <label for="no" class="input-box__label input-box__label--radio">No</label>
             </div>
           </div>
           <div class="inputs__item">
             <h5 class="inputs__title">Account opening</h5>
             <div class="input-box input-box--checkbox">
-              <input type="checkbox" name="phone" id="phone" class="input-box__input input-box__input--checkbox">
+              <input type="checkbox" name="phone" id="phone" class="input-box__input input-box__input--checkbox" ng-model="phone" ng-change="$ctrl.sendPhoneOption(phone)">
               <label for="phone" class="input-box__label input-box__label--checkbox">Opt in phone</label>
             </div>
             <div class="input-wrapper">
               <div class="input-box input-box--checkbox">
-                <input type="checkbox" name="text" id="text" class="input-box__input input-box__input--checkbox">
+                <input type="checkbox" name="text" id="text" class="input-box__input input-box__input--checkbox" ng-model="text" ng-change="$ctrl.sendTextOption(text)">
                 <label for="text" class="input-box__label input-box__label--checkbox">Opt in text</label>
               </div>
             </div>

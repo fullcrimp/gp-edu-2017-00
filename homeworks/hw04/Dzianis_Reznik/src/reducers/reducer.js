@@ -1,9 +1,12 @@
 const INITIAL_STATE = {
-  money: 50,
+  money: "50",
   email: undefined,
   type: undefined,
   msmOnly: false,
-  management: undefined
+  management: undefined,
+  phone: false,
+  text: false,
+  transfer: true
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -31,6 +34,18 @@ export default function reducer(state = INITIAL_STATE, action) {
     case "MANAGEMENT":
       return Object.assign({}, state, {
         management: action.payload.management
+      });
+    case "TEXT":
+      return Object.assign({}, state, {
+        text: action.payload.text
+      });
+    case "PHONE":
+      return Object.assign({}, state, {
+        phone: action.payload.phone
+      });
+    case "TRANSFER":
+      return Object.assign({}, state, {
+        transfer: action.payload.transfer
       });
     default:
       return state;

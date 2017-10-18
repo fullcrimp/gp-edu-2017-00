@@ -6,6 +6,10 @@ import './img/logo.jpg';
 class MainController {
   constructor($ngRedux, $scope) {
 
+    $scope.enableTransfer = true;
+    $scope.disableTransfer = false;
+    $scope.transfer = $scope.enableTransfer;
+
     function mapStateToThis(state) {
       return {
         reducer: state.reducer

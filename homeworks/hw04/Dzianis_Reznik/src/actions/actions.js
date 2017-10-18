@@ -43,6 +43,36 @@ function sendAccountManagementInput(management) {
     }
   }
 }
+
+function sendPhoneOption(phone) {
+  return {
+    type: "PHONE",
+    payload: {
+      phone: phone
+    }
+  }
+}
+
+function sendTextOption(text) {
+  return {
+    type: "TEXT",
+    payload: {
+      text: text
+    }
+  }
+}
+
+function sendTransfer(transfer) {
+  return {
+    type: "TRANSFER",
+    payload: {
+      transfer: transfer
+    }
+  }
+}
 export default {
-  sendEmailInput, sendMoneyInput, sendAccountTypeInput, sendMsmOnlyInput, sendAccountManagementInput
+  sendEmailInput, sendMoneyInput,
+  sendAccountTypeInput, sendMsmOnlyInput,
+  sendAccountManagementInput, sendPhoneOption,
+  sendTextOption, sendTransfer
 };

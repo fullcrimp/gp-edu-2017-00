@@ -637,7 +637,7 @@ button {
       color: #00adf2;
       font-size: 29px;
       transform: rotate(145deg); }
-      @media screen and (max-width: 490px) {
+      @media screen and (max-width: 720px) {
         .custom-checkbox__input:checked + .custom-checkbox__label:after {
           top: 7px;
           left: -4px; } }

@@ -640,7 +640,7 @@ button {
                     color: $deepskyblue;
                     font-size: 29px;
                     transform: rotate(145deg);
-                    @media screen and (max-width: $small-screen-width) {
+                    @media screen and (max-width: $medium-screen-width) {
                         top: 7px;
                         left: -4px;
                     }

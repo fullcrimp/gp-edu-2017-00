@@ -1,0 +1,11 @@
+<input name="moneyInput"
+  money-filter
+  ng-model="money"
+  min-length="2"
+  max-length="7"
+  range="50,1000000"
+  class="input-box__input input-box__input--money"
+  input-type="number"
+  ng-required
+  ng-change="$ctrl.send($parent.filterForm.moneyInput.$valid)"
+  >

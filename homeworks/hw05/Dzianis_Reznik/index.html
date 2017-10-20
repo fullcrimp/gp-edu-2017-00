@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="students">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Students</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body ng-controller="StudentsController">
+  <main>
+    <header ng-init="$scope.headerInverted = false" class="header ng-class:{ 'header--inverted': $scope.headerInverted && $scope.easter}">
+        <h1>AngularJS Students</h1>
+        <div>Solve to enable "Easter Eggs". The best JS framework:</div>
+        <input type="text" ng-model="pattern" ng-change="$scope.easter = (pattern === 'AngularJS')">
+
+        <input class="easter-checkbox" type="checkbox" ng-checked="$scope.easter"  ng-disabled="true">
+        <div ng-if="$scope.easter" >
+          <span>(double click to invert colors)</span>
+          <button class="" ng-dblclick="$scope.headerInverted = !$scope.headerInverted">HERE</button>
+        </div>
+    </header>
+    <div class="search">
+      <h2 class="search__title">Search:</h2>
+      <input class="search__input" type="text" ng-model="search" ng-change="searchUsed = true">
+      <span ng-if="searchUsed">Thanks for using search!</span>
+    </div>
+    <div class="students">
+      <div class="students__card" ng-class="{students__selected: student.selected}" ng-repeat="student in students | filter: search">
+          <img ng-src="{{student.photo}}" alt="photo" class="students__img">
+          <div class="students__info">
+            <h3 class="students__name" ng-cloak>{{student.name}} {{student.surname}}</h3>
+            <h5 class="students__username" ng-bind="student.username"></h5>
+            <a class="students__link" ng-href="{{student.github}}">Github account</a>
+            <a class="students__link" ng-href="mailto:{{student.email}}">{{student.email}}</a>
+          </div>
+          <button class="students__button button button--select" ng-hide="student.selected" ng-click="student.selected = true">Select</button>
+          <button class="students__button button button--remove" ng-show="student.selected" ng-click="student.selected = false">Remove</button>
+      </div>
+    </div>
+  </main>
+  <footer class="footer ng-class: { 'footer--black': colorBlack }"  ng-mouseenter="colorBlack = false" ng-mouseenter="colorBlack = false"  ng-mouseleave="colorBlack = true">
+    <span ng-init="colorBlack = true">I can change my color by ngMouseenter and ngMouseleave!</span>
+  </footer>
+
+  <script src="dist/bundle.js"></script>
+</body>
+</html>

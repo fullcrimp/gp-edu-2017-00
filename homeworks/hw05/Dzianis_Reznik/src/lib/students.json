@@ -1,0 +1,22 @@
+[{
+  "name": "Dzianis",
+  "surname": "Reznik",
+  "username": "dzianisreznik",
+  "photo": "img/dzianisreznik.jpg",
+  "github": "https://github.com/dzianisreznik",
+  "email": "dzianis.reznik@gmail.com"
+}, {
+  "name": "Ekaterina",
+  "surname": "Tatarinovich",
+  "username": "etatarinovich18",
+  "photo": "img/etatarinovich18.jpg",
+  "github": "https://github.com/etatarinovich18",
+  "email": "etatarinovich18@gmail.com"
+}, {
+  "name": "Bogdan",
+  "surname": "Kutas",
+  "username": "Wennod",
+  "photo": "img/Wennod.png",
+  "github": "https://github.com/Wennod",
+  "email": "wendor48@gmail.com"
+}]

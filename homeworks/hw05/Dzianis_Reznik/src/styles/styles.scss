@@ -1,0 +1,115 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+}
+main {
+  flex: 1 0 auto;
+  background-color: #eaffe0;
+  color: #000;
+}
+.header{
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+
+  &--inverted{
+    color: #fff;
+    background-color: #000;
+  }
+}
+.footer{
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  font-size: 36px;
+  padding: 40px;
+
+  &--black{
+    background-color: #000;
+    color: #fff;
+  }
+}
+.search{
+  text-align: center;
+  padding: 5px;
+
+  &__title{
+    color:#000;
+  }
+  &__input{
+    font-size: 36px;
+    display: block;
+    width: 400px;
+    height: 20px;
+    padding: 10px 15px;
+    margin: 0 auto;
+  }
+}
+.students{
+  display: flex;
+  flex-direction: column;
+
+  &__card{
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+    width: 800px;
+    background-color: #e1f5f5;
+    border: 1px #565656 solid;
+    border-radius: 5px;
+  }
+  &__selected{
+    background-color: #f7ef6a;
+  }
+  &__img{
+    width: 150px;
+    height: 150px;
+    flex-grow: 0;
+  }
+  &__info{
+    margin-left: 15px;
+    flex-grow: 1;
+  }
+  &__button{
+    align-self: center;
+    margin-right: 15px;
+    flex-grow: 0;
+  }
+  &__link{
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+
+    &:hover{
+      text-decoration: underline;
+      color: #aaa;
+    }
+  }
+}
+.button{
+  width: 150px;
+  height: 40px;
+  border: 1px #565656 solid;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #000;
+  cursor: pointer;
+
+  &--select{
+    background-color: #93C192;
+  }
+  &--remove{
+    background-color: #c17878;
+  }
+}
+.easter-checkbox{
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,18 @@
+<div class="text-input">
+        <input type="text" class="text-input__input" 
+         name="textInput"
+         placeholder="100000"
+         ng-model="value"
+         min-length-validator="2"
+         max-length-validator="8"
+         range-validator="10;20000000"
+         pattern-validator
+         onblur-formatter
+         input-check-validator
+         ng-blur="$ctrl.setValue({payloadObj: {
+                errors: $parent.filterForm.textInput.$error,
+                value: value,
+                validity: $parent.filterForm.textInput.$valid
+        }})"
+         required >
+</div>

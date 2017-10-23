@@ -1,0 +1,22 @@
+<header class="money-header">
+    <img src="../../../img/money-logo.jpg" alt="money supermarket logo" class="money-header__logo">
+    <div class="money-header__menu">
+        <a href="#" class="money-header__menu-item money-header__menu-item--user">Sign in</a>
+        <a href="#" class="money-header__menu-item">Retrieve quotes</a>
+    </div>
+</header>
+<div class="breadcrumbs-wraper">
+    <div class="breadcrumbs">
+        <a href="#" class="breadcrumbs__item">Credit Cards</a>
+        <a href="#" class="breadcrumbs__item breadcrumbs__item--current">Results</a>
+    </div>
+</div>
+<div class="search-wraper">
+    <filter-form set-form-validity="$ctrl.setFormValidity({payloadObj: payloadObj})" set-value="$ctrl.setValue({payloadObj: payloadObj})"></filter-form>
+</div>
+<div class="main">
+    <div class="main__pagination">
+        <pagination></pagination>
+    </div>
+    <card-list></card-list>
+</div>

@@ -1,0 +1,199 @@
+@import 'main-variables.scss';
+@import 'validation.styles.scss';
+@import '../components/filter-form/filters-form.style.scss';
+@import '../components/money-header/money-header.style.scss';
+@import '../components/card-list/card-list.style.scss';
+@import '../components/breadcrumbs/breadcrumbs.style.scss';
+@import '../components/pagination/pagination.style.scss';
+@import '../components/main-component/main-component.style.scss';
+@import '../components/text-input/text-input.style.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: $main-fs;
+    font-family: $main-ff;
+    background-color: $background;
+}
+
+.breadcrumbs-wraper {
+    padding: 15px;
+}
+
+.search {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    &__section {
+        width: 100%;
+        max-width: 980px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        padding-bottom: 25px;
+
+        &--border-bot {
+            border-bottom: 1px solid $border-grey;
+        }
+
+        &--padding-top {
+            padding-top: 25px;
+        }
+
+        &--nowrap {
+            flex-wrap: nowrap;
+        }
+
+    }
+
+    &__dropdown {
+        margin: 10px;
+        width: 100%;
+
+        &--big {
+            max-width: 350px;
+
+            @media screen and (max-width: 480px) {
+                max-width: 100%;
+            }
+        }
+
+        &--small {
+            max-width: 200px;
+
+            @media screen and (max-width: 480px) {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $sky-blue;
+    }
+
+    &__heading {
+        color: $header-grey;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: normal;
+        margin-right: 10px;
+
+        @media screen and (max-width: 480px) {
+            margin: 0 10px;
+        }
+
+    }
+    
+    &__results-heading {
+        font-size: 18px;
+        color: $purple;
+        line-height: 24px;
+        font-weight: bold;
+
+        @media screen and (max-width: 480px) {
+            margin-left: 10px;
+        }
+    }
+
+    &__back-text {
+        @media screen and (max-width: 480px) {
+            margin: 0 10px;
+        }
+    }
+}
+
+.dropdown {
+    width: 100%;
+    position: relative;
+
+    &__select {
+        font-family: $main-ff;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        color: $grey;
+        width: 100%;
+        padding: 10px 50px 10px 20px;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: 0 2px 1px 0 $grey;
+        background-color: $white;
+        -webkit-appearance: button;
+
+        &--big {
+            color: $header-grey;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: normal;
+            margin-right: 10px;
+        }
+    }
+
+    &::after,
+    &::before {
+        font-family: 'FontAwesome';
+        position: absolute;
+        pointer-events: none;
+        content: '';
+    }
+
+    &:after {
+        border-radius: 0 5px 5px 0;
+        width: 50px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    &:before {
+        font-weight: bold;
+        line-height: 20px;
+        content: '\f078';
+        color: $sky-blue;
+        top: 50%;
+        right: 20px;
+        transform: translate(0, -50%);
+    }
+}
+
+.button {
+    width: 100%;
+    border-radius: 27px;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: $green;
+    box-shadow: 0px 2px 1px 0px grey;
+    color: $white;
+    font-family: "Open Sans";
+}
+
+.link {
+    position: relative;
+    color: $sky-blue;
+    font-size: 1em;
+    font-family: $main-ff;
+    line-height: 1.4em;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+
+    &:after {
+        font-family: 'FontAwesome';
+        content: '\f054';
+        font-size: 0.6em;
+        line-height: 1.4em;
+        font-weight: bold;
+        position: absolute;
+        right: -15px;
+        top: 5px;
+    }
+}
+

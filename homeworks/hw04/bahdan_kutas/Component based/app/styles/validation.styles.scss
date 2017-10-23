@@ -1,0 +1,59 @@
+
+form .ng-valid {
+    border: 1px solid $sky-blue;
+}
+
+form .ng-invalid {
+    border: 1px solid #B35555;
+}
+
+form .ng-pristine {
+    border: none;
+}
+
+.messages {
+    position: relative;
+    
+    &__item {
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 23px;
+            left: -145px;
+            width: 200px;
+            color: #B35555;
+            font-family: $main-ff;
+            content: '';
+        }
+
+        &--min-length {
+            &::after {
+                content: 'Min length error!';
+            }
+        }
+
+        &--required {
+            &::after {
+                content: 'Fill the fieild please!';
+            }
+        }
+
+        &--max-length {
+            &::after {
+                content: 'Max length error!';
+            }
+        }
+
+        &--pattern {
+            &::after {
+                content: 'Unacceptable symbols!';
+            }
+        }
+
+        &--range {
+            &::after {
+                content: 'Range error!';
+            }
+        }
+    }
+}

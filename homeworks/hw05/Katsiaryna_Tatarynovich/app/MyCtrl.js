@@ -74,9 +74,9 @@ export class MyCtrl {
                 day: '6.4 Earth day'
             },
         ];
-        $scope.isShowAllPlanets = true;
-        $scope.showAllPlanets = () => {
-            $scope.isShowAllPlanets = ($scope.isShowAllPlanets) ? false : true;
-        }
+        $scope.isShowAllPlanets = false;
+        $scope.isShowTheAnswerOfQuestionYes = false;
+        $scope.isShowTheAnswerOfQuestionNo = false;
+        $scope.isHideTheQuestion = false;
     }
 }

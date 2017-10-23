@@ -34051,10 +34051,10 @@ class MyCtrl {
             orbit: '248 Earth years',
             day: '6.4 Earth day'
         }];
-        $scope.isShowAllPlanets = true;
-        $scope.showAllPlanets = () => {
-            $scope.isShowAllPlanets = $scope.isShowAllPlanets ? false : true;
-        };
+        $scope.isShowAllPlanets = false;
+        $scope.isShowTheAnswerOfQuestionYes = false;
+        $scope.isShowTheAnswerOfQuestionNo = false;
+        $scope.isHideTheQuestion = false;
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = MyCtrl;

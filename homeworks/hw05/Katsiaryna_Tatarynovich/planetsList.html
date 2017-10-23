@@ -1,7 +1,7 @@
-<ul ng-hide="isShowAllPlanets">
-    <li class="item" ng-repeat="planet in planets" ng-class="$even ? 'item--background-opacity' : 'item--background-white'">
+<ul ng-show="isShowAllPlanets">
+    <li class="item" ng-repeat="planet in planets | filter: planetSearch track by planet.title" ng-class-odd="'item--background-opacity'" ng-class-even="'item--background-white'" ng-class="{'item--background-red item--shadow-red' : isShowTheAnswerOfQuestionNo}">
         <div class="item__image">
-            <img ng-src="{{planet.image}}" alt="image of {{planet.title}}">
+            <img ng-mouseover="" ng-mouseleave="" ng-src="{{planet.image}}" alt="image of {{planet.title}}">
         </div>
         <div class="item__info">
             <h3 class="item__title" ng-bind="planet.title"></h3>
@@ -12,10 +12,15 @@
                 <li class="item__details-item" ng-bind="planet.day"></li>
             </ul>
         </div>
-        <div class="item__question">
-            <span class="item__question-text">Would you like to visit {{planet.title}}?</span>
-            <button type="button" name="button" class="item__button item__button--margin-right">yes</button>
-            <button type="button" name="button" class="item__button">no</button>
+        <div class="item__question-wrap">
+            <div class="item__question" ng-hide="isHideTheQuestion">
+                <span class="item__question-text">Would you like to visit {{planet.title}}?</span>
+                <button type="button" name="button" class="item__button item__button--margin-right" ng-click="isShowTheAnswerOfQuestionYes = !isShowTheAnswerOfQuestionYes; isHideTheQuestion = !isHideTheQuestion;">yes</button>
+                <button type="button" name="button" class="item__button"  ng-click="isShowTheAnswerOfQuestionNo = !isShowTheAnswerOfQuestionNo; isHideTheQuestion = !isHideTheQuestion;">no</button>
+            </div>
+            <div class="item__answer" ng-show="isShowTheAnswerOfQuestionYes">
+                <span class="item__answer-text">{{(planet.title === 'Earth') ? 'Congratulations, you are already here!' : 'Unfortunately, the option is not available, please try this option in future :('}}</span>
+            </div>
         </div>
     </li>
 </ul>

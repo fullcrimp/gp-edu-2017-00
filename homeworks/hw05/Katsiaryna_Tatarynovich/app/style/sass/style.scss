@@ -29,6 +29,10 @@ button {
     color: $white;
     font-weight: bold;
     text-transform: uppercase;
+
+    &:hover {
+        background-color: $deepskyblue;
+    }
 }
 
 img {
@@ -107,9 +111,17 @@ img {
         margin: 15px 0;
     }
 
-    &__question {
+    &__question-wrap {
         max-width: 25%;
         text-align: center;
+    }
+
+    &__answer {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        font-weight: bold;
+        color: $light-red;
     }
 
     &__question-text {
@@ -132,5 +144,13 @@ img {
 
     &--background-white {
         background-color: $white;
+    }
+
+    &--background-red {
+        background-color: $light-red-opacity;
+    }
+
+    &--shadow-red {
+        box-shadow: 0 0 4px $red;
     }
 }

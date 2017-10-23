@@ -24,6 +24,8 @@ button {
   color: #fff;
   font-weight: bold;
   text-transform: uppercase; }
+  button:hover {
+    background-color: #00a5c3; }
 
 img {
   width: 100%; }
@@ -77,9 +79,15 @@ img {
     margin-right: 25px; }
   .item__description {
     margin: 15px 0; }
-  .item__question {
+  .item__question-wrap {
     max-width: 25%;
     text-align: center; }
+  .item__answer {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-weight: bold;
+    color: #c74d4d; }
   .item__question-text {
     display: inline-block;
     width: 100%;
@@ -92,3 +100,7 @@ img {
     background-color: rgba(218, 238, 237, 0.4); }
   .item--background-white {
     background-color: #fff; }
+  .item--background-red {
+    background-color: rgba(199, 77, 77, 0.6); }
+  .item--shadow-red {
+    box-shadow: 0 0 4px red; }

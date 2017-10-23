@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="dist/style.bundle.css">
     <script src="dist/app.bundle.js"></script>
 </head>
-<body>
+<body ng-cloak>
     <div ng-controller="myCtrl" class="wrap">
-        <div class="intro">
-            <h2 class="intro__title">Enter the name of the planet</h2>
-            <input type="text" class="intro__input" placeholder="Mercury">
-            <button type="button" name="button" ng-click="showAllPlanets()" class="intro__button">show all planets</button>
+        <div class="intro" >
+            <div class="intro__input-wrap" ng-show="isShowAllPlanets">
+                <h2 class="intro__title">Enter the name of the planet</h2>
+                <input type="text" class="intro__input" placeholder="Mercury" ng-model="planetSearch">
+            </div>
+            <button type="button" name="button" ng-click="isShowAllPlanets = !isShowAllPlanets" class="intro__button">{{isShowAllPlanets ? 'hide' : 'show'}} all planets</button>
         </div>
         <ng-include src="'planetsList.html'"></ng-include>
     </div>

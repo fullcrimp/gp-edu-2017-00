@@ -7,8 +7,8 @@
          max-length-validator="8"
          range-validator="10;20000000"
          pattern-validator
-         onblur-formatter="valueOn"
-         input-check-validator="valueCheck"
+         onblur-formatter
+         input-check-validator
          ng-blur="$ctrl.setValue({payloadObj: {
                 errors: $parent.filterForm.textInput.$error,
                 value: value,

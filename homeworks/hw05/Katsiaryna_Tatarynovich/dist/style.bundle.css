@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #f2f8fa url(image/bg-three.jpg) no-repeat;
+  background-size: cover;
+  color: #333;
+  font-family: sans-serif; }
+
+ul {
+  list-style-type: none; }
+
+button {
+  cursor: pointer;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+  background-color: #47bacf;
+  box-shadow: 0 0 4px #47bacf;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase; }
+  button:hover {
+    background-color: #00a5c3; }
+
+img {
+  width: 100%; }
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.intro {
+  margin: 20px 0; }
+  .intro__title {
+    margin-bottom: 15px;
+    color: #521700; }
+  .intro__input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 15px; }
+    .intro__input:focus {
+      box-shadow: 0 0 4px #47bacf; }
+  .intro__button {
+    width: 100%;
+    height: 40px; }
+
+.item {
+  display: flex;
+  margin: 30px;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 4px #47bacf; }
+  .item__title {
+    color: #521700; }
+  .item__details-item {
+    position: relative;
+    padding-left: 15px; }
+    .item__details-item:before {
+      content: '\2981';
+      position: absolute;
+      left: 0;
+      color: #521700; }
+  .item__image {
+    width: 20%;
+    margin-right: 30px; }
+  .item__info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 55%;
+    margin-right: 25px; }
+  .item__description {
+    margin: 15px 0; }
+  .item__question-wrap {
+    max-width: 25%;
+    text-align: center; }
+  .item__answer {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-weight: bold;
+    color: #c74d4d; }
+  .item__question-text {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #521700; }
+  .item__button--margin-right {
+    margin-right: 20px; }
+  .item--background-opacity {
+    background-color: rgba(218, 238, 237, 0.4); }
+  .item--background-white {
+    background-color: #fff; }
+  .item--background-red {
+    background-color: rgba(199, 77, 77, 0.6); }
+  .item--shadow-red {
+    box-shadow: 0 0 4px red; }

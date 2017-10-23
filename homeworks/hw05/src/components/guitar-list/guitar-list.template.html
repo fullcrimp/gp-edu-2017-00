@@ -1,0 +1,18 @@
+<input class="searchInput" ng-model="guitarSearch" placeholder="Type here to search for guitars">
+<div class="guitarList">
+    <div class="guitarList__guitarListItem" ng-repeat="item in $ctrl.items | filter:guitarSearch">
+        <img class="guitarList__guitarListImg" ng-src="{{item.image}}" alt="Guitar image">
+        <div class="guitarList__name">{{ item.additionalInfo.name }}</div>
+        <div class="guitarList__price">{{ item.additionalInfo.price | currency }}</div>
+        <button ng-hide="toggle" ng-click="toggle = !toggle">Show more</button>
+        <div class="guitarList__additionalInfo" ng-class="{'guitarList__additionalInfo--mouseover': showTool}" ng-mouseover="showTool = true" ng-mouseleave="showTool = false" ng-show="toggle" ng-dblclick="toggle = !toggle">
+            <div class="guitarList__additionalInfoItem">Body: {{ item.additionalInfo.body }}</div>                
+            <div class="guitarList__additionalInfoItem">Neck: {{ item.additionalInfo.neck }}</div>
+            <div class="guitarList__additionalInfoItem">Fingerboard: {{ item.additionalInfo.fingerboard }}</div>
+            <div class="guitarList__additionalInfoItem">Pickups: {{ item.additionalInfo.pickups }}</div>                
+            <div class="guitarList__additionalInfoItem">Bridge: {{ item.additionalInfo.bridge }}</div>
+            <div class="guitarList__additionalInfoItem">Tailpiece: {{ item.additionalInfo.tailpiece }}</div>
+            <div class="guitarList__additionalInfoItem">Tuners: {{ item.additionalInfo.tuners }}</div>
+        </div>
+    </div>
+</div>

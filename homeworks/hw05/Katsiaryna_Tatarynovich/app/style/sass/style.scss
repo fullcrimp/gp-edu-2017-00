@@ -1,0 +1,156 @@
+@import 'variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $azure url(image/bg-three.jpg) no-repeat;
+    background-size: cover;
+    color: $black-light;
+    font-family: sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    background-color: $lightskyblue;
+    box-shadow: 0 0 4px $lightskyblue;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $deepskyblue;
+    }
+}
+
+img {
+    width: 100%;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro {
+    margin: 20px 0;
+
+    &__title {
+        margin-bottom: 15px;
+        color: $brown;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 15px;
+
+        &:focus {
+            box-shadow: 0 0 4px $lightskyblue;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        height: 40px;
+    }
+}
+
+.item {
+    display: flex;
+    margin: 30px;
+    padding: 20px 30px;
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: 0 0 4px $lightskyblue;
+
+    &__title {
+        color: $brown;
+    }
+
+    &__details-item {
+        position: relative;
+        padding-left: 15px;
+
+        &:before {
+            content: '\2981';
+            position: absolute;
+            left: 0;
+            color: $brown;
+        }
+    }
+
+    &__image {
+        width: 20%;
+        margin-right: 30px;
+    }
+
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        width: 55%;
+        margin-right: 25px;
+    }
+
+    &__description {
+        margin: 15px 0;
+    }
+
+    &__question-wrap {
+        max-width: 25%;
+        text-align: center;
+    }
+
+    &__answer {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        font-weight: bold;
+        color: $light-red;
+    }
+
+    &__question-text {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: $brown;
+    }
+
+    &__button {
+        &--margin-right {
+            margin-right: 20px;
+        }
+    }
+
+    &--background-opacity {
+        background-color: $azure-dark-opacity;
+    }
+
+    &--background-white {
+        background-color: $white;
+    }
+
+    &--background-red {
+        background-color: $light-red-opacity;
+    }
+
+    &--shadow-red {
+        box-shadow: 0 0 4px $red;
+    }
+}

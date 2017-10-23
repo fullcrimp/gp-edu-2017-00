@@ -1,0 +1,36 @@
+.guitarList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    &__guitarListImg {
+        max-height: 150px;
+    }
+    &__guitarListItem {
+        max-width: 400px;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    &__additionalInfo {
+        position: relative;
+        &--mouseover:after{
+            content: "Double-click me to hide";
+            color: slategray;
+            position: absolute;
+            bottom: -20px;
+        }
+    }
+}
+
+.searchInput {
+    display: flex;
+    position: relative;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%, 0);
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.guitarListWrapper {
+    margin: 10px 15px;
+}

@@ -1,0 +1,132 @@
+{
+    "guitars": [
+      {
+        "guitarId": "04976056-e03e-46de-a723-673291d09838",  
+        "additionalInfo": {
+          "price": "5600",
+          "name": "Freddie King 1960 ES-345 Sixties Cherry VOS",
+          "body": "Semi-solid construction with lightweight centerblock",
+          "neck": "Period correct slimmer, narrower neck",
+          "fingerboard": "Dark rosewood with small block inlays",
+          "pickups": "Calibrated MHS humbuckers",
+          "bridge": "Wired' ABR-1 bridge",
+          "tailpiece": "Chrome plated trapeze tailpiece",
+          "tuners": "Kluson tuners"
+        },
+        "brandName": "Gibson",
+        "image": "http://images.gibson.com.s3.amazonaws.com/Products/Electric-Guitars/2016/Memphis/Late-60s-ES-335TD/ES6916LBNT1_MAIN_HERO_01.jpg"
+      },
+      {
+        "guitarId": "b1b9ac63-812c-4d66-a311-93cce8d50398",  
+        "additionalInfo": {
+            "price": "4200",
+            "name": "Tamio Okuda Signature 1959 ES-330",
+            "body": " Correct '63 shape with narrower cutaway horns",
+            "neck": "Period correct slimmer, narrower neck",
+            "fingerboard": "Bound rosewood with block inlays",
+            "pickups": "MHS humbuckers",
+            "bridge": "Wired' ABR-1 bridge",
+            "tailpiece": "Chrome plated trapeze tailpiece",
+            "tuners": "Period-correct .100 fret wire"
+          },
+        "brandName": "Gibson",
+        "image": "http://images.gibson.com/Products/Electric-Guitars/2016/Memphis/Freddie-King-1960-ES-345/ARFK16SCGH1_MAIN_HERO_01.jpg"
+      },
+      {
+        "guitarId": "0c9fd73a-d5de-45c0-953d-a2c4416a5023",  
+        "additionalInfo": {
+            "price": "4349",
+            "name": "ES-Les Paul Trans Amber",
+            "body": "New Adirondack spruce top bracing",
+            "neck": "Period correct slimmer, narrower neck",
+            "fingerboard": "Rosewood with trapezoidal Les Paul inlays",
+            "pickups": "MHS humbuckers",
+            "bridge": "ABR-1 with titanium saddles",
+            "tailpiece": "Chrome plated trapeze tailpiece",
+            "tuners": "Period-correct .100 fret wire"
+        },
+        "brandName": "Gibson",
+        "image": "http://images.gibson.com.s3.amazonaws.com/Products/Electric-Guitars/2016/Memphis/ES-Les-Paul-Trans-Amber/ESLP16TANH1_MAIN_HERO_01.jpg"
+      },
+      {
+        "guitarId": "04973256-e03e-46de-a723-673291d09838",  
+        "additionalInfo": {
+          "price": "3999",
+          "name": "Les Paul Fort Knox",
+          "body": "Semi-solid construction with lightweight centerblock",
+          "neck": "Period correct slimmer, narrower neck",
+          "fingerboard": "Dark rosewood with small block inlays",
+          "pickups": "Calibrated MHS humbuckers",
+          "bridge": "Wired' ABR-1 bridge",
+          "tailpiece": "Chrome plated trapeze tailpiece",
+          "tuners": "Kluson tuners"
+        },
+        "brandName": "Gibson",
+        "image": "http://images.gibson.com.s3.amazonaws.com/Products/Electric-Guitars/2016/USA/Les-Paul-Fort-Knox/LPFK16BGGH1_MAIN_HERO_01.jpg"
+      },
+      {
+        "guitarId": "b1b9ac63-812c-4d66-a311-93cce8d65398",  
+        "additionalInfo": {
+            "price": "2499",
+            "name": "SG Dark 7",
+            "body": " Correct '63 shape with narrower cutaway horns",
+            "neck": "Period correct slimmer, narrower neck",
+            "fingerboard": "Bound rosewood with block inlays",
+            "pickups": "MHS humbuckers",
+            "bridge": "Wired' ABR-1 bridge",
+            "tailpiece": "Chrome plated trapeze tailpiece",
+            "tuners": "Period-correct .100 fret wire"
+          },
+        "brandName": "Gibson",
+        "image": "http://images.gibson.com.s3.amazonaws.com/Products/Electric-Guitars/2016/USA/SG-Dark-7/SGDS7EBBC1_MAIN_HERO_01.jpg"
+      },
+      {
+        "guitarId": "0c9fd73a-d5de-45c0-953d-a2c4416f7023",  
+        "additionalInfo": {
+            "price": "3980",
+            "name": "Les Paul Joe Bonamassa \"Tomato Soup Burst\" Limited Edition",
+            "body": "New Adirondack spruce top bracing",
+            "neck": "Period correct slimmer, narrower neck",
+            "fingerboard": "Rosewood with trapezoidal Les Paul inlays",
+            "pickups": "MHS humbuckers",
+            "bridge": "ABR-1 with titanium saddles",
+            "tailpiece": "Chrome plated trapeze tailpiece",
+            "tuners": "Period-correct .100 fret wire"
+        },
+        "brandName": "Gibson",
+        "image": "http://images.gibson.com.s3.amazonaws.com/Products/Electric-Guitars/2015/Les-Paul-Joe-Bonamassa-Tomato-Soup-Burst-Limited-Edition/LPJB3TMNH1_MAIN_HERO_01.jpg"
+      },
+      {
+        "guitarId": "0c9fd73a-d5df-45c0-953d-a2c4416f7123",  
+        "additionalInfo": {
+            "price": "2499",
+            "name": "SG Supreme 2016 Limited",
+            "body": "New Adirondack spruce top bracing",
+            "neck": "Period correct slimmer, narrower neck",
+            "fingerboard": "Rosewood with trapezoidal Les Paul inlays",
+            "pickups": "MHS humbuckers",
+            "bridge": "ABR-1 with titanium saddles",
+            "tailpiece": "Chrome plated trapeze tailpiece",
+            "tuners": "Period-correct .100 fret wire"
+        },
+        "brandName": "Gibson",
+        "image": "http://images.gibson.com.s3.amazonaws.com/Products/Electric-Guitars/2015/SG-Supreme-2016-Limited/SGSU16CHCH1_MAIN_HERO_01.jpg"
+      },
+      {
+        "guitarId": "0c9fd73a-d5de-45c8-953d-a2c4416c7023",  
+        "additionalInfo": {
+            "price": "3999",
+            "name": "Les Paul Sunken Treasure",
+            "body": "New Adirondack spruce top bracing",
+            "neck": "Period correct slimmer, narrower neck",
+            "fingerboard": "Rosewood with trapezoidal Les Paul inlays",
+            "pickups": "MHS humbuckers",
+            "bridge": "ABR-1 with titanium saddles",
+            "tailpiece": "Chrome plated trapeze tailpiece",
+            "tuners": "Period-correct .100 fret wire"
+        },
+        "brandName": "Gibson",
+        "image": "http://images.gibson.com.s3.amazonaws.com/Products/Electric-Guitars/2016/USA/Les-Paul-Sunken-Treasure/LPSST16NANH1_MAIN_HERO_01.jpg"
+      }
+    ]
+  }

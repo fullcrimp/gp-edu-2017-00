@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    &__socials-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        list-style: none;
+    }
+}

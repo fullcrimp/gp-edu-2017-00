@@ -20,14 +20,21 @@ module.exports = {
             },
             {
                 test: /\.(sass|scss)$/,
-                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+                loader: ExtractTextPlugin.extract(['css-loader?url=false', 'sass-loader'])
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loaders: [
+                    'file?hash=sha512&digest=hex&name=image/[name].[ext]',
+                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                ]
             }
         ]
     },
 
     plugins: [
         new ExtractTextPlugin({
-            filename: 'style/[name].bundle.css',
+            filename: '[name].bundle.css',
             allChunks: true,
         }),
     ]

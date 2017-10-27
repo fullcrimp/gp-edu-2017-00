@@ -34008,7 +34008,53 @@ class MyCtrl {
             diameter: '7,926 miles (12,760 km)',
             orbit: '365.24 days',
             day: '23 hours, 56 minutes'
+        }, {
+            title: 'Mars',
+            image: 'http://shubinpavel.ru/images/mars.png',
+            description: 'The fourth planet from the sun, is a cold, dusty place. The dust, an iron oxide, gives the planet its reddish cast. Mars shares similarities with Earth: It is rocky, has mountains and valleys, and storm systems ranging from localized tornado-like dust devils to planet-engulfing dust storms. It snows on Mars. And Mars harbors water ice. Scientists think it was once wet and warm, though today it’s cold and desert-like.',
+            diameter: '4,217 miles (6,787 km)',
+            orbit: '687 Earth days',
+            day: 'Just more than one Earth day (24 hours, 37 minutes)'
+        }, {
+            title: 'Jupiter',
+            image: 'http://www.pngmart.com/files/4/Jupiter-PNG-File.png',
+            description: 'The fifth planet from the sun, Jupiter is huge and is the most massive planet in our solar system. It’s a mostly gaseous world, mostly hydrogen and helium. Its swirling clouds are colorful due to different types of trace gases. A big feature is the Great Red Spot, a giant storm which has raged for hundreds of years. Jupiter has a strong magnetic field, and with dozens of moons, it looks a bit like a miniature solar system.',
+            diameter: '86,881 miles (139,822 km)',
+            orbit: '11.9 Earth years',
+            day: '9.8 Earth hours'
+        }, {
+            title: 'Saturn',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Saturnx.png',
+            description: 'The sixth planet from the sun is known most for its rings. When Galileo Galilei first studied Saturn in the early 1600s, he thought it was an object with three parts. Not knowing he was seeing a planet with rings, the stumped astronomer entered a small drawing — a symbol with one large circle and two smaller ones — in his notebook, as a noun in a sentence describing his discovery. More than 40 years later, Christiaan Huygens proposed that they were rings. The rings are made of ice and rock. Scientists are not yet sure how they formed. The gaseous planet is mostly hydrogen and helium. It has numerous moons.',
+            diameter: '74,900 miles (120,500 km)',
+            orbit: '29.5 Earth years',
+            day: 'About 10.5 Earth hours'
+        }, {
+            title: 'Uranus',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Uranus2-transparent.png/768px-Uranus2-transparent.png',
+            description: 'The seventh planet from the sun, Uranus is an oddball. It’s the only giant planet whose equator is nearly at right angles to its orbit — it basically orbits on its side. Astronomers think the planet collided with some other planet-size object long ago, causing the tilt. The tilt causes extreme seasons that last 20-plus years, and the sun beats down on one pole or the other for 84 Earth-years. Uranus is about the same size as Neptune. Methane in the atmosphere gives Uranus its blue-green tint. It has numerous moons and faint rings.',
+            diameter: '31,763 miles (51,120 km)',
+            orbit: '84 Earth years',
+            day: '18 Earth hours'
+        }, {
+            title: 'Neptune',
+            image: 'https://space-facts.com/wp-content/uploads/neptune-transparent-300x300.png',
+            description: 'The eighth planet from the sun, Neptune is known for strong winds — sometimes faster than the speed of sound. Neptune is far out and cold. The planet is more than 30 times as far from the sun as Earth. It has a rocky core. Neptune was the first planet to be predicted to exist by using math, before it was detected. Irregularities in the orbit of Uranus led French astronomer Alexis Bouvard to suggest some other might be exerting a gravitational tug. German astronomer Johann Galle used calculations to help find Neptune in a telescope. Neptune is about 17 times as massive as Earth.',
+            diameter: '30,775 miles (49,530 km)',
+            orbit: '165 Earth years',
+            day: '19 Earth hours'
+        }, {
+            title: 'Pluto (Dwarf Planet)',
+            image: 'http://cosmos.agency/wp-content/uploads/2015/08/pluto_heart_colored.png',
+            description: 'Once the ninth planet from the sun, Pluto is unlike other planets in many respects. It is smaller than Earth moon. Its orbit carries it inside the orbit of Neptune and then way out beyond that orbit. From 1979 until early 1999, Pluto had actually been the eighth planet from the sun. Then, on Feb. 11, 1999, it crossed Neptune path and once again became the solar system most distant planet — until it was demoted to dwarf planet status. Pluto will stay beyond Neptune for 228 years. ',
+            diameter: '1,430 miles (2,301 km)',
+            orbit: '248 Earth years',
+            day: '6.4 Earth day'
         }];
+        $scope.isShowAllPlanets = true;
+        $scope.showAllPlanets = () => {
+            $scope.isShowAllPlanets = $scope.isShowAllPlanets ? false : true;
+        };
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = MyCtrl;

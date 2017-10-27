@@ -1,0 +1,21 @@
+<ul ng-hide="isShowAllPlanets">
+    <li class="item" ng-repeat="planet in planets" ng-class="$even ? 'item--background-opacity' : 'item--background-white'">
+        <div class="item__image">
+            <img ng-src="{{planet.image}}" alt="image of {{planet.title}}">
+        </div>
+        <div class="item__info">
+            <h3 class="item__title" ng-bind="planet.title"></h3>
+            <p class="item__description" ng-bind="planet.description"></p>
+            <ul class="item__details">
+                <li class="item__details-item" ng-bind="planet.diameter"></li>
+                <li class="item__details-item" ng-bind="planet.orbit"></li>
+                <li class="item__details-item" ng-bind="planet.day"></li>
+            </ul>
+        </div>
+        <div class="item__question">
+            <span class="item__question-text">Would you like to visit {{planet.title}}?</span>
+            <button type="button" name="button" class="item__button item__button--margin-right">yes</button>
+            <button type="button" name="button" class="item__button">no</button>
+        </div>
+    </li>
+</ul>
